@@ -1,0 +1,430 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>EWS creatives</title>
+<style>
+@font-face{font-family:M;src:url(montserrat.woff2) format("woff2");font-weight:100 900}
+:root{--navy:#2A3852;--slate:#3C5072;--mid:#4F6A92;--deep:#1C1F26;--g:#84C73D;--w:#FEFEFE;--l:#D0D9E8;--gun:#434853}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;font-family:M,sans-serif;color:var(--w)}
+.art{position:relative;overflow:hidden;background:var(--navy);margin:20px;display:block}
+.sq{width:1080px;height:1080px}.pt{width:1080px;height:1350px}.st{width:1080px;height:1920px}
+.abs{position:absolute}.fill{position:absolute;inset:0}
+.ph{background-size:cover;background-position:center;background-repeat:no-repeat}
+.logo{position:absolute;width:150px;z-index:20}
+.k{font-weight:700;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+.kc{display:inline-block;border:2px solid var(--g);color:var(--g);font-weight:700;font-size:22px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.hl{font-weight:900;text-transform:uppercase;line-height:.98;letter-spacing:-.005em}
+.hl>div{white-space:nowrap}.hl .g{color:var(--g)}
+.sub{font-weight:700;font-size:34px;line-height:1.25}
+.body{font-weight:400;font-size:29px;line-height:1.45;color:#E6ECF5}
+.cta{display:inline-block;background:var(--g);color:var(--deep);font-weight:800;font-size:28px;letter-spacing:.06em;text-transform:uppercase;padding:24px 36px;white-space:nowrap}
+.foot{font-weight:400;font-size:27px;line-height:1.45;color:#E6ECF5}
+.foot span{display:block}
+.chip{display:inline-block;border:2px solid rgba(208,217,232,.35);padding:12px 20px;font-weight:700;font-size:24px;letter-spacing:.06em;text-transform:uppercase;color:var(--w)}
+.chip.on{border-color:var(--g);color:var(--g)}
+.grid{background-image:linear-gradient(rgba(208,217,232,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(208,217,232,.07) 1px,transparent 1px),linear-gradient(rgba(208,217,232,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(208,217,232,.12) 1px,transparent 1px);background-size:36px 36px,36px 36px,180px 180px,180px 180px}
+.lat{background-image:repeating-linear-gradient(45deg,rgba(208,217,232,.07) 0 1px,transparent 1px 44px),repeating-linear-gradient(-45deg,rgba(208,217,232,.07) 0 1px,transparent 1px 44px)}
+.dots{background-image:radial-gradient(rgba(208,217,232,.16) 1.6px,transparent 1.8px);background-size:28px 28px}
+.lines{background-image:repeating-linear-gradient(0deg,rgba(208,217,232,.06) 0 1px,transparent 1px 22px)}
+.bar{height:10px;background:var(--g)}
+.mono{font-family:"DejaVu Sans Mono",monospace}
+.num{font-weight:900;line-height:.85;letter-spacing:-.03em}
+.outline{color:transparent;-webkit-text-stroke:3px var(--g)}
+.tick{display:flex;gap:18px;align-items:flex-start;font-size:29px;line-height:1.35;color:#E6ECF5}
+.tick i{flex:none;width:22px;height:22px;background:var(--g);margin-top:8px}
+</style></head><body><div id="out"></div>
+<script src="posts.js"></script>
+<script>
+const BY={};POSTS.forEach(p=>BY[p.d]=p);
+const P=d=>BY["2026-10-"+d];
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const logo=(x,y,w=150)=>`<img class="logo" src="logo-white.svg" style="left:${x}px;top:${y}px;width:${w}px">`;
+const hl=(a,b,px,extra="")=>`<div class="hl" style="font-size:${px}px;${extra}"><div class="fit">${esc(a)}</div><div class="fit g">${esc(b)}</div></div>`;
+const foot=(al="left")=>`<div class="foot" style="text-align:${al}"><span>+1 (480) 968-6000</span><span>engineeringwireless.com</span></div>`;
+const ph=(k,pos="center",st="")=>`<div class="fill ph" style="background-image:url(ph/${k}.jpg);background-position:${pos};${st}"></div>`;
+function svg(w,h,inner,st=""){return `<svg class="abs" style="left:0;top:0;${st}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none">${inner}</svg>`}
+function arcs(cx,cy,n,step,r0=40,col="#D0D9E8",op=.14,sw=2){let s="";for(let i=0;i<n;i++)s+=`<circle cx="${cx}" cy="${cy}" r="${r0+i*step}" stroke="${col}" stroke-opacity="${(op*(1-i/(n+2))).toFixed(3)}" stroke-width="${sw}"/>`;return s}
+function wave(w,y,amp,len,col="#84C73D",op=1,sw=3,ph=0){let d=`M0 ${y}`;for(let x=0;x<=w;x+=8)d+=` L${x} ${(y+Math.sin(x/len*2*Math.PI+ph)*amp).toFixed(1)}`;return `<path d="${d}" stroke="${col}" stroke-opacity="${op}" stroke-width="${sw}"/>`}
+function contour(cx,cy,n,step,seed=1,op=.12){let s="";for(let i=1;i<=n;i++){let d="";for(let a=0;a<=360;a+=6){const r=i*step*(1+.12*Math.sin(a*Math.PI/180*3+seed+i*.7)+.06*Math.sin(a*Math.PI/180*5+seed*2));const x=cx+r*Math.cos(a*Math.PI/180),y=cy+r*Math.sin(a*Math.PI/180);d+=(a?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)}s+=`<path d="${d}Z" stroke="#D0D9E8" stroke-opacity="${(op*(1-i/(n+3))).toFixed(3)}" stroke-width="2"/>`}return s}
+const bars=(n=4,on=4,x=0,y=0,s=1)=>{let o="";for(let i=0;i<n;i++){const h=(i+1)*14*s;o+=`<rect x="${x+i*16*s}" y="${y+56*s-h}" width="${10*s}" height="${h}" fill="${i<on?"#84C73D":"#D0D9E8"}" fill-opacity="${i<on?1:.25}"/>`}return o};
+
+const D={};
+/* ---------- IMAGE POSTS (1080 x 1080), every layout different ---------- */
+D.d01=()=>{const p=P("01");return `<div class="art sq" data-id="d01">
+ <div class="abs ph" style="left:0;top:0;width:1080px;height:640px;background-image:url(ph/d01.jpg);background-position:center 40%;clip-path:polygon(0 0,100% 0,100% 74%,0 100%)"></div>
+ <div class="abs" style="left:0;top:0;width:1080px;height:220px;background:linear-gradient(rgba(28,31,38,.65),transparent)"></div>
+ ${logo(64,56)}
+ <div class="abs" style="left:0;top:0;width:1080px;height:640px;clip-path:polygon(0 100%,100% 74%,100% 75.2%,0 101.2%);background:var(--g)"></div>
+ ${svg(1080,1080,arcs(1080,1080,9,70,60))}
+ <div class="abs" style="left:64px;top:672px"><span class="kc">National Fire Pup Day</span></div>
+ <div class="abs" style="left:64px;top:748px;width:600px">${hl(p.h1,p.h2,96)}</div>
+ <div class="abs body" style="left:700px;top:676px;width:316px;font-size:24px">${esc(p.body)}</div>
+ <div class="abs" style="left:64px;bottom:52px"><span class="cta" style="font-size:24px;padding:20px 26px">Talk to an RF engineer</span></div>
+ <div class="abs" style="right:64px;bottom:56px">${foot("right")}</div></div>`};
+
+D.d02=()=>{const p=P("02");return `<div class="art sq" data-id="d02">
+ <div class="abs ph" style="right:0;top:0;width:470px;height:1080px;background-image:url(ph/d02.jpg);background-position:center"></div>
+ <div class="abs" style="right:470px;top:0;width:10px;height:1080px;background:var(--g)"></div>
+ <div class="abs grid" style="left:0;top:0;width:600px;height:1080px"></div>
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:236px">Manufacturing Day</div>
+ <div class="abs" style="left:60px;top:286px;width:480px">${hl(p.h1,p.h2,86)}</div>
+ <div class="abs" style="left:60px;top:486px;width:480px;display:flex;align-items:center;gap:20px">
+   <svg width="130" height="60">${bars(4,1,0,0,1.05)}</svg><span style="font-weight:700;font-size:22px;letter-spacing:.1em;color:#D0D9E8">DEAD ZONE BETWEEN THE AISLES</span></div>
+ <div class="abs body" style="left:60px;top:590px;width:480px">${esc(p.body)}</div>
+ <div class="abs" style="left:60px;top:790px"><span class="cta" style="font-size:24px;padding:20px 26px">Let's talk facilities</span></div>
+ <div class="abs" style="left:60px;bottom:52px">${foot()}</div></div>`};
+
+D.d03=()=>{const p=P("03");return `<div class="art sq" data-id="d03">
+ ${svg(1080,1080,arcs(900,560,8,62,430,"#84C73D",.5,2))}
+ <div class="abs ph" style="left:470px;top:130px;width:860px;height:860px;border-radius:50%;background-image:url(ph/d03.jpg);background-position:center 30%;border:12px solid var(--navy);box-shadow:0 0 0 4px #84C73D"></div>
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:250px">National Techies Day</div>
+ <div class="abs hl" style="left:60px;top:300px;width:380px;font-size:72px"><div>Our</div><div>techies</div><div class="g">climb</div><div class="g">towers</div></div>
+ <div class="abs body" style="left:60px;top:640px;width:330px;font-size:25px">Tower climbers to iBwave certified RF engineers.</div>
+ <div class="abs" style="left:60px;top:790px;width:340px;border-top:3px solid var(--g);padding-top:18px;font-weight:700;font-size:27px;line-height:1.3">Best view you've had from a job site?</div>
+ <div class="abs" style="left:60px;bottom:52px">${foot()}</div></div>`};
+
+D.d05=()=>{const p=P("05");const strip=(x,y,pos)=>`<div class="abs ph" style="left:${x}px;top:${y}px;width:316px;height:560px;background-image:url(ph/d05.jpg);background-size:1000px auto;background-position:${pos}"></div>`;return `<div class="art sq" data-id="d05" style="background:var(--deep)">
+ <div class="abs lines" style="left:0;top:0;width:1080px;height:1080px"></div>
+ ${strip(40,40,"-40px -120px")}${strip(382,90,"-382px -170px")}${strip(724,40,"-724px -120px")}
+ <div class="abs" style="left:40px;top:650px;width:1000px;height:4px;background:var(--g)"></div>
+ ${logo(64,56)}
+ <div class="abs k" style="left:40px;top:690px">Fire Prevention Week · Safe charging</div>
+ <div class="abs" style="left:40px;top:740px;width:620px">${hl(p.h1,p.h2,80)}</div>
+ <div class="abs body" style="left:40px;top:926px;width:640px;font-size:26px">EVITP certified electricians. The right circuit, the right install.</div>
+ <div class="abs" style="right:40px;top:760px"><span class="cta" style="font-size:22px;padding:18px 22px">Ask about EV installs</span></div>
+ <div class="abs" style="right:40px;bottom:44px">${foot("right")}</div></div>`};
+
+D.d06=()=>{const p=P("06");const node=(y,t,s)=>`<div class="abs" style="left:560px;top:${y}px;display:flex;gap:22px;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:var(--navy);border:6px solid var(--g)"></span><div><div style="font-weight:800;font-size:30px;text-transform:uppercase">${t}</div><div style="font-size:24px;color:#D0D9E8">${s}</div></div></div>`;return `<div class="art sq" data-id="d06">
+ <div class="abs grid" style="inset:0"></div>
+ <div class="abs ph" style="left:56px;top:150px;width:420px;height:760px;border-radius:8px;background-image:url(ph/d06.jpg);background-position:center 30%;box-shadow:0 30px 60px rgba(0,0,0,.35)"></div>
+ <div class="abs" style="left:56px;top:150px;width:420px;height:760px;border-radius:8px;box-shadow:inset 0 0 0 3px rgba(132,199,61,.8)"></div>
+ ${logo(56,50)}
+ <div class="abs k" style="left:560px;top:150px">Tower Tuesday</div>
+ <div class="abs" style="left:560px;top:196px;width:470px">${hl(p.h1,p.h2,76)}</div>
+ <div class="abs" style="left:576px;top:430px;width:4px;height:330px;background:linear-gradient(var(--g),rgba(132,199,61,.2))"></div>
+ ${node(410,"Donor antenna","Picks up the signal outside")}${node(560,"Head-end","Distributes it through the building")}${node(710,"Every floor","Antennas reach stairwells and cores")}
+ <div class="abs" style="left:560px;top:850px"><span class="cta" style="font-size:24px;padding:20px 26px">Talk to an RF engineer</span></div>
+ <div class="abs" style="left:56px;bottom:40px;font-size:24px;color:#D0D9E8">+1 (480) 968-6000 · engineeringwireless.com</div></div>`};
+
+D.d08=()=>{const p=P("08");const steps=["Survey","Design","Install","Test","Maintain"];return `<div class="art sq" data-id="d08">
+ <div class="abs ph" style="left:0;top:0;width:1080px;height:560px;background-image:url(ph/d08.jpg);background-position:center 45%"></div>
+ ${svg(1080,560,`<path d="M40 110V40h70M1040 110V40h-70M40 450v70h70M1040 450v70h-70" stroke="#84C73D" stroke-width="6"/>`)}
+ ${logo(70,64,130)}
+ <div class="abs dots" style="left:0;top:560px;width:1080px;height:520px"></div>
+ <div class="abs" style="left:70px;top:604px">${hl(p.h1,p.h2,96)}</div>
+ <div class="abs" style="left:620px;top:626px;width:390px" ><div class="body" style="font-size:27px">One call covers survey to yearly testing. No handoffs.</div></div>
+ <div class="abs" style="left:70px;top:856px;width:940px;height:4px;background:rgba(208,217,232,.25)"></div>
+ ${steps.map((s,i)=>`<div class="abs" style="left:${70+i*212}px;top:838px;text-align:left"><span style="display:block;width:40px;height:40px;border-radius:50%;background:var(--g);color:var(--deep);font-weight:900;font-size:22px;line-height:40px;text-align:center">${i+1}</span><div style="margin-top:12px;font-weight:800;font-size:25px;text-transform:uppercase;letter-spacing:.04em">${s}</div></div>`).join("")}
+ <div class="abs" style="left:70px;bottom:40px;font-size:24px;color:#D0D9E8">+1 (480) 968-6000 · engineeringwireless.com</div></div>`};
+
+D.d09=()=>{const p=P("09");return `<div class="art sq" data-id="d09">
+ <div class="abs lat" style="inset:0"></div>
+ <div class="abs ph" style="right:60px;top:170px;width:360px;height:640px;background-image:url(ph/d09.jpg);background-position:center 40%"></div>
+ <div class="abs" style="right:40px;top:190px;width:360px;height:640px;border:3px solid var(--g)"></div>
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:200px">Did you know Friday</div>
+ <div class="abs num outline" style="left:52px;top:250px;font-size:250px">1871</div>
+ ${svg(1080,1080,`<path d="M80 520h440" stroke="#84C73D" stroke-width="4" stroke-dasharray="14 12"/><path d="M510 506l24 14-24 14" stroke="#84C73D" stroke-width="4"/>`)}
+ <div class="abs hl" style="left:60px;top:556px;width:560px;font-size:118px"><div class="g">TO TODAY</div></div>
+ <div class="abs body" style="left:60px;top:700px;width:560px;font-size:27px">Fire Prevention Week marks the Great Chicago Fire. Today's fire codes cover radio coverage inside buildings too.</div>
+ <div class="abs" style="left:60px;top:900px"><span class="cta" style="font-size:24px;padding:20px 26px">Talk to an RF engineer</span></div>
+ <div class="abs" style="right:60px;bottom:50px">${foot("right")}</div></div>`};
+
+D.d12=()=>{const p=P("12");let spark="M0 60";for(let x=0;x<=940;x+=20)spark+=` L${x} ${(60-18*Math.sin(x/70)-10*Math.sin(x/23)).toFixed(1)}`;return `<div class="art sq" data-id="d12" style="background:var(--deep)">
+ <div class="abs grid" style="inset:0;opacity:.7"></div>
+ <div class="abs" style="left:70px;top:150px;width:940px;height:540px;background:var(--navy);border:2px solid rgba(208,217,232,.2);border-radius:10px;overflow:hidden">
+  <div style="height:54px;display:flex;align-items:center;gap:12px;padding:0 22px;background:#232a38;font-weight:700;font-size:20px;letter-spacing:.14em;color:#D0D9E8"><i style="width:14px;height:14px;border-radius:50%;background:#D03030"></i><i style="width:14px;height:14px;border-radius:50%;background:#E88A20"></i><i style="width:14px;height:14px;border-radius:50%;background:var(--g)"></i><span style="margin-left:14px">EWS NETWORK OPERATIONS CENTER</span><span style="margin-left:auto;color:var(--g)">● LIVE</span></div>
+  <div class="ph" style="height:486px;background-image:url(ph/d12.jpg);background-position:center 55%"></div></div>
+ ${svg(1080,1080,`<path d="${spark}" transform="translate(70 700)" stroke="#84C73D" stroke-width="3"/>`)}
+ ${logo(70,52,130)}
+ <div class="abs k" style="left:620px;top:74px;width:390px;text-align:right">Cybersecurity Awareness Month</div>
+ <div class="abs" style="left:70px;top:800px;width:500px">${hl(p.h1,p.h2,84)}</div>
+ <div class="abs body" style="left:600px;top:808px;width:410px;font-size:25px">An alert reaches an engineer, and you get a report instead of a surprise.</div>
+ <div class="abs" style="left:70px;bottom:36px;font-size:24px;color:#D0D9E8">+1 (480) 968-6000 · engineeringwireless.com</div>
+ <div class="abs" style="right:70px;bottom:28px"><span class="cta" style="font-size:22px;padding:16px 22px">Talk to an RF engineer</span></div></div>`};
+
+D.d13=()=>{const p=P("13");let path="M0 600";for(let x=0;x<=1080;x+=10)path+=` L${x} ${(600+22*Math.sin(x/95)).toFixed(1)}`;path+=" L1080 1080 L0 1080 Z";return `<div class="art sq" data-id="d13">
+ ${ph("d13","center 35%")}
+ ${svg(1080,1080,`<path d="${path}" fill="#2A3852"/>`+wave(1080,600,22,597,"#84C73D",1,5,0))}
+ ${logo(64,56)}
+ <div class="abs dots" style="left:0;top:640px;width:1080px;height:440px;opacity:.6"></div>
+ <div class="abs k" style="left:64px;top:660px">Disaster Risk Reduction Day</div>
+ <div class="abs" style="left:64px;top:708px;width:952px">${hl(p.h1,p.h2,110)}</div>
+ <div class="abs" style="left:64px;bottom:52px"><span class="cta" style="font-size:24px;padding:20px 26px">Talk to our tower team</span></div>
+ <div class="abs" style="right:64px;bottom:50px">${foot("right")}</div></div>`};
+
+D.d15=()=>{const p=P("15");let ecg="M0 40 L380 40 L410 40 L430 6 L456 76 L478 20 L492 40 L1080 40";return `<div class="art sq" data-id="d15">
+ <div class="abs ph" style="left:0;top:500px;width:1080px;height:580px;background-image:url(ph/d15.jpg);background-position:center 30%"></div>
+ <div class="abs grid" style="left:0;top:0;width:1080px;height:500px"></div>
+ ${svg(1080,100,`<path d="${ecg}" stroke="#84C73D" stroke-width="6" stroke-linejoin="round"/>`,"top:460px")}
+ ${logo(64,56)}
+ <div class="abs k" style="right:64px;top:74px;text-align:right">International ShakeOut Day</div>
+ <div class="abs" style="left:64px;top:170px;width:560px">${hl(p.h1,p.h2,116)}</div>
+ <div class="abs body" style="left:640px;top:190px;width:380px;font-size:26px">Most places require a yearly first-responder radio test. We run it and file the report.</div>
+ <div class="abs" style="left:0;bottom:0;width:1080px;height:150px;background:linear-gradient(transparent,rgba(28,31,38,.9))"></div>
+ <div class="abs" style="left:64px;bottom:48px"><span class="cta">Book your yearly test</span></div>
+ <div class="abs" style="right:64px;bottom:44px">${foot("right")}</div></div>`};
+
+D.d16=()=>`<div class="art sq" data-id="d16">
+ <div class="abs dots" style="inset:0"></div>
+ <div class="abs ph" style="right:70px;top:110px;width:340px;height:860px;border-radius:170px;background-image:url(ph/d16.jpg);background-position:30% center"></div>
+ ${svg(1080,1080,arcs(840,540,6,70,190,"#84C73D",.45,2))}
+ <div class="abs ph" style="right:70px;top:110px;width:340px;height:860px;border-radius:170px;background-image:url(ph/d16.jpg);background-position:30% center;box-shadow:0 0 0 10px var(--navy)"></div>
+ ${logo(64,56)}
+ <div class="abs k" style="left:64px;top:230px">Did you know Friday</div>
+ <div class="abs num" style="left:52px;top:290px;font-size:250px;color:var(--g)">80%</div>
+ <div class="abs hl" style="left:64px;top:560px;width:560px;font-size:64px"><div>of mobile data</div><div class="g">is used indoors</div></div>
+ <div class="abs body" style="left:64px;top:720px;width:560px;font-size:26px">We spend about 90% of our time inside, where concrete, steel and coated glass stop outdoor signal.</div>
+ <div class="abs" style="left:64px;top:880px;font-size:20px;letter-spacing:.1em;color:#9DAFCB;font-weight:700">SOURCE: ERICSSON</div>
+ <div class="abs" style="left:64px;bottom:44px;font-size:24px;color:#D0D9E8">+1 (480) 968-6000 · engineeringwireless.com</div></div>`;
+
+D.d19=()=>{const p=P("19");return `<div class="art sq" data-id="d19">
+ <div class="abs ph" style="left:420px;top:0;width:660px;height:1080px;background-image:url(ph/d19.jpg);background-position:center 30%;clip-path:polygon(28% 0,100% 0,100% 100%,0 100%)"></div>
+ <div class="abs" style="left:420px;top:0;width:660px;height:1080px;clip-path:polygon(28% 0,29.4% 0,1.4% 100%,0 100%);background:var(--g)"></div>
+ <div class="abs grid" style="left:0;top:0;width:560px;height:1080px;clip-path:polygon(0 0,100% 0,75% 100%,0 100%)"></div>
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:220px">Telecom staffing</div>
+ <div class="abs" style="left:60px;top:268px;width:470px">${hl(p.h1,p.h2,76)}</div>
+ <div class="abs" style="left:60px;top:460px;display:grid;gap:14px">${["Field technicians","RF engineers","Project support"].map((c,i)=>`<span class="chip ${i==0?"on":""}" style="font-size:22px">${c}</span>`).join("")}</div>
+ <div class="abs body" style="left:60px;top:700px;width:380px;font-size:25px">Short or long projects, people who contribute from day one.</div>
+ <div class="abs" style="left:60px;top:860px"><span class="cta" style="font-size:22px;padding:18px 24px">Tell us who you need</span></div>
+ <div class="abs" style="left:60px;bottom:36px;font-size:22px;color:#D0D9E8">engineeringwireless.com</div></div>`};
+
+D.d20=()=>{const p=P("20");let t="";for(let i=0;i<=24;i++){const y=90+i*24,maj=i%4==0;t+=`<path d="M0 ${y}h${maj?46:24}" stroke="${maj?"#84C73D":"#D0D9E8"}" stroke-opacity="${maj?1:.4}" stroke-width="3"/>`;if(maj)t+=`<text x="56" y="${y+8}" fill="#84C73D" font-family="M" font-weight="700" font-size="20">${(6-i/4)*50} FT</text>`}return `<div class="art sq" data-id="d20">
+ <div class="abs ph" style="left:170px;top:60px;width:850px;height:600px;background-image:url(ph/d20.jpg);background-position:center 30%"></div>
+ ${svg(170,700,t,"left:34px;top:30px")}
+ <div class="abs" style="left:170px;top:60px;width:850px;height:600px;border:3px solid rgba(132,199,61,.0)"></div>
+ ${logo(840,90,140)}
+ <div class="abs k" style="left:60px;top:716px">Day of the Air Traffic Controller</div>
+ <div class="abs" style="left:60px;top:764px;width:960px">${hl(p.h1,p.h2,96)}</div>
+ <div class="abs" style="left:60px;bottom:44px;font-size:24px;color:#D0D9E8">engineeringwireless.com</div>
+ <div class="abs" style="right:60px;bottom:40px"><span class="cta" style="font-size:22px;padding:18px 24px">Ask about airspace filings</span></div></div>`};
+
+D.d22=()=>{const p=P("22");return `<div class="art sq" data-id="d22">
+ <div class="abs ph" style="left:0;top:0;width:1080px;height:600px;background-image:url(ph/d22.jpg);background-position:center 60%"></div>
+ <div class="abs" style="right:40px;top:40px;background:rgba(28,31,38,.75);padding:16px 22px;display:flex;align-items:center;gap:14px"><svg width="66" height="58">${bars(4,4,0,0,1)}</svg><span style="font-weight:800;font-size:26px;letter-spacing:.1em">FULL BARS</span></div>
+ ${logo(60,50)}
+ ${svg(1080,1080,arcs(1080,1080,7,80,120)+`<rect x="0" y="600" width="1080" height="8" fill="#84C73D"/>`)}
+ <div class="abs k" style="left:60px;top:650px">Caps Lock Day</div>
+ <div class="abs" style="left:60px;top:700px;width:620px">${hl(p.h1,p.h2,112)}</div>
+ <div class="abs" style="left:60px;top:940px;display:flex;gap:12px">${["Design","Install","Tune"].map(c=>`<span class="chip" style="font-size:22px">${c}</span>`).join("")}</div>
+ <div class="abs" style="right:60px;top:862px"><span class="cta" style="font-size:22px;padding:18px 22px">Let's talk venues</span></div>
+ <div class="abs" style="right:60px;bottom:44px">${foot("right")}</div></div>`};
+
+D.d23=()=>{const p=P("23");let panes="";const W=250,H=330,gx=14;for(let r=0;r<3;r++)for(let c=0;c<2;c++){panes+=`<div class="abs ph" style="left:${540+c*(W+gx)}px;top:${40+r*(H+gx)}px;width:${W}px;height:${H}px;background-image:url(ph/d23.jpg);background-size:${2*W+gx}px ${3*H+2*gx}px;background-position:-${c*(W+gx)}px -${r*(H+gx)}px"></div>`}return `<div class="art sq" data-id="d23">
+ ${panes}
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:220px">Did you know Friday</div>
+ <div class="abs" style="left:60px;top:268px;width:430px">${hl(p.h1,p.h2,72)}</div>
+ ${svg(470,160,`<path d="M10 120 L200 30" stroke="#84C73D" stroke-width="5"/><path d="M240 10v140" stroke="#D0D9E8" stroke-width="8"/><path d="M200 30 L110 140" stroke="#84C73D" stroke-width="5" stroke-dasharray="10 10"/><circle cx="10" cy="120" r="10" fill="#84C73D"/>`,"left:60px;top:470px")}
+ <div class="abs body" style="left:60px;top:660px;width:430px;font-size:25px">Coatings that keep heat out also keep signal out. The fix is a system designed alongside the glass.</div>
+ <div class="abs" style="left:60px;top:900px"><span class="cta" style="font-size:22px;padding:18px 24px">Talk to an RF engineer</span></div>
+ <div class="abs" style="left:60px;bottom:40px;font-size:22px;color:#D0D9E8">engineeringwireless.com</div></div>`};
+
+D.d26=()=>{const p=P("26");return `<div class="art sq" data-id="d26">
+ <div class="abs lat" style="inset:0"></div>
+ <div class="abs ph" style="right:60px;top:150px;width:420px;height:620px;border-radius:210px 210px 0 0;background-image:url(ph/d26.jpg);background-position:center"></div>
+ <div class="abs" style="right:40px;top:170px;width:420px;height:620px;border-radius:210px 210px 0 0;border:3px solid var(--g)"></div>
+ ${logo(60,56)}
+ <div class="abs k" style="left:60px;top:200px">Healthcare DAS</div>
+ <div class="abs num" style="left:48px;top:250px;font-size:280px;color:var(--g)">60+</div>
+ <div class="abs hl" style="left:60px;top:500px;font-size:46px"><div>Turnkey hospital</div><div>wireless systems</div></div>
+ <div class="abs" style="left:60px;top:640px;display:grid;gap:14px;width:480px">${["Cellular for staff and patients","Public safety radio to code","Installs around live operations"].map(t=>`<div class="tick" style="font-size:25px"><i></i>${t}</div>`).join("")}</div>
+ <div class="abs" style="left:60px;top:880px"><span class="cta" style="font-size:22px;padding:18px 24px">Let's talk about your campus</span></div>
+ <div class="abs" style="right:60px;bottom:52px">${foot("right")}</div></div>`};
+
+D.d27=()=>{const p=P("27");return `<div class="art sq" data-id="d27">
+ <div class="abs ph" style="left:0;top:0;width:430px;height:1080px;background-image:url(ph/d27.jpg);background-position:center 30%"></div>
+ <div class="abs" style="left:0;top:0;width:430px;height:1080px;background:linear-gradient(transparent 55%,rgba(42,56,82,.95))"></div>
+ <div class="abs contour" style="left:430px;top:0;width:650px;height:1080px">${svg(650,1080,contour(420,460,9,52,2,.18))}</div>
+ ${logo(50,50,140)}
+ <div class="abs k" style="left:490px;top:110px">Tower Tuesday</div>
+ <div class="abs" style="left:490px;top:160px;display:flex;gap:14px">${["9","1","1"].map(n=>`<span style="width:130px;height:150px;border:4px solid var(--g);display:grid;place-items:center;font-weight:900;font-size:110px;color:var(--g)">${n}</span>`).join("")}</div>
+ <div class="abs hl" style="left:490px;top:360px;font-size:64px"><div>calls are</div><div class="g">mostly mobile</div></div>
+ <div class="abs body" style="left:490px;top:520px;width:530px;font-size:26px">In many areas, 80% or more of 911 calls come from mobile phones. Tower maintenance is part of the emergency chain.</div>
+ <div class="abs" style="left:490px;top:760px"><span class="cta" style="font-size:22px;padding:18px 24px">Talk to our tower team</span></div>
+ <div class="abs" style="left:490px;bottom:52px">${foot()}</div></div>`};
+
+D.d28=()=>{const p=P("28");const hex="polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)";return `<div class="art sq" data-id="d28">
+ ${svg(1080,1080,arcs(540,330,10,58,250,"#D0D9E8",.22,2))}
+ <div class="abs" style="left:236px;top:48px;width:608px;height:544px;clip-path:${hex};background:var(--g);z-index:-0;opacity:1;mask:linear-gradient(#000,#000);-webkit-mask:none"></div>
+ <div class="abs ph" style="left:250px;top:60px;width:580px;height:520px;clip-path:${hex};background-image:url(ph/d28.jpg);background-position:center 40%"></div>
+ <div class="abs k" style="left:0;top:620px;width:1080px;text-align:center">National First Responders Day</div>
+ <div class="abs hl" style="left:0;top:668px;width:1080px;text-align:center;font-size:104px"><div>${esc(p.h1)}</div><div class="g">${esc(p.h2)}</div></div>
+ <div class="abs body" style="left:170px;top:890px;width:740px;text-align:center;font-size:26px">To the firefighters, police and EMS teams who work inside the buildings we design and build. We're proud to keep your radios working.</div>
+ <img class="logo" src="logo-white.svg" style="left:960px;top:980px;width:90px"></div>`};
+
+D.d29=()=>{const p=P("29");return `<div class="art sq" data-id="d29" style="background:var(--deep)">
+ <div class="abs grid" style="inset:0;opacity:.6"></div>
+ <div class="abs ph" style="right:0;bottom:0;width:560px;height:520px;background-image:url(ph/d29.jpg);background-position:center"></div>
+ <div class="abs" style="right:0;bottom:0;width:560px;height:520px;background:linear-gradient(90deg,rgba(28,31,38,1),rgba(28,31,38,0) 40%)"></div>
+ <div class="abs mono" style="left:60px;top:150px;width:640px;background:#11141A;border:2px solid rgba(132,199,61,.5);padding:28px 30px;font-size:28px;line-height:1.6;color:#9DD45C">
+  <div style="color:#6B717F">ARPANET · UCLA → SRI</div><div style="color:#6B717F">OCT 29, 1969 · 10:30 PM</div><div>&gt; SEND "LOGIN"</div><div>&gt; L</div><div>&gt; O</div><div style="color:#F08A8A">&gt; CONNECTION LOST_</div></div>
+ ${logo(60,56)}
+ <div class="abs k" style="right:60px;top:74px;text-align:right">International Internet Day</div>
+ <div class="abs" style="left:60px;top:600px">${hl(p.h1,"dropped at LO",76)}</div>
+ <div class="abs body" style="left:60px;top:790px;width:470px;font-size:25px">Dropped connections since day one. Fixing them is our day job.</div>
+ <div class="abs" style="left:60px;top:920px"><span class="cta" style="font-size:22px;padding:18px 24px">Talk to an RF engineer</span></div>
+ <div class="abs" style="left:60px;bottom:24px;font-size:20px;color:#9DAFCB">engineeringwireless.com</div></div>`};
+
+D.d31=()=>{const p=P("31");return `<div class="art sq" data-id="d31" style="background:var(--deep)">
+ ${ph("d31","center 30%")}
+ <div class="fill" style="background:linear-gradient(rgba(28,31,38,.2),rgba(28,31,38,.1) 35%,rgba(28,31,38,.92) 70%)"></div>
+ ${svg(1080,1080,arcs(560,260,7,60,40,"#84C73D",.55,2))}
+ ${logo(64,56)}
+ <div class="abs k" style="left:0;top:640px;width:1080px;text-align:center">Happy Halloween</div>
+ <div class="abs hl" style="left:0;top:690px;width:1080px;text-align:center;font-size:124px"><div>${esc(p.h1)}</div><div class="g">${esc(p.h2)}</div></div>
+ <div class="abs body" style="left:0;top:950px;width:1080px;text-align:center;font-size:27px">The only dead zones we like are in haunted houses.</div>
+ <div class="abs" style="left:0;bottom:26px;width:1080px;text-align:center;font-size:20px;color:#9DAFCB">engineeringwireless.com</div></div>`};
+
+/* ---------- CAROUSELS (1080 x 1350) ---------- */
+function slideShell(id,n,total,inner,bg=""){return `<div class="art pt" data-id="${id}" style="${bg}">${inner}
+ <div class="abs" style="left:60px;bottom:48px;display:flex;gap:10px">${Array.from({length:total},(_,i)=>`<i style="width:${i==n?44:14}px;height:8px;background:${i==n?"#84C73D":"rgba(208,217,232,.35)"}"></i>`).join("")}</div>
+ <img class="logo" src="logo-white.svg" style="right:60px;top:auto;bottom:40px;width:100px"></div>`}
+/* Oct 7: 5 areas we always test — floorplan system */
+const AREAS=[["Stairwells","Firefighters stage and climb here, and concrete cores block signal."],["Elevator lobbies","A staging point on every floor, often boxed in by steel."],["Basements and underground parking","Below grade, outdoor signal rarely reaches."],["Mechanical and electrical rooms","Dense steel and equipment create dead spots."],["The fire command center","Where the incident commander runs the building."]];
+const ROOMS=[[60,700,380,240,"STAIR"],[440,700,260,300,"ELEV"],[60,940,380,300,"P1 PARKING"],[700,1000,320,240,"MECH / ELEC"],[700,700,320,300,"FCC"]];
+function plan(k){const r=ROOMS[k];return svg(1080,1350,`<g stroke="#D0D9E8" stroke-opacity=".28" stroke-width="3">${ROOMS.map(q=>`<rect x="${q[0]}" y="${q[1]}" width="${q[2]}" height="${q[3]}"/>`).join("")}<rect x="440" y="1000" width="260" height="240"/></g>
+ ${ROOMS.map((q,i)=>`<text x="${q[0]+20}" y="${q[1]+40}" fill="${i==k?"#84C73D":"#D0D9E8"}" fill-opacity="${i==k?1:.4}" font-family="M" font-weight="700" font-size="20" letter-spacing="2">${q[4]}</text>`).join("")}
+ <rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}" fill="#84C73D" fill-opacity=".14" stroke="#84C73D" stroke-width="4"/>
+ ${arcs(r[0]+r[2]/2,r[1]+r[3]/2+14,4,28,14,"#84C73D",.9,3)}<circle cx="${r[0]+r[2]/2}" cy="${r[1]+r[3]/2+14}" r="9" fill="#84C73D"/>`)}
+D.c07=()=>{const out=[];const T=7;
+ out.push(slideShell("c07-1",0,T,`<div class="abs grid" style="inset:0"></div>
+  <div class="abs ph" style="right:0;top:0;width:430px;height:1350px;background-image:url(ph/c07.jpg);background-position:center"></div>
+  <div class="abs" style="right:430px;top:0;width:8px;height:1350px;background:var(--g)"></div>
+  ${logo(60,56)}
+  <div class="abs k" style="left:60px;top:280px">Fire Prevention Week · Swipe</div>
+  <div class="abs num outline" style="left:40px;top:330px;font-size:420px;-webkit-text-stroke:5px #84C73D">5</div>
+  <div class="abs hl" style="left:60px;top:800px;width:520px;font-size:80px"><div>areas we</div><div class="g">always test</div></div>
+  <div class="abs body" style="left:60px;top:970px;width:500px;font-size:27px">Codes hold these spaces to a higher standard, so we do too.</div>`));
+ AREAS.forEach((a,i)=>out.push(slideShell(`c07-${i+2}`,i+1,T,`<div class="abs grid" style="inset:0;opacity:.6"></div>${plan(i)}
+  <div class="abs" style="left:60px;top:70px;width:960px;display:flex;flex-direction:column;gap:22px">
+   <div style="font-weight:700;font-size:22px;letter-spacing:.14em;color:#D0D9E8">AREA ${i+1} OF 5 · WHERE WE TEST</div>
+   <div class="num" style="font-size:200px;color:var(--g)">0${i+1}</div>
+   <div class="hl" style="font-size:${a[0].length>24?56:76}px;white-space:normal;line-height:1.04">${esc(a[0])}</div>
+   <div class="body" style="font-size:30px;width:820px">${esc(a[1])}</div></div>`)));
+ out.push(slideShell("c07-7",6,T,`<div class="abs ph" style="left:0;top:0;width:1080px;height:560px;background-image:url(ph/c07.jpg);background-position:center 45%"></div><div class="abs bar" style="left:0;top:560px;width:1080px"></div>
+  <div class="abs" style="left:60px;top:640px">${hl("Want these","checked?",104)}</div>
+  <div class="abs body" style="left:60px;top:880px;width:900px">Codes often ask for 99% coverage in critical areas instead of 95%, per your AHJ.</div>
+  <div class="abs" style="left:60px;top:1040px"><span class="cta">Let's talk coverage</span></div>
+  <div class="abs" style="right:60px;top:1030px">${foot("right")}</div>`));
+ return out.join("")};
+
+/* Oct 14: We speak fire code — phrasebook system */
+const CODES=[["IFC 510","When a building needs first-responder radio coverage."],["NFPA 1225","How the system performs and how it gets tested."],["UL 2524","The rules for the equipment itself."],["Your AHJ","The local fire authority with the final say."]];
+D.c14=()=>{const out=[];const T=6;
+ out.push(slideShell("c14-1",0,T,`<div class="abs ph" style="left:0;top:830px;width:1080px;height:520px;background-image:url(ph/c14.jpg);background-position:center 40%"></div>
+  <div class="abs" style="left:0;top:830px;width:1080px;height:520px;background:linear-gradient(rgba(42,56,82,.95),rgba(42,56,82,.2) 40%,rgba(28,31,38,.85))"></div>
+  <div class="abs dots" style="left:0;top:0;width:1080px;height:830px"></div>
+  ${logo(60,56)}
+  <div class="abs k" style="left:60px;top:230px">World Standards Day · Phrasebook</div>
+  <div class="abs" style="left:60px;top:280px">${hl("We speak","fire code",130)}</div>
+  <div class="abs" style="left:60px;top:590px;display:flex;flex-wrap:wrap;gap:14px;width:960px">${CODES.map((c,i)=>`<span class="chip ${i==0?"on":""}">${c[0]}</span>`).join("")}</div>`));
+ CODES.forEach((c,i)=>out.push(slideShell(`c14-${i+2}`,i+1,T,`<div class="abs lines" style="inset:0"></div>
+  <div class="abs" style="left:60px;top:70px;font-weight:700;font-size:22px;letter-spacing:.14em;color:#D0D9E8">FIRE CODE PHRASEBOOK · ${i+1}/4</div>
+  <div class="abs" style="left:60px;top:200px;width:960px;border-top:3px solid var(--g);padding-top:40px">
+   <div class="hl" style="font-size:150px;color:var(--g)">${c[0]}</div>
+   <div style="margin-top:20px;font-weight:700;font-size:26px;letter-spacing:.12em;color:#D0D9E8">IN PLAIN ENGLISH</div>
+   <div class="sub" style="margin-top:18px;font-size:52px;line-height:1.2">${esc(c[1])}</div></div>
+  <div class="abs num outline" style="right:40px;bottom:120px;font-size:${c[0].length>7?210:260}px;-webkit-text-stroke:3px rgba(132,199,61,.35);text-align:right">${c[0].replace("Your ","")}</div>
+  ${svg(1080,1350,wave(1080,760,26,260,"#84C73D",.35,3)+wave(1080,790,18,190,"#D0D9E8",.18,2,1))}`)));
+ out.push(slideShell("c14-6",5,T,`<div class="abs grid" style="inset:0"></div>${svg(1080,1350,arcs(1080,0,10,80,120))}
+  <div class="abs" style="left:60px;top:320px">${hl("We handle","the translation",104)}</div>
+  <div class="abs body" style="left:60px;top:570px;width:880px">Four layers of rules, one team that speaks all of them for your building.</div>
+  <div class="abs" style="left:60px;top:780px"><span class="cta">Let us translate for your building</span></div>
+  <div class="abs" style="left:60px;top:940px">${foot()}</div>`));
+ return out.join("")};
+
+/* Oct 21: Call before the drywall — site tape system */
+const PRE=[["Early coverage survey","Know where signal will fall short before walls go up.","c21b"],["Pathway and pre-cabling plan","Conduit and cable routes drawn into the design.",null],["Equipment room and power","Space, power and cooling reserved from day one.","c21c"],["Design ready for permit review","Plans your fire authority can approve without redraws.",null]];
+const tape=`repeating-linear-gradient(-45deg,#84C73D 0 34px,#2A3852 34px 68px)`;
+D.c21=()=>{const out=[];const T=6;
+ out.push(slideShell("c21-1",0,T,`<div class="abs ph" style="left:0;top:0;width:1080px;height:760px;background-image:url(ph/c21.jpg);background-position:center 55%"></div>
+  <div class="abs" style="left:-20px;top:730px;width:1120px;height:60px;background:${tape};transform:rotate(-2deg)"></div>
+  ${logo(60,56)}
+  <div class="abs k" style="left:60px;top:850px">Pre-construction · Swipe</div>
+  <div class="abs" style="left:60px;top:900px">${hl("Call before","the drywall",112)}</div>
+  <div class="abs body" style="left:60px;top:1150px;width:900px;font-size:27px">What we plan during design, so coverage is never a retrofit.</div>`));
+ PRE.forEach((s,i)=>out.push(slideShell(`c21-${i+2}`,i+1,T,`${s[2]?`<div class="abs ph" style="left:540px;top:0;width:540px;height:1350px;background-image:url(ph/${s[2]}.jpg);background-position:center"></div><div class="abs" style="left:520px;top:0;width:20px;height:1350px;background:${tape}"></div>`:`<div class="abs grid" style="inset:0"></div>`}
+  <div class="abs" style="left:60px;top:160px;font-weight:900;font-size:40px;color:var(--deep);background:var(--g);padding:10px 22px">STEP 0${i+1}</div>
+  <div class="abs hl" style="left:60px;top:280px;width:${s[2]?420:900}px;white-space:normal;font-size:${s[2]?64:92}px;line-height:1.02">${esc(s[0])}</div>
+  <div class="abs body" style="left:60px;top:${s[2]?720:620}px;width:${s[2]?420:860}px;font-size:32px">${esc(s[1])}</div>
+  ${s[2]?"":`<div class="abs num outline" style="right:50px;bottom:110px;font-size:480px;-webkit-text-stroke:4px rgba(132,199,61,.4)">0${i+1}</div><div class="abs" style="left:-20px;bottom:230px;width:560px;height:44px;background:${tape};transform:rotate(-3deg)"></div>`}`)));
+ out.push(slideShell("c21-6",5,T,`<div class="abs" style="left:-20px;top:120px;width:1120px;height:60px;background:${tape};transform:rotate(2deg)"></div>
+  <div class="abs lat" style="left:0;top:200px;width:1080px;height:1150px"></div>
+  <div class="abs" style="left:60px;top:360px">${hl("Plan it once","build it once",100)}</div>
+  <div class="abs body" style="left:60px;top:600px;width:880px">Opening finished ceilings later costs far more than planning coverage now. Have a project in design?</div>
+  <div class="abs" style="left:60px;top:840px"><span class="cta">Let's talk before you build</span></div>
+  <div class="abs" style="left:60px;top:1000px">${foot()}</div>`));
+ return out.join("")};
+
+/* Oct 30: Inspection checklist — clipboard system */
+const TIPS=["IFC 510 sets when coverage is required. Your AHJ confirms it.","A benchmark survey shows where signal falls short, floor by floor.","Built to NFPA 1225 and your local amendments.","Acceptance test results your fire authority can review.","Most jurisdictions require testing every year."];
+const CHK=["Does the building need first-responder coverage?","Has the signal inside been surveyed?","Is the system designed and installed to code?","Is the test report ready for your AHJ?","Is the yearly test on the calendar?"];
+D.c30=()=>{const out=[];const T=7;
+ const box=(on)=>`<span style="flex:none;width:64px;height:64px;border:5px solid var(--g);display:grid;place-items:center;background:${on?"var(--g)":"transparent"}">${on?`<svg width="38" height="38" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" stroke="#1C1F26" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`:""}</span>`;
+ out.push(slideShell("c30-1",0,T,`${ph("c30","center 50%")}<div class="fill" style="background:rgba(28,31,38,.55)"></div>
+  ${logo(60,56)}
+  <div class="abs" style="left:90px;top:300px;width:900px;background:#FEFEFE;color:var(--deep);padding:60px 56px;box-shadow:0 40px 80px rgba(0,0,0,.4)">
+   <div style="position:absolute;left:50%;top:-34px;transform:translateX(-50%);width:220px;height:62px;background:var(--gun);border-radius:6px"></div>
+   <div style="font-weight:700;font-size:24px;letter-spacing:.14em;color:#5E9E1C">NATIONAL CHECKLIST DAY</div>
+   <div class="hl" style="font-size:96px;color:#2A3852;margin-top:14px"><div>Inspection</div><div style="color:#5E9E1C">checklist</div></div>
+   <div style="margin-top:34px;display:grid;gap:22px">${[1,1,0].map(o=>`<div style="display:flex;gap:22px;align-items:center">${box(o)}<span style="flex:1;height:14px;background:#E4E6EA"></span></div>`).join("")}</div>
+   <div style="margin-top:34px;font-size:28px;color:#434853">Five things to confirm before your fire authority walks the building.</div></div>`));
+ CHK.forEach((q,i)=>out.push(slideShell(`c30-${i+2}`,i+1,T,`<div class="abs dots" style="inset:0"></div>
+  <div class="abs" style="left:60px;top:80px;display:flex;gap:14px">${CHK.map((_,j)=>`<span style="width:48px;height:48px;border:4px solid ${j<=i?"#84C73D":"rgba(208,217,232,.3)"};background:${j<i?"#84C73D":"transparent"}"></span>`).join("")}</div>
+  <div class="abs num" style="left:52px;top:220px;font-size:200px;color:var(--g)">0${i+1}</div>
+  <div class="abs" style="left:60px;top:470px;width:960px;display:flex;gap:34px;align-items:flex-start">${box(0)}<div class="sub" style="font-size:62px;line-height:1.12">${esc(q)}</div></div>
+  <div class="abs" style="left:60px;top:920px;width:960px;background:var(--slate);padding:36px 40px;border-left:0">
+   <div style="display:flex;align-items:center;gap:14px;font-weight:700;font-size:22px;letter-spacing:.14em;color:var(--g)"><svg width="30" height="30">${arcs(15,15,3,5,3,"#84C73D",1,2)}</svg>WHY IT MATTERS</div>
+   <div class="body" style="margin-top:14px;font-size:32px">${TIPS[i]}</div></div>`)));
+ out.push(slideShell("c30-7",6,T,`<div class="abs ph" style="left:0;top:0;width:1080px;height:600px;background-image:url(ph/c30.jpg);background-position:center 50%"></div>
+  <div class="abs" style="left:60px;top:540px;width:120px;height:120px;background:var(--g);display:grid;place-items:center"><svg width="70" height="70" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" stroke="#1C1F26" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="abs" style="left:60px;top:720px">${hl("Missing a","checkmark?",104)}</div>
+  <div class="abs body" style="left:60px;top:960px;width:900px">We can take care of it, from survey to the yearly test.</div>
+  <div class="abs" style="left:60px;top:1080px"><span class="cta">Let's talk coverage</span></div>`));
+ return out.join("")};
+
+/* ---------- REEL COVERS (1080 x 1920) ---------- */
+D.r04=()=>{const p=P("04");return `<div class="art st" data-id="r04">
+ <div class="abs ph" style="left:0;top:0;width:1080px;height:1000px;background-image:url(ph/r04.jpg);background-position:center 40%"></div>
+ <div class="abs bar" style="left:0;top:1000px;width:1080px"></div>
+ <div class="abs grid" style="left:0;top:1010px;width:1080px;height:910px"></div>
+ ${logo(70,80,170)}
+ <div class="abs k" style="left:70px;top:1070px">Fire Prevention Week · Watch</div>
+ <div class="abs" style="left:70px;top:1120px">${hl(p.h1,p.h2,118)}</div>
+ <div class="abs" style="left:70px;top:1420px;display:grid;grid-template-columns:1fr 1fr;gap:18px;width:940px">${["Model the building","Map what blocks signal","Predict coverage","Build, test, hand off"].map((s,i)=>`<div style="border:2px solid rgba(208,217,232,.3);padding:22px"><div style="font-weight:900;font-size:40px;color:var(--g)">0${i+1}</div><div style="font-weight:700;font-size:28px;margin-top:6px">${s}</div></div>`).join("")}</div>
+ <div class="abs" style="left:70px;bottom:90px;font-size:26px;color:#D0D9E8">engineeringwireless.com</div></div>`};
+D.r11=()=>{const p=P("11");return `<div class="art st" data-id="r11" style="background:var(--deep)">
+ ${ph("r11","center 40%")}
+ <div class="fill" style="background:linear-gradient(rgba(28,31,38,.1) 30%,rgba(28,31,38,.95) 62%)"></div>
+ ${svg(1080,1920,wave(1080,1130,60,140,"#84C73D",.9,4)+wave(1080,1130,30,62,"#E88A20",.7,3,2)+`<path d="M0 1130h1080" stroke="#D0D9E8" stroke-opacity=".3" stroke-dasharray="6 10"/>`)}
+ ${logo(70,80,170)}
+ <div class="abs k" style="left:70px;top:1260px">Spooky season · Watch</div>
+ <div class="abs" style="left:70px;top:1310px">${hl(p.h1,p.h2,134)}</div>
+ <div class="abs body" style="left:70px;top:1600px;width:900px;font-size:34px">Like ghost hunters, with better equipment.</div>
+ <div class="abs" style="left:70px;bottom:90px;font-size:26px;color:#D0D9E8">engineeringwireless.com</div></div>`};
+D.r18=()=>{const p=P("18");return `<div class="art st" data-id="r18">
+ ${ph("r18","center 30%")}
+ <div class="fill" style="background:linear-gradient(rgba(28,31,38,.35),transparent 20%,transparent 55%,rgba(42,56,82,.96) 72%)"></div>
+ ${svg(1080,1920,`<g stroke="#84C73D" stroke-width="5"><circle cx="540" cy="560" r="170"/><circle cx="540" cy="560" r="8" fill="#84C73D"/><path d="M540 330v120M540 670v120M310 560h120M650 560h120"/></g>`)}
+ ${logo(70,80,170)}
+ <div class="abs" style="left:0;top:1340px;width:1080px;text-align:center"><div class="k">Watch till the end</div></div>
+ <div class="abs hl" style="left:0;top:1400px;width:1080px;text-align:center;font-size:120px"><div>${esc(p.h1)}</div><div class="g">${esc(p.h2)}</div></div>
+ <div class="abs body" style="left:0;top:1680px;width:1080px;text-align:center;font-size:32px">Stealth sites that blend right in.</div></div>`};
+D.r25=()=>{const p=P("25");return `<div class="art st" data-id="r25">
+ <div class="abs ph" style="left:0;top:0;width:1080px;height:640px;background-image:url(ph/r25.jpg);background-position:center 85%;filter:grayscale(1) contrast(.9) brightness(.8)"></div>
+ <div class="abs ph" style="left:0;top:660px;width:1080px;height:640px;background-image:url(ph/r25.jpg);background-position:center 20%"></div>
+ <div class="abs" style="left:0;top:640px;width:1080px;height:20px;background:var(--g)"></div>
+ ${logo(70,70,160)}
+ <div class="abs lat" style="left:0;top:1300px;width:1080px;height:620px"></div>
+ <div class="abs" style="left:70px;top:1370px">${hl(p.h1,p.h2,126)}</div>
+ <div class="abs body" style="left:70px;top:1650px;width:900px;font-size:32px">Every step of a turnkey tower build, self-performed by our crews.</div></div>`};
+
+const order=["d01","d02","d03","d05","d06","d08","d09","d12","d13","d15","d16","d19","d20","d22","d23","d26","d27","d28","d29","d31","c07","c14","c21","c30","r04","r11","r18","r25"];
+const only=(location.hash||"").slice(1);
+document.getElementById("out").innerHTML=order.filter(k=>!only||only.split(",").includes(k)).map(k=>D[k]()).join("");
+/* fit headline lines to their box */
+document.fonts.ready.then(()=>{document.querySelectorAll(".hl").forEach(h=>{const box=h.parentElement.getBoundingClientRect();const art=h.closest(".art").getBoundingClientRect();const maxW=Math.min(h.getBoundingClientRect().width||box.width,art.right-h.getBoundingClientRect().left-50);h.querySelectorAll(":scope>div").forEach(line=>{let fs=parseFloat(getComputedStyle(h).fontSize);line.style.display="inline-block";while(line.getBoundingClientRect().width>maxW&&fs>30){fs-=2;line.style.fontSize=fs+"px"}line.style.display="block"})});document.body.dataset.ready=1});
+</script></body></html>
