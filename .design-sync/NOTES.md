@@ -23,7 +23,7 @@ No design-system sync has run from this repo yet: it holds no component library.
 
 ## Detail panel
 
-- Previews sit in one fixed 4:5 frame on the sunken surface so every format lines up.
+- Previews hug the creative: 1:1 for images, 4:5 for carousels, 9:16 for reels. No frame, no letterbox bands.
 - "Why it works" is a sunken callout with an Apple Green lightbulb badge, anchored level with the bottom of the preview. No left-border accent bars.
 - Section headers: 11px uppercase overline, count pill on the right, 28px ghost buttons with icons.
 - Ghost buttons: Slate Blue in light, `#D0D9E8` in dark (Slate Blue text is unreadable on dark).
@@ -33,10 +33,12 @@ No design-system sync has run from this repo yet: it holds no component library.
 ## Social creatives (images, carousels, reel covers)
 
 - Photos come from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). When no photo there matches the topic (EV charger, Dalmatian, firefighters, NOC, warehouse), use a free-license Pexels or Pixabay photo, saved first to the Drive folder `27 Stock - Licensed (Pexels & Pixabay)`. Each photo must match the post's subject; keep watermarks and timestamp overlays out of frame.
-- **Cut-out "sticker" style (from Oct 2026 v3):** remove the photo background and float the subject over a layered brand background (navy gradient + pattern + RF arcs or waves), with a soft drop shadow, and a floor shadow or green glow for depth. No plain photo rectangles, ovals or circles.
-- Text never sits on the subject: text and cut-out keep separate zones. An occluder (clipboard card, caution tape, badge) may overlap the subject's body, never its head.
+- **Pop-out style (from Oct 2026 v4):** don't remove the whole background. Keep the lower part of the photo (floor, ground, table, desk) as a panel and remove only the negative space above the cut line, so the subject breaks out of the frame. Remove the entire background only for isolated objects (3D models, a crane, a radio cluster, conduit) and then always put a big EWS brand graphic behind them.
+- A big brand graphic sits behind every subject for depth: concentric Slate/Green rings, a solid Apple Green disc, giant signal bars, broadcast arcs, a Slate hexagon, a thick sine band or a slanted green slab. Use a different one from the neighbouring posts.
+- Cut edges must be seamless: soft mask from BiRefNet, specks removed, 1px choke, 0.8px feather and edge colour decontamination. No white fringe or stray particles.
+- Text never sits on the subject: text and subject keep separate zones. An occluder (clipboard card, caution tape, badge, filing tag) may overlap the subject's body, never its head.
 - **Never crop or cover a face or head.** Heads stay inside the canvas with room above; no text, logo or card covers them. The renderer QA checks detected faces on every export.
-- Where a cut-out ends in a straight cut (the source photo's edge), that edge sits flush on the canvas edge or hides behind an occluder. A straight base is allowed only for objects standing on a floor shadow.
+- Where a subject is cut by the photo's own edge above the panel, that edge sits flush on the canvas edge or hides behind an occluder. The panel's own straight edges are fine.
 - Style: EWS navy (`#2A3852` / `#1C1F26`), uppercase Montserrat 900 headline with the second line in Apple Green, green CTA block, white logo, phone + engineeringwireless.com. Text and photo are clearly separated, and the text side carries a technical background: blueprint grid, RF arcs, sine waves, contour lines, lattice, or dot matrix.
 - **Permanent spec (every graphic):** 64px margin on all four sides; all text, logos and buttons stay inside it (photos may bleed to the edge).
 - **Fixed type sizes, never changed per post:** kicker 22px · title 76px (Montserrat 900) · subtext 28px · CTA 26px · labels/chips 22px · footer 24px · big numerals 200px. Titles wrap onto more lines rather than shrink. Logo 150px wide at the top-left margin (carousel slide footers use 100px).
@@ -52,34 +54,36 @@ No design-system sync has run from this repo yet: it holds no component library.
 - No EV charger, Dalmatian or firefighter photos exist in the stock folder yet. Oct 1, 5 and 28 use interim EWS cut-outs until Pexels/Pixabay photos are added.
 
 ### Layout registry: used, do not repeat
-v3 (cut-out) layouts, current:
+v4 (pop-out) layouts, current. Each has a big brand graphic behind the subject:
 
 | Post | Layout |
 |---|---|
-| Oct 1 | Tilted equipment cut-out top-right on grid, green glow + front arc; text band below with side note |
-| Oct 2 | (v2) Grid text column left, full-height photo right, green vertical seam |
-| Oct 3 | Two climbers cut out, anchored bottom-left; title top full width; copy and CTA right |
-| Oct 5 | Metering rack cut-out right on scan lines with sine waves; stacked 3-line title left |
-| Oct 6 | Rack cut-out left with floor shadow; leader lines to white callout tags right |
-| Oct 8 | Full-width team cut-out along the bottom; process dots row above |
-| Oct 9 | Tall rack cut-out bleeding left; timeline and copy right |
+| Oct 1 | Equipment popping out of a gravel panel, top-right; Slate/Green rings behind |
+| Oct 2 | (v2) Grid text column left, full-height photo right |
+| Oct 3 | Climbers break out of a bottom-left panel; green disc behind their heads |
+| Oct 5 | Metering rack on a gravel panel, bottom-right; giant signal/charge bars behind |
+| Oct 6 | Rack panel flush left with its top strip popping out; leader lines to tags; Slate hexagon |
+| Oct 8 | Team on a floor strip across the bottom; broadcast arcs behind |
+| Oct 9 | Rack room panel bottom-left, rack top popping out; slanted green slab |
 | Oct 12 | (v2) Photo inside an app window (NOC title bar) |
-| Oct 13 | Five layered sine waves behind title; worker cut-out bottom-right |
-| Oct 15 | Full-width title; ECG line; crew cut-out bottom-right |
-| Oct 16 | Giant 80% numeral; phone cut-out tilted over rings |
-| Oct 19 | Worker (back view) cut-out right; chip stack left |
-| Oct 20 | Crane cut-out with altitude ruler right edge |
-| Oct 22 | DAS radio cluster cut-out top with "full bars" badge occluder; stadium seat curves |
-| Oct 23 | Two-person cut-out bottom-right on diagonal glass stripes with floor shadow |
-| Oct 26 | 3D hospital heat-map model floating, tilted, under the title |
-| Oct 27 | 9-1-1 digit boxes; monopole cut-out right over contour lines |
-| Oct 28 | Crew cut-out hanging from the top edge; centered text below |
-| Oct 29 | Rotary phone cut-out bottom-left; terminal console card right |
-| Oct 31 | Lattice tower cut-out on floor shadow, purple night glow, rings from the top |
-| Oct 7 carousel | Cover: worker cut-out right, solid "5" numeral left |
-| Oct 14 carousel | Cover: three-person cut-out rising from the bottom, chips row under title |
-| Oct 21 carousel | Cover: two workers cut out above a caution-tape band; step 1 conduit cut-out behind a tape occluder |
-| Oct 30 carousel | Cover: checklist card left overlapping two workers' shoulders, heads clear |
-| Reel covers | Oct 4 floating floor-plan heat map in perspective + tag · Oct 11 antenna cut-out between oscilloscope waves · Oct 18 monopine cut-out with crosshair · Oct 25 lattice tower flush to top + build timeline |
+| Oct 13 | Worker full cut-out flush bottom-right over a thick Slate/Green sine band |
+| Oct 15 | Crew on a ground strip bottom-right; rings behind; ECG line |
+| Oct 16 | Phone popping off a carpet panel; broadcast arcs; giant 80% |
+| Oct 19 | Worker (back) on a ground strip, right; Slate hexagon |
+| Oct 20 | Crane flush to the top; its base hidden behind an "FAA filing first" tag; rings |
+| Oct 22 | DAS radio cluster floating top-left; giant signal bars and "full bars" badge |
+| Oct 23 | Two men over their conference table panel, bottom-right; green slab |
+| Oct 26 | 3D hospital model tilted over a Slate hexagon |
+| Oct 27 | Monopole rising from its compound panel, right; broadcast arcs from the top |
+| Oct 28 | Crew in tower steel flush to the top; green disc; centered text below |
+| Oct 29 | Rotary phone on a desk panel, bottom-left; sine band; LOGIN terminal card |
+| Oct 31 | Lattice tower flush bottom-right on floor shadow; broadcast arcs; night glow |
+| Oct 7 carousel | Cover: worker on a ground panel, right; green disc; "5" numeral |
+| Oct 14 carousel | Cover: team at their table (table kept), rings behind heads |
+| Oct 21 carousel | Cover: crew at the pole base panel, green slab behind, tape band; step 1 conduit behind a tape occluder |
+| Oct 30 carousel | Cover: two men on a rock panel, Slate hexagon; checklist card overlaps a shoulder only |
+| Reel covers | Oct 4 floating floor-plan heat map · Oct 11 antenna over a sine band · Oct 18 monopine on its building panel, green disc, crosshair · Oct 25 lattice tower flush to top over its building panel, hexagon |
+
+v3 cut-out layouts (retired, also do not repeat): whole-background cut-outs floating with drop shadows, same compositions as above without the photo panels.
 
 v1/v2 layouts (retired, also do not repeat): Oct 1 angled photo top · Oct 3 circular photo · Oct 5 staggered triptych · Oct 6 rounded card + signal chain · Oct 8 viewfinder brackets · Oct 9 offset frame · Oct 13 sine-wave panel · Oct 15 text top + photo bottom · Oct 16 capsule photo · Oct 19 slanted photo · Oct 20 ruler + text band · Oct 22 wide photo + badge · Oct 23 window mullions · Oct 26 arch photo + 60+ · Oct 27 photo column + digit boxes · Oct 28 hexagon photo · Oct 29 terminal + fade · Oct 31 full-bleed photo + rings · carousel photo half-panels and photo covers · reel full-bleed photo covers.
