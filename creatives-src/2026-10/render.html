@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>EWS creatives v4</title>
+<html><head><meta charset="utf-8"><title>EWS creatives v5</title>
 <style>
 @font-face{font-family:M;src:url(montserrat.woff2) format("woff2");font-weight:100 900}
 /* ===== EWS creative system — fixed on every graphic =====
@@ -28,791 +28,12 @@ body{background:#888;font-family:M,sans-serif;color:var(--w)}
 .lat{background-image:repeating-linear-gradient(45deg,rgba(208,217,232,.07) 0 1px,transparent 1px 44px),repeating-linear-gradient(-45deg,rgba(208,217,232,.07) 0 1px,transparent 1px 44px)}
 .dots{background-image:radial-gradient(rgba(208,217,232,.16) 1.6px,transparent 1.8px);background-size:28px 28px}
 .lines{background-image:repeating-linear-gradient(0deg,rgba(208,217,232,.06) 0 1px,transparent 1px 22px)}
-.cut{display:block;max-width:none}
+.glass{background:rgba(28,31,38,.5);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(254,254,254,.16);box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);padding:24px 28px}
+.chip.glass{padding:12px 18px}
 .tick{display:flex;gap:18px;align-items:flex-start}.tick i{flex:none;width:18px;height:18px;background:var(--g);margin-top:12px}
 </style></head><body><div id="out"></div>
 <script src="posts.js"></script>
-<script>window.POPMETA={
- "d01": {
-  "faces": [],
-  "edge": {
-   "r": [
-    0.314,
-    0.606
-   ]
-  },
-  "w": 800,
-  "h": 579,
-  "cut": 0.6062176165803109,
-  "mode": "pop",
-  "src": "d01",
-  "box": [
-   0.0,
-   0.035,
-   1.0,
-   1.0
-  ]
- },
- "d03": {
-  "faces": [
-   [
-    0.6031956481933594,
-    0.07884033898022413,
-    0.08886576970418295,
-    0.12929999624755395
-   ],
-   [
-    0.11048385620117188,
-    0.17621370782435963,
-    0.3095783996582031,
-    0.4058863949278048
-   ]
-  ],
-  "edge": {
-   "l": [
-    0.438,
-    0.545
-   ]
-  },
-  "w": 1200,
-  "h": 1054,
-  "cut": 0.5445920303605313,
-  "mode": "pop",
-  "src": "d03",
-  "box": [
-   0.0,
-   0.34125,
-   1.0,
-   1.0
-  ]
- },
- "d05": {
-  "faces": [],
-  "edge": {
-   "r": [
-    0.021,
-    0.569
-   ]
-  },
-  "w": 1148,
-  "h": 1170,
-  "cut": 0.5692307692307692,
-  "mode": "pop",
-  "src": "d05",
-  "box": [
-   0.14962962962962964,
-   0.25,
-   1.0,
-   0.9
-  ]
- },
- "d06": {
-  "faces": [],
-  "edge": {},
-  "w": 900,
-  "h": 1500,
-  "cut": 0.25842696629213485,
-  "mode": "pop",
-  "src": "d06",
-  "box": [
-   0.0,
-   0.11,
-   0.9496047430830039,
-   1.0
-  ]
- },
- "d08": {
-  "faces": [
-   [
-    0.8072540283203125,
-    0.3462695058517556,
-    0.026578330993652345,
-    0.07563408701565548
-   ],
-   [
-    0.895399644639757,
-    0.31769540933080703,
-    0.02750870598687066,
-    0.08857516721569206
-   ],
-   [
-    0.5460610283745659,
-    0.3303427032748496,
-    0.02616930643717448,
-    0.07638846448245998
-   ],
-   [
-    0.38855133056640623,
-    0.10189857036456643,
-    0.02567013210720486,
-    0.07476249069789297
-   ],
-   [
-    0.198360104031033,
-    0.34585230000152395,
-    0.026206883324517143,
-    0.07725406840191705
-   ],
-   [
-    0.614987318250868,
-    0.11765072032596106,
-    0.02537208769056532,
-    0.0774589310386866
-   ],
-   [
-    0.1769603305392795,
-    0.05630560628149381,
-    0.02499532699584961,
-    0.07330955733558446
-   ],
-   [
-    0.3358877563476563,
-    0.059130010121200435,
-    0.02611330244276259,
-    0.07611108291288655
-   ],
-   [
-    0.9173257107204861,
-    0.10221412370976918,
-    0.028712679545084635,
-    0.08726060964041166
-   ],
-   [
-    0.2860053168402778,
-    0.3392211358475902,
-    0.025968528323703343,
-    0.0770220762731505
-   ],
-   [
-    0.6348113335503472,
-    0.33755016946978633,
-    0.026164169311523437,
-    0.07744815662716392
-   ],
-   [
-    0.27818800184461806,
-    0.08294505105682096,
-    0.026318848927815754,
-    0.07879154021780266
-   ],
-   [
-    0.11603278266059028,
-    0.3272737619625732,
-    0.025202062394883897,
-    0.0820702650767154
-   ],
-   [
-    0.724705064561632,
-    0.3456117706894099,
-    0.025950870513916015,
-    0.07714132896790424
-   ],
-   [
-    0.8383761257595486,
-    0.07091757348982038,
-    0.029179577297634547,
-    0.08743178983968629
-   ],
-   [
-    0.37364939371744793,
-    0.36504702326225213,
-    0.02432373046875,
-    0.07433635577733869
-   ],
-   [
-    0.4610834418402778,
-    0.02310547748064653,
-    0.026541752285427517,
-    0.07858401870231481
-   ],
-   [
-    0.7554734971788194,
-    0.06412638055332616,
-    0.02451465818617079,
-    0.07839411721893033
-   ],
-   [
-    0.6826917182074653,
-    0.09469548933527716,
-    0.027391476101345485,
-    0.08376479923957657
-   ],
-   [
-    0.45559607611762154,
-    0.32662372564308356,
-    0.025406500498453777,
-    0.0750547590119321
-   ],
-   [
-    0.039577806260850695,
-    0.07600710388897919,
-    0.026679515838623047,
-    0.0803863366651597
-   ],
-   [
-    0.22305989583333333,
-    0.0798904359418177,
-    0.025673421223958333,
-    0.08040024617248456
-   ],
-   [
-    0.5414529418945313,
-    0.07027216044452009,
-    0.024937843746609158,
-    0.07862524620423238
-   ],
-   [
-    0.11380300733778212,
-    0.10503324947679617,
-    0.02544577916463216,
-    0.07971946408751727
-   ]
-  ],
-  "edge": {
-   "l": [
-    0.532,
-    0.637
-   ],
-   "r": [
-    0.532,
-    0.637
-   ]
-  },
-  "w": 1500,
-  "h": 641,
-  "cut": 0.5305591677503251,
-  "mode": "pop",
-  "src": "d08",
-  "box": [
-   0.0,
-   0.146503884572697,
-   1.0,
-   1.0
-  ]
- },
- "d09": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.578,
-    0.624
-   ],
-   "r": [
-    0.578,
-    0.624
-   ]
-  },
-  "w": 770,
-  "h": 1500,
-  "cut": 0.5777777777777777,
-  "mode": "pop",
-  "src": "d09",
-  "box": [
-   0.0,
-   0.1,
-   1.0,
-   1.0
-  ]
- },
- "d13": {
-  "faces": [
-   [
-    0.3747499606753355,
-    0.21467049133601446,
-    0.18444668558619964,
-    0.44055716979679804
-   ]
-  ],
-  "edge": {
-   "r": [
-    0.642,
-    1.0
-   ],
-   "b": [
-    0.002,
-    1.0
-   ]
-  },
-  "w": 1490,
-  "h": 812,
-  "cut": null,
-  "mode": "full",
-  "src": "d13",
-  "box": [
-   0.10402886349969934,
-   0.3488372093023256,
-   1.0,
-   1.0
-  ]
- },
- "d15": {
-  "faces": [
-   [
-    0.7524482163806889,
-    0.27884312947591144,
-    0.09921422100707189,
-    0.07959488762749566
-   ],
-   [
-    0.43573796829121225,
-    0.25478758070203994,
-    0.08118239025141569,
-    0.0639741219414605
-   ],
-   [
-    0.3524035767420826,
-    0.3100149197048611,
-    0.06904815827440096,
-    0.0784769778781467
-   ]
-  ],
-  "edge": {
-   "l": [
-    0.86,
-    1.0
-   ],
-   "r": [
-    0.0,
-    1.0
-   ]
-  },
-  "w": 993,
-  "h": 1500,
-  "cut": 0.86,
-  "mode": "pop",
-  "src": "d15",
-  "box": [
-   0.0,
-   0.0,
-   1.0,
-   1.0
-  ]
- },
- "d16": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.542,
-    0.651
-   ],
-   "r": [
-    0.542,
-    0.651
-   ]
-  },
-  "w": 1500,
-  "h": 765,
-  "cut": 0.5424836601307189,
-  "mode": "pop",
-  "src": "d16",
-  "box": [
-   0.0,
-   0.035,
-   1.0,
-   0.8
-  ]
- },
- "d19": {
-  "faces": [],
-  "edge": {
-   "r": [
-    0.378,
-    0.846
-   ]
-  },
-  "w": 945,
-  "h": 1403,
-  "cut": 0.8460441910192444,
-  "mode": "pop",
-  "src": "d19",
-  "box": [
-   0.3,
-   0.22055555555555556,
-   1.0,
-   1.0
-  ]
- },
- "d20": {
-  "faces": [],
-  "edge": {
-   "t": [
-    0.727,
-    0.989
-   ],
-   "b": [
-    0.004,
-    0.72
-   ]
-  },
-  "w": 542,
-  "h": 667,
-  "cut": null,
-  "mode": "full",
-  "src": "d20",
-  "box": [
-   0.24166666666666667,
-   0.0,
-   0.5427777777777778,
-   0.5595637583892618
-  ]
- },
- "d22": {
-  "faces": [],
-  "edge": {},
-  "w": 1267,
-  "h": 687,
-  "cut": null,
-  "mode": "full",
-  "src": "d22a",
-  "box": [
-   0.0,
-   0.11298076923076923,
-   0.7038888888888889,
-   0.9387019230769231
-  ]
- },
- "d23": {
-  "faces": [
-   [
-    0.7358303693384906,
-    0.07575663356019215,
-    0.07182436051711538,
-    0.09064418674862824
-   ],
-   [
-    0.4991896386240043,
-    0.04206518131534947,
-    0.0881660872814702,
-    0.09834767897145229
-   ]
-  ],
-  "edge": {},
-  "w": 1224,
-  "h": 1327,
-  "cut": 0.5659382064807837,
-  "mode": "pop",
-  "src": "d23",
-  "box": [
-   0.0,
-   0.2627777777777778,
-   0.85,
-   1.0
-  ]
- },
- "d26": {
-  "faces": [],
-  "edge": {},
-  "w": 1462,
-  "h": 802,
-  "cut": null,
-  "mode": "full",
-  "src": "hm_3d",
-  "box": [
-   0.0220125786163522,
-   0.10845986984815618,
-   0.9415094339622642,
-   0.9783080260303688
-  ]
- },
- "d27": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.597,
-    0.674
-   ],
-   "r": [
-    0.597,
-    0.674
-   ]
-  },
-  "w": 736,
-  "h": 1500,
-  "cut": 0.5964601769911504,
-  "mode": "pop",
-  "src": "d27",
-  "box": [
-   0.0,
-   0.058333333333333334,
-   1.0,
-   1.0
-  ]
- },
- "d28": {
-  "faces": [
-   [
-    0.7062084621853298,
-    0.22231835486904886,
-    0.035878658294677734,
-    0.06042136121916291
-   ]
-  ],
-  "edge": {
-   "t": [
-    0.269,
-    0.649
-   ]
-  },
-  "w": 1440,
-  "h": 1192,
-  "cut": 0.549496644295302,
-  "mode": "pop",
-  "src": "d28",
-  "box": [
-   0.0,
-   0.0,
-   0.8,
-   1.0
-  ]
- },
- "d29": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.753,
-    0.903
-   ],
-   "r": [
-    0.753,
-    0.903
-   ]
-  },
-  "w": 1500,
-  "h": 890,
-  "cut": 0.7528089887640449,
-  "mode": "pop",
-  "src": "d29",
-  "box": [
-   0.0,
-   0.11,
-   1.0,
-   1.0
-  ]
- },
- "d31": {
-  "faces": [],
-  "edge": {
-   "b": [
-    0.011,
-    0.973
-   ]
-  },
-  "w": 184,
-  "h": 804,
-  "cut": null,
-  "mode": "full",
-  "src": "d31c",
-  "box": [
-   0.2421875,
-   0.021875,
-   0.5296875,
-   0.859375
-  ]
- },
- "c07": {
-  "faces": [
-   [
-    0.3455893687712841,
-    0.04453442577699791,
-    0.19387000646346655,
-    0.10245275843472196
-   ]
-  ],
-  "edge": {},
-  "w": 624,
-  "h": 1378,
-  "cut": 0.6342525399129173,
-  "mode": "pop",
-  "src": "c07w",
-  "box": [
-   0.25,
-   0.23444444444444446,
-   1.0,
-   1.0
-  ]
- },
- "c14": {
-  "faces": [
-   [
-    0.31567560831705727,
-    0.11560425980324539,
-    0.07824596563975016,
-    0.14501099563525155
-   ],
-   [
-    0.6069956461588542,
-    0.041088318556882025,
-    0.0588607668876648,
-    0.12708826202833443
-   ],
-   [
-    0.15669954617818196,
-    0.45350424091467695,
-    0.11963460445404053,
-    0.2543230378225948
-   ]
-  ],
-  "edge": {},
-  "w": 960,
-  "h": 623,
-  "cut": 0.3274478330658106,
-  "mode": "pop",
-  "src": "c14",
-  "box": [
-   0.0,
-   0.2847301951779564,
-   1.0,
-   1.0
-  ]
- },
- "c21b": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.231,
-    0.276
-   ],
-   "b": [
-    0.485,
-    0.902
-   ]
-  },
-  "w": 571,
-  "h": 1500,
-  "cut": null,
-  "mode": "full",
-  "src": "c21b",
-  "box": [
-   0.0,
-   0.0,
-   0.47185185185185186,
-   0.93
-  ]
- },
- "c21c": {
-  "faces": [
-   [
-    0.12597525128042705,
-    0.127431000622995,
-    0.05489972194531521,
-    0.08151001060478848
-   ],
-   [
-    0.635679545042338,
-    0.07044094795485795,
-    0.05228931641132569,
-    0.0873197700647342
-   ]
-  ],
-  "edge": {},
-  "w": 1443,
-  "h": 1091,
-  "cut": 0.6040329972502292,
-  "mode": "pop",
-  "src": "c21c",
-  "box": [
-   0.0,
-   0.3938888888888889,
-   1.0,
-   1.0
-  ]
- },
- "c30": {
-  "faces": [
-   [
-    0.4777667705829327,
-    0.09878207755976898,
-    0.058681565981644854,
-    0.06949552628918841
-   ]
-  ],
-  "edge": {
-   "r": [
-    0.059,
-    0.092
-   ]
-  },
-  "w": 832,
-  "h": 1396,
-  "cut": 0.8065902578796562,
-  "mode": "pop",
-  "src": "c30w",
-  "box": [
-   0.0,
-   0.22444444444444445,
-   1.0,
-   1.0
-  ]
- },
- "r11": {
-  "faces": [],
-  "edge": {},
-  "w": 254,
-  "h": 567,
-  "cut": null,
-  "mode": "full",
-  "src": "r11",
-  "box": [
-   0.3401442307692308,
-   0.255,
-   0.6454326923076923,
-   0.57
-  ]
- },
- "r18": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.783,
-    0.867
-   ],
-   "r": [
-    0.212,
-    0.867
-   ]
-  },
-  "w": 1077,
-  "h": 1500,
-  "cut": 0.7831325301204819,
-  "mode": "pop",
-  "src": "r18",
-  "box": [
-   0.0,
-   0.07777777777777778,
-   1.0,
-   1.0
-  ]
- },
- "r25": {
-  "faces": [],
-  "edge": {
-   "l": [
-    0.72,
-    0.864
-   ],
-   "r": [
-    0.665,
-    0.864
-   ],
-   "t": [
-    0.598,
-    0.713
-   ]
-  },
-  "w": 792,
-  "h": 1500,
-  "cut": 0.72,
-  "mode": "pop",
-  "src": "r25",
-  "box": [
-   0.2994100294985251,
-   0.0,
-   1.0,
-   1.0
-  ]
- }
-};</script>
-<script>window.CUTMETA={"d01": {"w": 757, "h": 578, "faces": [], "edge": {"r": [0.311, 0.716]}}, "d03": {"w": 1026, "h": 1053, "faces": [[0.7054919861910636, 0.0779655434806802, 0.10393657275343034, 0.1294227882667824], [0.12922088444581506, 0.1754313846599003, 0.36207999960023757, 0.4062718520929784]], "edge": {"l": [0.437, 1.0], "b": [0.0, 0.625]}}, "d05": {"w": 918, "h": 1013, "faces": [], "edge": {"r": [0.141, 0.795]}}, "d06": {"w": 799, "h": 1500, "faces": [], "edge": {"b": [0.108, 0.924]}}, "d08": {"w": 1500, "h": 614, "faces": [[0.8061375076181811, 0.3677917817679558, 0.02704409032706287, 0.08033510071137992], [0.8958277899104367, 0.3374416709604843, 0.027990769234803384, 0.09408052981887734], [0.5403673550447816, 0.3508750536165185, 0.0266278980140837, 0.08113636628040292], [0.38009745337452305, 0.10823204504192205, 0.026119976140739826, 0.07940933058933658], [0.18657331105475375, 0.36734864461487826, 0.0266661333997348, 0.08205577154844505], [0.6105015109392665, 0.12496326509760229, 0.02581670878632989, 0.08227336736015194], [0.1647985274000583, 0.0598052641304817, 0.025433345727828884, 0.07786609059539289], [0.3265110013712726, 0.062805217932601, 0.026570912604280756, 0.0808417441436599], [0.9181380889185274, 0.10856721150940953, 0.029215841255597706, 0.09268426631695657], [0.2757544207532504, 0.3603053224679515, 0.026423601459958177, 0.08180936001940986], [0.6306729227759327, 0.35853049768268735, 0.026622670865314974, 0.08226192326835506], [0.2678001149351682, 0.08810047550096038, 0.026780061091050515, 0.08368880445785944], [0.10280328365690362, 0.3476153631895287, 0.02564370396313794, 0.0871713174640803], [0.7221419537653688, 0.3670931652764589, 0.026405634214272937, 0.08193602482916901], [0.8378049894670364, 0.07532543372054126, 0.029690920935976365, 0.09286608616950104], [0.36493437461357053, 0.38773641006722637, 0.02474998012648389, 0.07895670938228376], [0.4539006191704353, 0.02454159141245468, 0.027006870612645298, 0.08346838450563547], [0.7534495731610373, 0.0681121362507014, 0.024944253665973668, 0.0832666797532561], [0.6793923644847019, 0.10058125870003885, 0.027871485009848432, 0.0889711748829204], [0.448317092714369, 0.34692492406012604, 0.025851724645119728, 0.07971976475162401], [0.025008508349084933, 0.0807313023351174, 0.02714704833777359, 0.08538272499379532], [0.2117059426229508, 0.08485600171168206, 0.026123322896057094, 0.0853974990423213], [0.5356785163426547, 0.0746399052235303, 0.025374855140698975, 0.08351217449040703], [0.10053443369587779, 0.11156155918184565, 0.025891691631621194, 0.08467440315373036]], "edge": {}}, "d09": {"w": 744, "h": 1395, "faces": [], "edge": {"l": [0.011, 0.496]}}, "d13": {"w": 1489, "h": 812, "faces": [[0.37433004795584285, 0.21467049133601446, 0.1845705584442159, 0.44055716979679804]], "edge": {"r": [0.597, 1.0], "b": [0.0, 1.0]}}, "d15": {"w": 1101, "h": 1408, "faces": [[0.73198753308427, 0.07806650075045499, 0.10741448813844658, 0.10175482793287798], [0.38910050699648047, 0.04731366851113059, 0.08789228808327657, 0.08178509907288985], [0.29887835011495234, 0.1179168007590554, 0.0747551359337747, 0.10032568194649437]], "edge": {"r": [0.283, 1.0], "b": [0.05, 1.0]}}, "d16": {"w": 1415, "h": 761, "faces": [], "edge": {}}, "d19": {"w": 898, "h": 1403, "faces": [], "edge": {"r": [0.377, 1.0], "b": [0.19, 1.0]}}, "d20": {"w": 441, "h": 622, "faces": [], "edge": {"b": [0.0, 0.596]}}, "d22": {"w": 1267, "h": 686, "faces": [], "edge": {"l": [0.918, 1.0]}}, "d23": {"w": 635, "h": 721, "faces": [[0.7144194835752953, 0.13804306897971566, 0.13844569649283342, 0.166830562850804], [0.25828050027682087, 0.076033974487474, 0.16994533989373153, 0.18100883494468403]], "edge": {}}, "d26": {"w": 1460, "h": 801, "faces": [], "edge": {}}, "d27": {"w": 391, "h": 1500, "faces": [], "edge": {}}, "d28": {"w": 1099, "h": 1192, "faces": [[0.8425297411709509, 0.22231835486904886, 0.047011162824691484, 0.06042136121916291]], "edge": {"t": [0.184, 0.456]}}, "d29": {"w": 1424, "h": 996, "faces": [], "edge": {"l": [0.861, 0.912]}}, "d31": {"w": 263, "h": 938, "faces": [], "edge": {"b": [0.023, 0.817]}}, "c07": {"w": 556, "h": 1376, "faces": [[0.2607456454270178, 0.0464352008908294, 0.22825706262382672, 0.10063056058661882]], "edge": {"r": [0.808, 0.974], "b": [0.0, 0.252]}}, "c14": {"w": 728, "h": 623, "faces": [[0.4025392637148008, 0.11560425980324539, 0.1031814931513189, 0.14501099563525155], [0.7866975553743132, 0.041088318556882025, 0.0776185936980195, 0.12708826202833443], [0.19290050045474544, 0.45350424091467695, 0.15775991796137212, 0.2543230378225948]], "edge": {"b": [0.0, 0.456]}}, "c21": {"w": 1320, "h": 1176, "faces": [], "edge": {"l": [0.838, 0.848], "t": [0.092, 0.113]}}, "c21b": {"w": 549, "h": 1500, "faces": [], "edge": {"l": [0.219, 0.262]}}, "c21c": {"w": 1321, "h": 970, "faces": [[0.11035752278399413, 0.1422961048244201, 0.05996994607652524, 0.09167775419569507], [0.6671351881121073, 0.0781969837306701, 0.057118458426603305, 0.09821223622744846]], "edge": {}}, "c30": {"w": 832, "h": 1237, "faces": [], "edge": {"l": [0.114, 0.149], "r": [0.066, 0.104]}}, "r04": {"w": 832, "h": 1291, "faces": [], "edge": {"l": [0.628, 1.0], "r": [0.179, 1.0], "b": [0.0, 1.0]}}, "r11": {"w": 253, "h": 560, "faces": [], "edge": {"b": [0.451, 0.901]}}, "r18": {"w": 730, "h": 1257, "faces": [], "edge": {"r": [0.277, 0.319]}}, "r25": {"w": 822, "h": 1500, "faces": [], "edge": {"r": [0.695, 0.709], "t": [0.594, 0.713]}}, "hm_floor": {"w": 1377, "h": 616, "faces": [], "edge": {"l": [0.0, 1.0], "r": [0.0, 1.0], "t": [0.0, 1.0], "b": [0.0, 1.0]}}};</script>
+<script>window.PHOTOS={"c07": {"w": 832, "h": 1800, "faces": []}, "c07w": {"w": 832, "h": 1800, "faces": [[423.64776611328125, 483.3684387207031, 120.97488403320312, 141.17990112304688, 0.9046052098274231]]}, "c14": {"w": 960, "h": 871, "faces": [[303.048583984375, 320.0214538574219, 75.11612701416016, 90.34185028076172, 0.9371623396873474], [582.7158203125, 273.5980224609375, 56.5063362121582, 79.17598724365234, 0.9289476275444031], [150.4315643310547, 530.5331420898438, 114.8492202758789, 158.44325256347656, 0.8906635046005249]]}, "c21": {"w": 1350, "h": 1800, "faces": []}, "c21b": {"w": 1350, "h": 1800, "faces": []}, "c21c": {"w": 1443, "h": 1800, "faces": [[181.78228759765625, 848.0272216796875, 79.22029876708984, 88.92742156982422, 0.8580312132835388], [917.2855834960938, 785.85107421875, 75.45348358154297, 95.265869140625, 0.7573502659797668]]}, "c30": {"w": 1800, "h": 832, "faces": [[539.9048461914062, 310.049072265625, 22.804597854614258, 26.312999725341797, 0.7427719235420227]]}, "c30w": {"w": 832, "h": 1800, "faces": [[397.501953125, 541.8997802734375, 48.823062896728516, 97.01575469970703, 0.7426918148994446]]}, "d01": {"w": 800, "h": 600, "faces": []}, "d02": {"w": 1192, "h": 1800, "faces": []}, "d03": {"w": 1200, "h": 1600, "faces": [[723.8347778320312, 629.0977172851562, 106.63892364501953, 136.28219604492188, 0.935961902141571], [132.58062744140625, 731.729248046875, 371.49407958984375, 427.80426025390625, 0.8647944331169128]]}, "d05": {"w": 1350, "h": 1800, "faces": []}, "d06": {"w": 1012, "h": 1800, "faces": []}, "d08": {"w": 1800, "h": 901, "faces": [[1453.0572509765625, 398.28125, 47.84099578857422, 58.16261291503906, 0.9431791305541992], [1611.7193603515625, 376.3077697753906, 49.51567077636719, 68.11430358886719, 0.9362562298774719], [982.9098510742188, 386.0335388183594, 47.10475158691406, 58.74272918701172, 0.936255156993866], [699.3923950195312, 210.36000061035156, 46.20623779296875, 57.49235534667969, 0.935473620891571], [357.0481872558594, 397.9604187011719, 47.17238998413086, 59.40837860107422, 0.9337450861930847], [1106.9771728515625, 222.47340393066406, 45.66975784301758, 59.56591796875, 0.9330865144729614], [318.5285949707031, 175.29901123046875, 44.9915885925293, 56.37504959106445, 0.9325301051139832], [604.5979614257812, 177.47097778320312, 47.003944396972656, 58.529422760009766, 0.9322841167449951], [1651.186279296875, 210.6026611328125, 51.682823181152344, 67.10340881347656, 0.9307844042778015], [514.8095703125, 392.8610534667969, 46.743350982666016, 59.229976654052734, 0.9297921061515808], [1142.660400390625, 391.5760803222656, 47.09550476074219, 59.55763244628906, 0.9283083081245422], [500.7384033203125, 195.7847442626953, 47.37392807006836, 60.590694427490234, 0.9272823333740234], [208.8590087890625, 383.67352294921875, 45.363712310791016, 63.11203384399414, 0.9272384643554688], [1304.4691162109375, 397.77545166015625, 46.71156692504883, 59.32168197631836, 0.9266683459281921], [1509.0770263671875, 186.53561401367188, 52.52323913574219, 67.23504638671875, 0.9265211820602417], [672.5689086914062, 412.7211608886719, 43.78271484375, 57.16465759277344, 0.9261133074760437], [829.9501953125, 149.7681121826172, 47.77515411376953, 60.43111038208008, 0.9252431988716125], [1359.852294921875, 181.3131866455078, 44.12638473510742, 60.28507614135742, 0.9245522618293762], [1228.8450927734375, 204.82083129882812, 49.304656982421875, 64.41513061523438, 0.9243829846382141], [820.0729370117188, 383.17364501953125, 45.7317008972168, 57.71710968017578, 0.922391414642334], [71.24005126953125, 190.449462890625, 48.023128509521484, 61.81709289550781, 0.9199858903884888], [401.5078125, 193.4357452392578, 46.212158203125, 61.827789306640625, 0.9188985824584961], [974.6152954101562, 186.03929138183594, 44.888118743896484, 60.46281433105469, 0.9164965748786926], [204.8454132080078, 212.77056884765625, 45.80240249633789, 61.30426788330078, 0.9102325439453125]]}, "d09": {"w": 832, "h": 1800, "faces": []}, "d12": {"w": 1296, "h": 968, "faces": [[928.8292846679688, 351.5565490722656, 75.71514129638672, 96.87904357910156, 0.9400030970573425], [842.5426635742188, 526.9549560546875, 33.75401306152344, 41.707027435302734, 0.8801351189613342], [914.025634765625, 554.1995849609375, 23.99211883544922, 31.00547218322754, 0.8333573341369629]]}, "d13": {"w": 1663, "h": 1247, "faces": [[731.37744140625, 609.3124389648438, 274.8255615234375, 357.732421875, 0.8744427561759949]]}, "d15": {"w": 1192, "h": 1800, "faces": [[896.9182739257812, 501.9176330566406, 118.26335144042969, 143.2707977294922, 0.9232638478279114], [519.399658203125, 458.6176452636719, 96.7694091796875, 115.1534194946289, 0.8769440054893494], [420.0650634765625, 558.02685546875, 82.30540466308594, 141.25856018066406, 0.8531045913696289]]}, "d16": {"w": 1800, "h": 1200, "faces": []}, "d19": {"w": 1350, "h": 1800, "faces": []}, "d20": {"w": 1800, "h": 1192, "faces": []}, "d22": {"w": 1800, "h": 832, "faces": []}, "d22a": {"w": 1800, "h": 832, "faces": []}, "d22b": {"w": 1800, "h": 832, "faces": []}, "d23": {"w": 1440, "h": 1800, "faces": [[900.6563720703125, 573.529052734375, 87.91301727294922, 120.28483581542969, 0.919922947883606], [611.0081176757812, 528.8204956054688, 107.91529083251953, 130.5073699951172, 0.914941132068634]]}, "d26": {"w": 640, "h": 480, "faces": []}, "d27": {"w": 832, "h": 1800, "faces": []}, "d28": {"w": 1800, "h": 1192, "faces": [[1016.940185546875, 265.00347900390625, 51.66526794433594, 72.02226257324219, 0.8473055362701416]]}, "d29": {"w": 1800, "h": 1200, "faces": []}, "d31": {"w": 1379, "h": 1800, "faces": []}, "d31b": {"w": 1800, "h": 1200, "faces": []}, "d31c": {"w": 640, "h": 960, "faces": []}, "hm_3d": {"w": 1590, "h": 922, "faces": []}, "hm_cable": {"w": 1590, "h": 922, "faces": []}, "hm_floor": {"w": 790, "h": 545, "faces": []}, "r04": {"w": 832, "h": 1800, "faces": []}, "r11": {"w": 832, "h": 1800, "faces": []}, "r18": {"w": 1192, "h": 1800, "faces": []}, "r25": {"w": 1356, "h": 1800, "faces": []}};</script>
 <script>
 const M=64, W=1080;
 const BY={};POSTS.forEach(p=>BY[p.d]=p);const P=d=>BY["2026-10-"+d];
@@ -1090,7 +311,7 @@ function plan(k){const r=ROOMS[k];return svg(1080,1350,`<g stroke="#D0D9E8" stro
  <rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}" fill="#84C73D" fill-opacity=".14" stroke="#84C73D" stroke-width="4"/>
  ${arcs(r[0]+r[2]/2,r[1]+r[3]/2+10,4,26,12,"#84C73D",.9,3)}<circle cx="${r[0]+r[2]/2}" cy="${r[1]+r[3]/2+10}" r="9" fill="#84C73D"/>`)+ROOMS.map((q,i)=>`<div class="a lbl" style="left:${q[0]+18}px;top:${q[1]+16}px;color:${i==k?"#84C73D":"rgba(208,217,232,.5)"}">${q[4]}</div>`).join("")}
 D.c07=()=>{const o=[],N=7;
- o.push(shell("c07-1",0,N,COVER.c07()));
+ o.push(shell("c07-1",0,N,COVER5.c07()));
  AREAS.forEach((a,i)=>o.push(shell(`c07-${i+2}`,i+1,N,`<div class="a grid" style="inset:0;opacity:.6"></div>${plan(i)}
   <div class="a" style="left:64px;top:64px;width:952px;display:flex;flex-direction:column;gap:24px">
    <div class="k" style="color:#D0D9E8">Area ${i+1} of 5 · Where we test</div>
@@ -1106,7 +327,7 @@ D.c07=()=>{const o=[],N=7;
  return o.join("")};
 const CODES=[["IFC 510","When a building needs first-responder radio coverage.","building"],["NFPA 1225","How the system performs and how it gets tested.","gauge"],["UL 2524","The rules for the equipment itself.","box"],["Your AHJ","The local fire authority with the final say.","badge"]];
 D.c14=()=>{const o=[],N=6;
- o.push(shell("c14-1",0,N,COVER.c14()));
+ o.push(shell("c14-1",0,N,COVER5.c14()));
  CODES.forEach((c,i)=>o.push(shell(`c14-${i+2}`,i+1,N,`<div class="a lines" style="inset:0"></div>
   <div class="a k" style="left:64px;top:64px;color:#D0D9E8">Fire code phrasebook · ${i+1}/4</div>
   <div class="a" style="left:64px;top:200px;width:952px;height:3px;background:var(--g)"></div>
@@ -1122,11 +343,11 @@ D.c14=()=>{const o=[],N=6;
   ${CTA("Let us translate for you","left:64px;top:800px")}
   ${FOOT("left:64px;top:940px")}`));
  return o.join("")};
-const PRE=[["Early coverage survey","Know where signal will fall short before walls go up.","c21b","meter"],["Pathway and pre-cabling plan","Conduit and cable routes drawn into the design.",null,"conduit"],["Equipment room and power","Space, power and cooling reserved from day one.",null,"box"],["Design ready for permit review","Plans your fire authority can approve without redraws.",null,"plan"]];
+const PRE=[["Early coverage survey","Know where signal will fall short before walls go up.","c21b","meter"],["Pathway and pre-cabling plan","Conduit and cable routes drawn into the design.",null,"conduit"],["Equipment room and power","Space, power and cooling reserved from day one.","c21c","box"],["Design ready for permit review","Plans your fire authority can approve without redraws.",null,"plan"]];
 const tape=`repeating-linear-gradient(-45deg,#84C73D 0 34px,#2A3852 34px 68px)`;
 D.c21=()=>{const o=[],N=6;
- o.push(shell("c21-1",0,N,COVER.c21()));
- PRE.forEach((s,i)=>o.push(shell(`c21-${i+2}`,i+1,N,`${s[2]?`<div class="a grid" style="inset:0"></div>${glow(850,700,380,.2)}${pop(s[2],623,100,{h:1250})}<div class="a occ" style="left:620px;top:0;width:20px;height:1350px;background:${tape}"></div>`:`<div class="a grid" style="inset:0"></div><div class="a" style="left:0;top:1060px;width:1080px;height:40px;background:${tape}"></div>${icon(s[3],680,760,1.2)}`}
+ o.push(shell("c21-1",0,N,COVER5.c21()));
+ PRE.forEach((s,i)=>o.push(shell(`c21-${i+2}`,i+1,N,`${s[2]?`${base("grid")}${ph5(s[2],{x:540,y:0,w:540,h:1350},{fx:.5,fy:0,ay:0,zoom:1.1,fade:[["l",150]]})}<div class="a" style="left:540px;top:1180px;width:540px;height:40px;background:${tape};box-shadow:0 14px 24px rgba(0,0,0,.4)"></div>`:`<div class="a grid" style="inset:0"></div><div class="a" style="left:0;top:1060px;width:1080px;height:40px;background:${tape}"></div>${icon(s[3],680,760,1.2)}`}
   <div class="a lbl" style="left:64px;top:180px;background:var(--g);color:var(--deep);padding:10px 18px">Step 0${i+1}</div>
   <div class="a" style="left:64px;top:260px;width:${s[2]?520:880}px;display:flex;flex-direction:column;gap:28px"><div class="t">${esc(s[0])}</div><div class="s">${esc(s[1])}</div></div>`)));
  o.push(shell("c21-6",5,N,`<div class="a" style="left:0;top:64px;width:1080px;height:40px;background:${tape}"></div>
@@ -1140,7 +361,7 @@ D.c21=()=>{const o=[],N=6;
 const TIPS=["IFC 510 sets when coverage is required. Your AHJ confirms it.","A benchmark survey shows where signal falls short, floor by floor.","Built to NFPA 1225 and your local amendments.","Acceptance test results your fire authority can review.","Most jurisdictions require testing every year."];
 const CHK=["Does the building need coverage?","Has the signal been surveyed?","Is it designed and installed to code?","Is the test report ready?","Is the yearly test scheduled?"];
 D.c30=()=>{const o=[],N=7;const box=(on)=>`<span style="flex:none;width:56px;height:56px;border:5px solid var(--g);display:grid;place-items:center;background:${on?"var(--g)":"transparent"}">${on?`<svg width="34" height="34" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" stroke="#1C1F26" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`:""}</span>`;
- o.push(shell("c30-1",0,N,COVER.c30()));
+ o.push(shell("c30-1",0,N,COVER5.c30()));
  CHK.forEach((q,i)=>o.push(shell(`c30-${i+2}`,i+1,N,`<div class="a dots" style="inset:0"></div>
   <div class="a" style="left:64px;top:64px;display:flex;gap:14px">${CHK.map((_,j)=>`<span style="width:44px;height:44px;border:4px solid ${j<=i?"#84C73D":"rgba(208,217,232,.3)"};background:${j<i?"#84C73D":"transparent"}"></span>`).join("")}</div>
   <div class="a n" style="left:64px;top:190px">0${i+1}</div>
@@ -1198,593 +419,306 @@ D.r25=()=>{const p=P("25");const st=["Site work","Steel","Antennas","Power, test
  ${Sx(M,1560,952,"Every step self-performed by our own crews.")}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 
-/* ===== v3: cut-out subjects floating over layered brand backgrounds ===== */
-const CM = window.CUTMETA;
-const shadow = "filter:drop-shadow(0 28px 36px rgba(0,0,0,.5)) drop-shadow(0 6px 10px rgba(0,0,0,.35))";
-/* place a cut-out by height (h) or width (w); never stretched: the other side follows the cut-out's own ratio */
-function cut(k,x,y,{h,w,st="",cls="",base=0,card=0}){const m=CM[k];if(h==null)h=Math.round(w*m.h/m.w);if(w==null)w=Math.round(h*m.w/m.h);
- return `<img class="cut ${cls}" data-k="${k}" data-base="${base?1:0}" data-card="${card?1:0}" src="cut/${k}.png" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${shadow};${st}">`}
-const cw=(k,h)=>Math.round(h*CM[k].w/CM[k].h), ch=(k,w)=>Math.round(w*CM[k].h/CM[k].w);
-const glow=(cx,cy,r,op=.35)=>`<div class="a" style="left:${cx-r}px;top:${cy-r}px;width:${2*r}px;height:${2*r}px;background:radial-gradient(circle,rgba(132,199,61,${op}),rgba(132,199,61,0) 65%)"></div>`;
-const floor=(cx,y,w,op=.55)=>`<div class="a" style="left:${cx-w/2}px;top:${y-22}px;width:${w}px;height:44px;background:radial-gradient(ellipse at center,rgba(0,0,0,${op}),rgba(0,0,0,0) 70%)"></div>`;
-const arc=(cx,cy,r,a0,a1,col="#84C73D",sw=4,op=.9)=>{const p=a=>[cx+r*Math.cos(a*Math.PI/180),cy+r*Math.sin(a*Math.PI/180)];const [x0,y0]=p(a0),[x1,y1]=p(a1);return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 ${Math.abs(a1-a0)>180?1:0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${col}" stroke-opacity="${op}" stroke-width="${sw}" stroke-linecap="round"/>`};
-const tag=(x,y,t,st="")=>`<div class="a lbl" style="left:${x}px;top:${y}px;background:#FEFEFE;color:#1C1F26;padding:10px 16px;box-shadow:0 14px 24px rgba(0,0,0,.35);${st}">${t}</div>`;
-const bgNavy=(extra="")=>`<div class="a" style="inset:0;background:radial-gradient(120% 90% at 70% 30%,#34466A 0%,#2A3852 45%,#1F2A40 100%)"></div>${extra}`;
+/* ===== v5: full photos in their own section, blended into the text side =====
+   Depth stack, back to front: navy base + pattern -> graded photo section with gradient fade
+   -> brand overlay crossing the seam (glow) -> frosted glass cards with deep shadows -> text. */
+const NAT = window.PHOTOS;   // natural sizes + detected faces per photo
+/* ph5: uniform scale only (cover), focal point (fx,fy) placed at (ax,ay) of the box, then clamped so the photo always covers it.
+   fade: [[side,len],...] gradient mask from transparent at that edge to solid after len px. */
+function ph5(k,{x,y,w,h},{fx=.5,fy=.5,ax=.5,ay=.5,zoom=1,fade=[],grade=1,tint="",st=""}={}){
+ const n=NAT[k],s=Math.max(w/n.w,h/n.h)*zoom,iw=n.w*s,ih=n.h*s;
+ let ix=ax*w-fx*iw,iy=ay*h-fy*ih;ix=Math.min(0,Math.max(w-iw,ix));iy=Math.min(0,Math.max(h-ih,iy));
+ const dir={l:"to right",r:"to left",t:"to bottom",b:"to top"};
+ const m=fade.map(([sd,len])=>`linear-gradient(${dir[sd]},transparent 0,rgba(0,0,0,.55) ${Math.round(len*.45)}px,#000 ${len}px)`).join(",");
+ const mask=m?`-webkit-mask-image:${m};mask-image:${m};-webkit-mask-composite:source-in;mask-composite:intersect;`:"";
+ return `<div class="box ph5" data-fade='${JSON.stringify(fade)}' style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${mask}${st}">
+  <img data-k="${k}" src="ph/${k}.jpg" style="position:absolute;left:${ix.toFixed(1)}px;top:${iy.toFixed(1)}px;width:${iw.toFixed(1)}px;height:${ih.toFixed(1)}px;max-width:none">
+  ${grade?`<div class="a" style="inset:0;background:linear-gradient(180deg,rgba(28,31,38,.18),rgba(28,31,38,.42));mix-blend-mode:multiply"></div><div class="a" style="inset:0;background:rgba(42,56,82,.22);mix-blend-mode:soft-light"></div>`:""}
+  ${tint?`<div class="a" style="inset:0;${tint}"></div>`:""}</div>`}
+/* glass card: frosted panel floating above the photo edge */
+const glass=(x,y,inner,st="")=>`<div class="a glass occ" style="left:${x}px;top:${y}px;${st}">${inner}</div>`;
+/* seam glow: soft light spill where photo meets navy */
+const spill=(cx,cy,r,col="132,199,61",op=.22)=>`<div class="a" style="left:${cx-r}px;top:${cy-r}px;width:${2*r}px;height:${2*r}px;background:radial-gradient(circle,rgba(${col},${op}),rgba(${col},0) 65%);mix-blend-mode:screen"></div>`;
+/* glowing brand line art over everything behind the text */
+const glowsvg=(w,h,inner,st="")=>svg(w,h,inner,`filter:drop-shadow(0 0 8px rgba(132,199,61,.55));${st}`);
+const base=(pat="grid",st="")=>`<div class="a" style="inset:0;background:radial-gradient(110% 90% at 20% 20%,#34466A 0%,#2A3852 45%,#1C2334 100%)"></div><div class="a ${pat}" style="inset:0;${st}"></div>`;
+const pill=(t,on)=>`<span class="lbl" style="display:inline-flex;align-items:center;gap:10px"><i style="width:12px;height:12px;border-radius:50%;background:${on?"#84C73D":"#D03030"};box-shadow:0 0 12px ${on?"#84C73D":"#D03030"}"></i>${t}</span>`;
 
-D.d01=()=>{const p=P("01"),k="d01",w=700,h=ch(k,700);return `<div class="art sq" data-id="d01">
- ${bgNavy(`<div class="a grid" style="inset:0;opacity:.8"></div>`)}
- ${svg(1080,1080,arcs(740,300,8,64,90,"#84C73D",.35,2))}
- ${glow(740,300,360,.28)}
- ${cut(k,1080-w,90,{w,st:"transform:rotate(-3deg);transform-origin:right center"})}
- ${svg(1080,1080,arc(740,300,330,110,160,"#84C73D",5))}
+/* ================= v5 IMAGE POSTS ================= */
+D.d01=()=>{const p=P("01");return `<div class="art sq" data-id="d01">${base("grid")}
+ ${ph5("d01",{x:280,y:380,w:800,h:700},{fx:.5,fy:.55,fade:[["t",240],["l",260]]})}
+ ${spill(700,700,420)}
+ ${glowsvg(1080,1080,arcs(760,700,6,70,90,"#84C73D",.9,3))}
  ${logo()}
- ${K(M,640,"National Fire Pup Day")}
- ${T(M,682,600,p.h1,p.h2)}
- ${Sx(700,682,316,"Dalmatians cleared the road for fire crews. We clear the signal indoors.")}
+ ${K(M,200,"National Fire Pup Day")}
+ ${T(M,242,700,p.h1,p.h2)}
+ ${Sx(M,410,520,"Dalmatians cleared the road for fire crews. We clear the signal for them indoors.")}
+ ${glass(64,640,`<div class="k">In-building</div><div class="s" style="margin-top:8px">Public safety radio</div>`,"width:360px")}
  ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}
+ ${WEBONLY("right:64px;bottom:64px","right")}</div>`};
+
+D.d02=()=>{const p=P("02");return `<div class="art sq" data-id="d02">${base("dots")}
+ ${ph5("d02",{x:0,y:0,w:640,h:1080},{fx:.5,fy:.4,fade:[["r",300]]})}
+ <div class="a" style="left:0;top:0;width:640px;height:300px;background:linear-gradient(rgba(28,35,52,.8),rgba(28,35,52,0))"></div>
+ <div class="a" style="left:0;top:0;width:1080px;height:1080px;background:linear-gradient(115deg,rgba(28,35,52,0) 45%,rgba(28,35,52,.9) 62%)"></div>
+ ${glowsvg(1080,1080,`<path d="M0 820 C200 800 360 700 600 760 S900 900 1080 860" stroke="#84C73D" stroke-width="3" stroke-dasharray="4 10"/>`)}
+ ${glass(120,520,`${pill("Dead zone",0)}<div class="mono" style="margin-top:10px;color:#FEFEFE">-112 dBm</div>`,"width:300px")}
+ ${logo()}
+ ${K(600,300,"Manufacturing Day")}
+ ${T(600,342,416,p.h1,p.h2)}
+ ${Sx(600,660,416,"Steel, racking and machinery create dead zones. We bring coverage back.")}
+ ${CTA("Let's talk facilities","right:64px;bottom:64px")}</div>`};
+
+D.d03=()=>{const p=P("03");return `<div class="art sq" data-id="d03">${base("lat")}
+ ${ph5("d03",{x:0,y:0,w:1080,h:700},{fx:.5,fy:.27,ax:.5,ay:0,fade:[["b",60]]})}
+ <div class="a" style="left:0;top:0;width:1080px;height:240px;background:linear-gradient(rgba(28,35,52,.65),rgba(28,35,52,0))"></div>
+ ${glowsvg(1080,1080,`<path d="M0 700H1080" stroke="#84C73D" stroke-width="3"/>`+[0,1,2,3,4,5,6,7,8].map(i=>`<path d="M${64+i*119} 688v24" stroke="#84C73D" stroke-width="3"/>`).join(""))}
+ ${glass(640,440,`<div class="k">Climbers to RF engineers</div><div class="s" style="margin-top:8px">Your best job-site view?</div>`,"width:376px")}
+ ${logo(866,64)}
+ ${K(M,740,"National Techies Day")}
+ ${T(M,782,952,p.h1,p.h2)}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
-D.d03=()=>{const p=P("03"),k="d03",h=640,w=cw(k,h);return `<div class="art sq" data-id="d03">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- ${svg(1080,1080,arcs(300,760,7,70,120,"#D0D9E8",.22,2))}
- ${glow(300,780,380,.25)}
- ${cut(k,0,1080-h,{h})}
+D.d05=()=>{const p=P("05");return `<div class="art sq" data-id="d05">${base("lines")}
+ ${ph5("d05",{x:380,y:240,w:700,h:840},{fx:.55,fy:0,ay:0,fade:[["t",220],["l",220]]})}
+ ${spill(760,640,380)}
+ ${glowsvg(1080,1080,`<path d="M0 560 H340 L380 500 L420 620 L460 470 L500 560 H1080" stroke="#84C73D" stroke-width="4" stroke-linejoin="round"/>`)}
  ${logo()}
- ${K(560,96,"National Techies Day","width:456px;text-align:right")}
- ${T(M,200,952,p.h1,p.h2)}
- ${Sx(700,440,316,"Tower climbers to iBwave certified RF engineers. Where's your best job-site view?")}
- ${CTA("Talk to our team","right:64px;top:760px")}
- ${FOOT("right:64px;bottom:64px","right")}</div>`};
-
-D.d05=()=>{const p=P("05"),k="d05",h=600,w=cw(k,h);return `<div class="art sq" data-id="d05" style="background:var(--deep)">
- <div class="a lines" style="inset:0"></div>
- ${svg(1080,1080,wave(1080,640,70,420,"#84C73D",.5,4)+wave(1080,640,40,210,"#D0D9E8",.18,2,1.4))}
- ${glow(1080-w/2,560,420,.22)}
- ${cut(k,1080-w,370,{h})}
- ${logo()}
- ${K(M,300,"Fire Prevention Week · Safe charging")}
- <div class="a t" style="left:64px;top:342px;width:460px"><span>Charged</span><span>up about</span><span class="g">safety</span></div>
- ${Sx(M,672,400,"EVITP certified electricians. The right circuit, the right install.")}
+ ${K(M,200,"Fire Prevention Week · Safe charging")}
+ ${T(M,242,620,p.h1,p.h2)}
+ ${Sx(M,620,420,"EVITP certified electricians. The right circuit, the right install.")}
+ ${glass(640,700,`<div class="k">2026 theme</div><div class="lbl" style="margin-top:8px">Charge safely</div>`,"width:376px")}
  ${CTA("Ask about EV installs","left:64px;bottom:64px")}
- ${WEBONLY("left:64px;top:860px")}</div>`};
+ ${WEBONLY("left:64px;top:880px")}</div>`};
 
-D.d06=()=>{const p=P("06"),k="d06",h=820,w=cw(k,h),x=40,y=150;const lead=(tx,ty,px,py)=>`<path d="M${tx} ${ty}H${px+40}L${px} ${py}" stroke="#84C73D" stroke-width="3"/><circle cx="${px}" cy="${py}" r="8" fill="#84C73D"/>`;return `<div class="art sq" data-id="d06">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${floor(x+w/2,y+h-4,w*1.1)}
- ${cut(k,x,y,{h,base:1})}
- ${svg(1080,1080,lead(520,500,x+w-60,y+120)+lead(520,620,x+w-40,y+420)+lead(520,740,x+w-60,y+700))}
+D.d06=()=>{const p=P("06");const L=(ty,px,py)=>`<path d="M360 ${ty}H${px-60}L${px} ${py}" stroke="#84C73D" stroke-width="3"/><circle cx="${px}" cy="${py}" r="9" fill="#84C73D"/><circle cx="${px}" cy="${py}" r="18" stroke="#84C73D" stroke-width="2"/>`;return `<div class="art sq" data-id="d06">${base("grid")}
+ ${ph5("d06",{x:520,y:0,w:560,h:1080},{fx:.5,fy:.45,fade:[["l",200]]})}
+ ${spill(620,540,300)}
+ ${glowsvg(1080,1080,L(606,760,170)+L(716,800,430)+L(826,780,700))}
  ${logo()}
- ${K(520,160,"Tower Tuesday")}
- <div class="a t" style="left:520px;top:202px;width:496px"><span>From</span><span>tower to</span><span class="g">stairwell</span></div>
- ${tag(520,500,"Donor antenna")}${tag(520,620,"Head-end")}${tag(520,740,"Every floor")}
- ${CTA("Talk to an RF engineer","right:64px;bottom:64px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
+ ${K(M,200,"Tower Tuesday")}
+ ${T(M,242,500,p.h1,p.h2)}
+ ${glass(64,580,`<div class="lbl">Donor antenna</div>`,"padding:14px 18px")}
+ ${glass(64,690,`<div class="lbl">Head-end</div>`,"padding:14px 18px")}
+ ${glass(64,800,`<div class="lbl">Every floor</div>`,"padding:14px 18px")}
+ ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
 
-D.d08=()=>{const p=P("08"),k="d08",w=1080,h=ch(k,w),steps=["Survey","Design","Install","Test","Maintain"];return `<div class="art sq" data-id="d08">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${svg(1080,1080,arcs(540,1080,9,60,220,"#84C73D",.3,2))}
- ${cut(k,0,1080-h+24,{w})}
+D.d08=()=>{const p=P("08"),steps=["Survey","Design","Install","Test","Maintain"];return `<div class="art sq" data-id="d08">${base("lat")}
+ ${ph5("d08",{x:0,y:540,w:1080,h:540},{fx:.5,fy:.5,fade:[["t",60]],tint:"background:radial-gradient(24% 20% at 93% 5%,rgba(28,35,52,1) 40%,rgba(28,35,52,0))"})}
+ ${glowsvg(1080,1080,arcs(540,1080,6,90,620,"#84C73D",.5,2))}
  ${logo()}
  ${CTA("Talk to an RF engineer","right:64px;top:64px")}
  ${K(M,200,"Fire Prevention Week")}
  ${T(M,242,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:430px;width:952px">
+ <div class="a" style="left:64px;top:410px;width:952px">
   <div style="position:absolute;left:15px;right:15px;top:13px;height:4px;background:rgba(208,217,232,.3)"></div>
-  <div style="display:flex;justify-content:space-between;position:relative">${steps.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==steps.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div>
- ${WEBONLY("left:64px;top:540px")}</div>`};
+  <div style="display:flex;justify-content:space-between;position:relative">${steps.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==steps.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g);box-shadow:0 0 16px rgba(132,199,61,.8)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div></div>`};
 
-D.d09=()=>{const p=P("09"),k="d09",h=1000,w=cw(k,h);return `<div class="art sq" data-id="d09">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${glow(w/2,560,420,.2)}
- ${cut(k,0,80,{h})}
- ${logo(700,64)}
- ${K(600,236,"Did you know Friday")}
- ${T(600,278,416,"From 1871","to today")}
- ${svg(416,90,`<path d="M16 30H400" stroke="#84C73D" stroke-width="4" stroke-dasharray="14 12"/><circle cx="16" cy="30" r="14" fill="#84C73D"/><circle cx="400" cy="30" r="14" fill="#2A3852" stroke="#84C73D" stroke-width="6"/>`,"left:600px;top:586px")}
- <div class="a lbl" style="left:600px;top:646px">1871</div><div class="a lbl" style="left:916px;top:646px;width:100px;text-align:right">2026</div>
- ${Sx(600,700,416,"Fire Prevention Week marks the Great Chicago Fire. Today's codes cover radio inside buildings.")}
- ${CTA("Talk to an engineer","left:600px;bottom:64px")}</div>`};
+D.d09=()=>{const p=P("09");return `<div class="art sq" data-id="d09">${base("lat")}
+ ${ph5("d09",{x:0,y:0,w:500,h:1080},{fx:.5,fy:.45,fade:[["r",200]]})}
+ ${glowsvg(1080,1080,`<path d="M0 640H1080" stroke="#84C73D" stroke-width="3" stroke-dasharray="14 12"/><circle cx="560" cy="640" r="14" fill="#84C73D"/><circle cx="1000" cy="640" r="14" fill="#2A3852" stroke="#84C73D" stroke-width="6"/>`)}
+ ${logo(866,64)}
+ ${K(560,236,"Did you know Friday")}
+ ${T(560,278,456,p.h1,p.h2)}
+ <div class="a lbl" style="left:540px;top:680px">1871</div><div class="a lbl" style="left:916px;top:680px;width:100px;text-align:right">2026</div>
+ ${Sx(560,740,456,"The week marks the Great Chicago Fire. Today's codes cover radio indoors.")}
+ ${glass(64,560,`<div class="k">Since 1925</div><div class="lbl" style="margin-top:8px">Longest-running</div>`,"width:340px;top:800px")}
+ ${CTA("Talk to an engineer","right:64px;bottom:64px")}</div>`};
 
-D.d13=()=>{const p=P("13"),k="d13",w=820,h=ch(k,w);let s="";for(let i=0;i<5;i++)s+=wave(1080,300+i*46,30+i*6,260+i*40,i%2?"#D0D9E8":"#84C73D",.25+i*.08,2+i%2,i*.7);return `<div class="art sq" data-id="d13" style="background:var(--deep)">
- ${bgNavy(svg(1080,1080,s))}
- ${cut(k,1080-w,1080-h,{w})}
+D.d12=()=>{const p=P("12");let spark="M0 30";for(let x=0;x<=1080;x+=16)spark+=` L${x} ${(30-12*Math.sin(x/70)-8*Math.sin(x/23)).toFixed(1)}`;return `<div class="art sq" data-id="d12" style="background:var(--deep)">${base("grid","opacity:.6")}
+ ${ph5("d12",{x:0,y:0,w:1080,h:660},{fx:.5,fy:.5,fade:[["b",260]]})}
+ <div class="a" style="left:0;top:0;width:1080px;height:260px;background:linear-gradient(rgba(28,31,38,.7),transparent)"></div>
+ ${glowsvg(1080,60,`<path d="${spark}" stroke="#84C73D" stroke-width="3"/>`,"top:560px")}
+ ${glass(700,64,`${pill("Live · all systems normal",1)}`,"padding:16px 22px;left:auto;right:64px")}
+ ${logo()}
+ ${K(M,650,"Cybersecurity Awareness Month")}
+ ${T(M,692,952,p.h1,p.h2)}
+ ${Sx(M,852,952,"An alert reaches an engineer. You get a report, not a surprise.")}
+ ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
+
+D.d13=()=>{const p=P("13");let s="";for(let i=0;i<4;i++)s+=wave(1080,880+i*34,26+i*6,300+i*50,i%2?"#D0D9E8":"#84C73D",.35+i*.1,2+i%2,i*.8);return `<div class="art sq" data-id="d13" style="background:var(--deep)">${base("")}
+ ${ph5("d13",{x:420,y:0,w:660,h:1080},{fx:.52,fy:.45,ax:.62,fade:[["l",220]]})}
+ ${glowsvg(1080,1080,s)}
  ${logo()}
  ${K(M,200,"Disaster Risk Reduction Day")}
- ${T(M,242,700,p.h1,p.h2)}
- ${Sx(M,410,480,"Inspections and upgrades that keep sites carrying calls.")}
- ${CTA("Talk to our tower team","left:64px;top:516px")}
- ${WEBONLY("left:64px;top:640px")}</div>`};
+ ${T(M,242,480,p.h1,p.h2)}
+ ${Sx(M,500,400,"Inspections and upgrades that keep sites carrying calls.")}
+ ${glass(64,700,`<div class="k">Before the storm</div><div class="lbl" style="margin-top:8px">Inspect · Upgrade · Maintain</div>`,"width:420px")}
+ ${CTA("Talk to our tower team","left:64px;bottom:64px")}</div>`};
 
-D.d15=()=>{const p=P("15"),k="d15",h=700,w=cw(k,h);const ecg="M0 40 L180 40 L210 40 L230 6 L256 74 L278 20 L292 40 L1080 40";return `<div class="art sq" data-id="d15">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${svg(1080,80,`<path d="${ecg}" stroke="#84C73D" stroke-width="6" stroke-linejoin="round"/>`,"top:680px")}
- ${floor(1080-w/2,1080,w,.4)}
- ${cut(k,1080-w,440,{h})}
+D.d15=()=>{const p=P("15");const ecg="M0 40 L420 40 L450 40 L470 6 L496 74 L518 20 L532 40 L1080 40";return `<div class="art sq" data-id="d15">${base("grid")}
+ ${ph5("d15",{x:480,y:0,w:600,h:1080},{fx:.55,fy:.4,fade:[["l",160]]})}
+ ${glowsvg(1080,80,`<path d="${ecg}" stroke="#84C73D" stroke-width="5" stroke-linejoin="round"/>`,"top:900px")}
  ${logo()}
  ${K(M,200,"International ShakeOut Day")}
- ${T(M,242,952,"Drill day","test day")}
- ${Sx(M,440,330,"Most places require a yearly radio test. We run it and file the report.")}
- ${CTA("Book your test","left:64px;top:760px")}
+ <div class="a t" style="left:64px;top:242px;width:460px"><span>Drill day</span><span class="g">test day</span></div>
+ ${Sx(M,420,360,"Most places require a yearly radio test. We run it and file the report.")}
+ ${CTA("Book your test","left:64px;top:700px")}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 
-D.d16=()=>{const k="d16",w=760,h=ch(k,w);return `<div class="art sq" data-id="d16">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- <div class="a n" style="left:64px;top:200px">80%</div>
- ${glow(640,470,380,.25)}
- ${cut(k,300,330,{w,st:"transform:rotate(-14deg)"})}
- ${svg(1080,1080,arcs(640,470,4,70,300,"#84C73D",.5,2))}
+D.d16=()=>{return `<div class="art sq" data-id="d16">${base("dots")}
+ ${ph5("d16",{x:300,y:0,w:780,h:640},{fx:.4,fy:.3,fade:[["l",260],["b",200]]})}
+ ${glowsvg(1080,1080,arcs(700,260,5,60,80,"#84C73D",.9,3))}
  ${logo()}
- ${T(M,700,952,"of mobile data","is used indoors")}
- ${K(M,864,"Source: Ericsson","color:#9DAFCB")}
+ <div class="a n" style="left:64px;top:200px;text-shadow:0 20px 40px rgba(0,0,0,.45)">80%</div>
+ ${T(M,680,952,"of mobile data","is used indoors")}
+ ${K(M,844,"Source: Ericsson","color:#9DAFCB")}
  ${CTA("Let's talk coverage","left:64px;bottom:64px")}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
-D.d19=()=>{const p=P("19"),k="d19",h=960,w=cw(k,h);return `<div class="art sq" data-id="d19">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${svg(1080,1080,arcs(1080-w/2,380,7,60,160,"#84C73D",.3,2))}
- ${cut(k,1080-w,1080-h,{h})}
+D.d19=()=>{const p=P("19");return `<div class="art sq" data-id="d19">${base("grid")}
+ ${ph5("d19",{x:0,y:0,w:1080,h:640},{fx:.6,fy:.3,fade:[["b",240]]})}
+ <div class="a" style="left:0;top:0;width:600px;height:640px;background:linear-gradient(90deg,rgba(28,35,52,.85),rgba(28,35,52,0))"></div>
  ${logo()}
- ${K(M,220,"Telecom staffing")}
- <div class="a t" style="left:64px;top:262px;width:400px"><span>Need a</span><span>crew?</span><span class="g">We have</span><span class="g">one</span></div>
- <div class="a" style="left:64px;top:600px;display:grid;gap:12px;justify-items:start">${["Field technicians","RF engineers","Project support"].map((c,i)=>`<span class="chip ${i==0?"on":""}" style="background:rgba(42,56,82,.85)">${c}</span>`).join("")}</div>
- ${CTA("Tell us who you need","left:64px;top:840px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
+ ${K(M,200,"Telecom staffing")}
+ ${T(M,242,480,p.h1,p.h2)}
+ <div class="a" style="left:64px;top:700px;display:flex;flex-wrap:wrap;gap:12px;width:952px">${["Field technicians","RF engineers","Project support"].map((c,i)=>`<span class="chip glass ${i==0?"on":""}" style="position:relative">${c}</span>`).join("")}</div>
+ ${CTA("Tell us who you need","left:64px;bottom:64px")}
+ ${WEBONLY("right:64px;bottom:64px","right")}</div>`};
 
-D.d20=()=>{const p=P("20"),k="d20",h=746,w=cw(k,h);let t="";for(let i=0;i<=24;i++){const y=i*30,maj=i%4==0;t+=`<path d="M0 ${y+2}h${maj?44:22}" stroke="${maj?"#84C73D":"#D0D9E8"}" stroke-opacity="${maj?1:.4}" stroke-width="3"/>`}return `<div class="art sq" data-id="d20">
- ${bgNavy(`<div class="a lines" style="inset:0"></div>`)}
- ${svg(60,730,t,"left:1016px;top:120px;transform:scaleX(-1);transform-origin:30px 0")}
- ${cut(k,1016-w-40,1080-h,{h})}
+D.d20=()=>{const p=P("20");return `<div class="art sq" data-id="d20">${base("lines")}
+ ${ph5("d20",{x:0,y:0,w:1080,h:640},{fx:.58,fy:0,ay:0,zoom:1.51,fade:[["b",220]]})}
+ ${glowsvg(1080,1080,arcs(1080,0,6,90,300,"#84C73D",.6,2))}
+ ${glass(640,480,`<div class="k">FAA Form 7460-1</div><div class="lbl" style="margin-top:8px">Filed first</div>`,"width:376px")}
  ${logo()}
- ${K(M,220,"Day of the Air Traffic Controller")}
- <div class="a t" style="left:64px;top:262px;width:480px"><span>Clear</span><span>skies</span><span class="g">clear</span><span class="g">towers</span></div>
- ${Sx(M,600,440,"Tall structures near airports often need an FAA filing first. We handle it.")}
+ ${K(M,660,"Air Traffic Controller Day")}
+ ${T(M,702,560,p.h1,p.h2)}
+ ${Sx(660,720,356,"Tall structures near airports often need an FAA filing first.")}
  ${CTA("Ask about FAA filings","left:64px;bottom:64px")}</div>`};
 
-D.d22=()=>{const p=P("22"),k="d22",w=780,h=ch(k,w);let seats="";for(let r=0;r<9;r++)seats+=`<path d="M0 ${720+r*44} Q540 ${680+r*44} 1080 ${720+r*44}" stroke="#D0D9E8" stroke-opacity="${.05+r*.012}" stroke-width="10"/>`;return `<div class="art sq" data-id="d22">
- ${bgNavy(svg(1080,1080,seats))}
- ${glow(360,380,420,.25)}
- ${cut(k,0,200,{w})}
- <div class="a occ" style="right:64px;top:250px;background:#1C1F26;padding:16px 22px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 30px rgba(0,0,0,.4)"><svg width="52" height="48">${bars(4)}</svg><span class="lbl">Full bars</span></div>
+D.d22=()=>{const p=P("22");return `<div class="art sq" data-id="d22">${base("")}
+ ${ph5("d22b",{x:0,y:0,w:1080,h:1040},{fx:.5,fy:.4,fade:[["b",120]]})}
+ <div class="a" style="inset:0;background:linear-gradient(200deg,rgba(28,35,52,0) 30%,rgba(28,35,52,.92) 62%)"></div>
+ ${glass(760,480,`<svg width="200" height="150" style="display:block">${[0,1,2,3].map(i=>`<rect x="${i*52}" y="${150-(i+1)*36}" width="36" height="${(i+1)*36}" fill="#84C73D"/>`).join("")}</svg><div class="lbl" style="margin-top:14px">Full bars</div>`,"padding:26px")}
  ${logo()}
  ${K(M,640,"Caps Lock Day")}
- ${T(M,682,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:850px;display:flex;gap:12px">${["Design","Install","Tune"].map(c=>`<span class="chip">${c}</span>`).join("")}</div>
- ${CTA("Let's talk venues","right:64px;top:850px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
+ ${T(M,682,640,p.h1,p.h2)}
+ <div class="a" style="left:64px;top:860px;display:flex;gap:12px">${["Design","Install","Tune"].map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+ ${WEBONLY("left:64px;bottom:64px")}
+ ${CTA("Let's talk venues","right:64px;bottom:64px")}</div>`};
 
-D.d23=()=>{const p=P("23"),k="d23",h=700,w=cw(k,h);return `<div class="art sq" data-id="d23">
- ${bgNavy(`<div class="a" style="inset:0;background:repeating-linear-gradient(115deg,rgba(208,217,232,.0) 0 90px,rgba(208,217,232,.07) 90px 150px,rgba(208,217,232,0) 150px 230px)"></div><div class="a grid" style="inset:0;opacity:.5"></div>`)}
- ${floor(1080-w/2,1060,w)}
- ${cut(k,1080-w,1080-h-10,{h})}
- ${logo()}
- ${K(M,220,"Did you know Friday")}
- <div class="a t" style="left:64px;top:262px;width:380px"><span>Green</span><span>builds</span><span class="g">block</span><span class="g">signal</span></div>
- ${Sx(M,600,340,"Coatings that keep heat out also keep signal out.")}
- ${CTA("Talk to an engineer","left:64px;top:780px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
+D.d23=()=>{const p=P("23");return `<div class="art sq" data-id="d23">${base("")}
+ <div class="a" style="inset:0;background:repeating-linear-gradient(115deg,rgba(208,217,232,0) 0 90px,rgba(208,217,232,.06) 90px 150px,rgba(208,217,232,0) 150px 230px)"></div>
+ ${ph5("d23",{x:0,y:0,w:620,h:1080},{fx:.59,fy:.38,fade:[["r",160]]})}
+ ${glass(380,700,`<div class="k">Low-E glass</div><div class="mono" style="margin-top:8px;color:#FEFEFE">up to −40 dB</div>`,"width:330px")}
+ ${logo(866,64)}
+ ${K(600,220,"Did you know Friday")}
+ <div class="a t" style="left:600px;top:262px;width:416px"><span>Green</span><span>builds</span><span class="g">block</span><span class="g">signal</span></div>
+ ${Sx(760,600,256,"Coatings that keep heat out keep signal out.")}
+ ${CTA("Talk to an engineer","right:64px;bottom:64px")}</div>`};
 
-D.d26=()=>{const k="d26",w=1000,h=ch(k,w);return `<div class="art sq" data-id="d26">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${glow(600,480,440,.18)}
- ${cut(k,140,420,{w:880,st:"transform:rotate(-6deg)"})}
+D.d26=()=>{return `<div class="art sq" data-id="d26">${base("grid")}
+ ${ph5("hm_3d",{x:0,y:400,w:1080,h:560},{fx:.5,fy:.5,fade:[["t",180],["b",140]],grade:0})}
+ ${glowsvg(1080,1080,arcs(540,1080,5,100,500,"#84C73D",.4,2))}
  ${logo()}
  ${K(M,200,"Healthcare DAS")}
- ${T(M,242,952,"60+ hospital","systems delivered")}
- ${K(M,880,"Coverage prediction · public safety 700 MHz","color:#9DAFCB")}
+ ${T(M,242,700,"60+ hospital","systems delivered")}
+ ${glass(700,500,`<div class="k">Predicted</div><div class="lbl" style="margin-top:8px">700 MHz coverage</div>`,"width:316px")}
  ${CTA("Talk about your campus","left:64px;bottom:64px")}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
-D.d27=()=>{const p=P("27"),k="d27",h=1000,w=cw(k,h);return `<div class="art sq" data-id="d27">
- ${bgNavy(svg(1080,1080,contour(860,420,9,52,2,.2)))}
- ${glow(900,300,300,.25)}
- ${cut(k,900-w/2,80,{h})}
+D.d27=()=>{const p=P("27");return `<div class="art sq" data-id="d27">${base("")}
+ ${svg(1080,1080,contour(300,700,9,52,2,.18))}
+ ${ph5("d27",{x:600,y:0,w:480,h:1080},{fx:.5,fy:.45,fade:[["l",200]]})}
+ ${glowsvg(1080,1080,arcs(860,120,4,60,60,"#84C73D",.9,3))}
  ${logo()}
  ${K(M,220,"Tower Tuesday")}
- <div class="a" style="left:64px;top:262px;display:flex;gap:16px">${["9","1","1"].map(n=>`<span class="n" style="width:160px;height:210px;border:4px solid var(--g);display:grid;place-items:center;background:rgba(28,31,38,.5)">${n}</span>`).join("")}</div>
- <div class="a t" style="left:64px;top:510px;width:690px"><span>Calls are</span><span class="g">mostly mobile</span></div>
- ${Sx(M,700,560,"In many areas, 80% or more of 911 calls come from mobile phones.")}
+ <div class="a" style="left:64px;top:262px;display:flex;gap:16px">${["9","1","1"].map(n=>`<span class="n glass" style="position:relative;width:160px;height:210px;display:grid;place-items:center;padding:0">${n}</span>`).join("")}</div>
+ <div class="a t" style="left:64px;top:510px;width:560px"><span>Calls are</span><span class="g">mostly mobile</span></div>
+ ${Sx(M,760,520,"In many areas, 80% or more of 911 calls come from mobile phones.")}
  ${CTA("Talk to our tower team","left:64px;bottom:64px")}</div>`};
 
-D.d28=()=>{const p=P("28"),k="d28",h=600,w=cw(k,h);return `<div class="art sq" data-id="d28">
- ${bgNavy(svg(1080,1080,arcs(540,300,10,56,240,"#D0D9E8",.2,2)))}
- ${cut(k,540-w/2+120,0,{h})}
- ${K(64,650,"National First Responders Day","width:952px;text-align:center")}
- <div class="a t" style="left:64px;top:692px;width:952px;text-align:center"><span>${esc(p.h1)}</span><span class="g">${esc(p.h2)}</span></div>
- ${Sx(140,856,800,"To the teams who work inside the buildings we build: thank you. Keeping your radios working is our job.","text-align:center")}
+D.d28=()=>{const p=P("28");return `<div class="art sq" data-id="d28">${base("")}
+ ${ph5("d28",{x:0,y:0,w:1080,h:640},{fx:.55,fy:.4,fade:[["b",220]]})}
+ ${glowsvg(1080,1080,arcs(540,640,6,70,300,"#84C73D",.45,2))}
  ${logo()}
- ${WEBONLY("right:64px;bottom:64px","right")}</div>`};
+ ${K(64,640,"National First Responders Day","width:952px;text-align:center")}
+ <div class="a t" style="left:64px;top:682px;width:952px;text-align:center"><span>${esc(p.h1)}</span><span class="g">${esc(p.h2)}</span></div>
+ ${Sx(140,846,800,"To the teams who work inside the buildings we build: thank you.","text-align:center")}
+ ${WEBONLY("left:64px;bottom:64px;width:952px","center")}</div>`};
 
-D.d29=()=>{const p=P("29"),k="d29",w=760,h=ch(k,w);return `<div class="art sq" data-id="d29" style="background:var(--deep)">
- <div class="a grid" style="inset:0;opacity:.6"></div>
- ${floor(w/2,1080-40,w)}
- ${cut(k,0,1080-h-40,{w})}
- <div class="a mono" style="left:560px;top:180px;width:456px;background:#11141A;border:2px solid rgba(132,199,61,.5);padding:24px 26px;color:#9DD45C;box-shadow:0 24px 40px rgba(0,0,0,.45)">
-  <div style="color:#8A93A3">OCT 29, 1969</div><div>&gt; LOGIN</div><div>&gt; L</div><div>&gt; O</div><div style="color:#F29A9A">&gt; LOST_</div></div>
+D.d29=()=>{const p=P("29");return `<div class="art sq" data-id="d29" style="background:var(--deep)">${base("grid","opacity:.5")}
+ ${ph5("d29",{x:460,y:0,w:620,h:1080},{fx:.42,fy:.55,fade:[["l",240]]})}
+ ${glass(360,560,`<div class="mono" style="color:#9DD45C"><div style="color:#8A93A3">OCT 29, 1969</div><div style="color:#8A93A3">UCLA → SRI</div><div>&gt; SEND LOGIN</div><div>&nbsp; L &nbsp;received</div><div>&nbsp; O &nbsp;received</div><div style="color:#F29A9A">&nbsp; G &nbsp;CRASH_</div></div>`,"width:420px;background:rgba(17,20,26,.78)")}
  ${logo()}
  ${K(M,200,"International Internet Day")}
- <div class="a t" style="left:64px;top:242px;width:460px"><span>First</span><span>message</span><span class="g">dropped</span><span class="g">at LO</span></div>
- ${CTA("Talk to an RF engineer","right:64px;bottom:64px")}</div>`};
+ ${T(M,242,540,p.h1,p.h2)}
+ ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
 
-D.d31=()=>{const p=P("31"),k="d31",h=900,w=cw(k,h);return `<div class="art sq" data-id="d31" style="background:var(--deep)">
- <div class="a" style="inset:0;background:radial-gradient(70% 60% at 78% 20%,#3a2f4a 0%,#1C1F26 70%)"></div>
- ${svg(1080,1080,arcs(800,150,8,60,30,"#84C73D",.55,2))}
- ${floor(800,1020,w*1.4)}
- ${cut(k,800-w/2,1020-h,{h,base:1})}
+D.d31=()=>{const p=P("31");return `<div class="art sq" data-id="d31" style="background:var(--deep)">${base("")}
+ ${ph5("d31",{x:440,y:0,w:640,h:1080},{fx:.5,fy:.55,fade:[["l",320]],grade:0})}
+ <div class="a" style="left:440px;top:0;width:640px;height:1080px;background:linear-gradient(90deg,rgba(28,35,52,.9),rgba(28,35,52,0) 50%)"></div>
+ ${glowsvg(1080,1080,arcs(760,540,5,60,40,"#84C73D",.85,3))}
  ${logo()}
  ${K(M,300,"Happy Halloween")}
- <div class="a t" style="left:64px;top:342px;width:560px"><span>No tricks</span><span class="g">just signal</span></div>
- ${Sx(M,520,520,"The only dead zones we like are in haunted houses.")}
+ ${T(M,342,560,p.h1,p.h2)}
+ ${Sx(M,520,440,"The only dead zones we like are in haunted houses.")}
  ${CTA("Let's talk coverage","left:64px;bottom:64px")}
- ${WEBONLY("left:64px;top:700px")}</div>`};
+ ${WEBONLY("left:64px;top:720px")}</div>`};
 
-/* carousel covers and cut-out slides */
-const COVER={
- c07:()=>{const k="c07",h=1130,w=cw(k,h);return `<div class="a grid" style="inset:0"></div>
-  ${svg(1080,1350,arcs(1080-w/2,560,9,70,120,"#84C73D",.28,2))}
-  ${cut(k,1080-w,1350-h,{h})}
+/* ================= v5 carousel covers ================= */
+const COVER5={
+ c07:()=>`${base("grid")}
+  ${ph5("c07w",{x:300,y:0,w:780,h:960},{fx:.5,fy:.3,ay:.35,fade:[["l",260],["b",260]]})}
   ${logo()}
-  ${K(M,330,"Fire Prevention Week · Swipe")}
-  <div class="a n" style="left:64px;top:372px">5</div>
-  <div class="a t" style="left:64px;top:580px;width:500px"><span>Areas we</span><span class="g">always</span><span class="g">test</span></div>
-  ${Sx(M,830,460,"Codes hold these spaces to a higher standard, so we do too.")}`},
- c14:()=>{const k="c14",w=900,h=ch(k,w);return `<div class="a dots" style="inset:0"></div>
-  ${svg(1080,1350,arcs(540,1350,10,70,180,"#84C73D",.3,2))}
-  ${floor(540,1350-10,w)}
-  ${cut(k,540-w/2,1350-h,{w})}
+  ${K(M,560,"Fire Prevention Week · Swipe")}
+  <div class="a n" style="left:64px;top:602px;text-shadow:0 24px 48px rgba(0,0,0,.5)">5</div>
+  <div class="a t" style="left:64px;top:800px;width:640px"><span>Areas we</span><span class="g">always test</span></div>
+  ${Sx(M,980,640,"Codes hold these spaces to a higher standard, so we do too.")}`,
+ c14:()=>`${base("dots")}
+  ${ph5("c14",{x:180,y:470,w:900,h:816},{fx:.5,fy:.4,fade:[["l",160],["t",120]]})}
   ${logo()}
   ${K(M,200,"World Standards Day · Phrasebook")}
   ${T(M,242,952,"We speak","fire code")}
-  <div class="a" style="left:64px;top:430px;display:flex;flex-wrap:wrap;gap:12px;width:952px">${CODES.map((c,i)=>`<span class="chip ${i==0?"on":""}">${c[0]}</span>`).join("")}</div>`},
- c21:()=>{const k="c21c",w=940,h=ch(k,w);return `<div class="a lat" style="inset:0"></div>
-  ${glow(540,500,460,.2)}
-  ${floor(540,150+h,w)}
-  ${cut(k,70,150,{w})}
-  <div class="a" style="left:0;top:${h+190}px;width:1080px;height:48px;background:${tape};box-shadow:0 14px 24px rgba(0,0,0,.35)"></div>
+  <div class="a" style="left:64px;top:600px;display:grid;gap:12px;justify-items:start">${CODES.map((c,i)=>`<span class="chip glass ${i==0?"on":""}" style="position:relative">${c[0]}</span>`).join("")}</div>`,
+ c21:()=>`${base("lat")}
+  ${ph5("c21",{x:260,y:380,w:820,h:970},{fx:.5,fy:0,ay:0,fade:[["l",220],["t",200]]})}
+  <div class="a occ" style="left:-60px;top:560px;width:1200px;height:52px;background:${tape};transform:rotate(-8deg);box-shadow:0 18px 30px rgba(0,0,0,.45)"></div>
   ${logo()}
-  ${K(M,h+290,"Pre-construction · Swipe")}
-  ${T(M,h+332,952,"Call before","the drywall")}`},
- c30:()=>{const k="c30",h=740,w=cw(k,h);return `<div class="a dots" style="inset:0"></div>
-  ${cut(k,1080-w,1350-h,{h})}
+  ${K(M,200,"Pre-construction · Swipe")}
+  ${T(M,242,952,"Call before","the drywall")}
+  ${Sx(M,420,640,"What we plan during design, so coverage is never a retrofit.")}`,
+ c30:()=>`${base("dots")}
+  ${ph5("c30",{x:0,y:600,w:1080,h:750},{fx:.6,fy:.55,fade:[["t",220]]})}
   ${logo()}
-  <div class="a occ" style="left:64px;top:400px;width:620px;background:#FEFEFE;padding:52px 48px 44px;box-shadow:0 40px 80px rgba(0,0,0,.45)">
+  <div class="a occ" style="left:64px;top:240px;width:640px;background:#FEFEFE;padding:52px 48px 44px;box-shadow:0 40px 80px rgba(0,0,0,.5)">
    <div style="position:absolute;left:50%;top:-28px;transform:translateX(-50%);width:180px;height:52px;background:var(--gun);border-radius:6px"></div>
    <div class="k" style="color:#4B7F16">National Checklist Day</div>
    <div class="t" style="color:#2A3852;margin-top:14px"><span>Inspection</span><span style="color:#4B7F16">checklist</span></div>
-   <div class="s" style="margin-top:26px;color:#434853">Five things to confirm before your fire authority walks the building.</div></div>`}
+   <div class="s" style="margin-top:26px;color:#434853">Five things to confirm before your fire authority walks the building.</div></div>`
 };
 
-/* reel covers */
-D.r04=()=>{const p=P("04");return `<div class="art st" data-id="r04">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${svg(1080,1920,arcs(540,500,9,70,120,"#84C73D",.3,2))}
- ${glow(540,620,520,.22)}
- <div class="a" style="left:110px;top:280px;width:860px;height:640px;perspective:1600px"><div style="transform:rotateX(52deg) rotateZ(-18deg);transform-origin:center">${cut("hm_floor",0,0,{w:860,card:1,st:"position:relative"})}</div></div>
- ${tag(640,250,"Predicted coverage")}
+/* ================= v5 reel covers ================= */
+D.r04=()=>{const p=P("04"),st=["Model the building","Map what blocks signal","Predict coverage","Build, test, hand off"];return `<div class="art st" data-id="r04">${base("grid")}
+ ${ph5("r04",{x:40,y:660,w:1040,h:1260},{fx:.5,fy:.5,fade:[["t",300],["l",120]]})}
  ${logo()}
- ${K(M,1250,"Fire Prevention Week · Watch")}
- ${T(M,1292,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:1500px;display:grid;grid-template-columns:1fr 1fr;gap:16px;width:952px">${["Model the building","Map what blocks signal","Predict coverage","Build, test, hand off"].map((s,i)=>`<div style="border:2px solid rgba(208,217,232,.3);padding:22px;background:rgba(28,31,38,.4)"><div class="k">Step 0${i+1}</div><div class="s" style="margin-top:10px">${s}</div></div>`).join("")}</div>
+ ${K(M,200,"Fire Prevention Week · Watch")}
+ ${T(M,242,952,p.h1,p.h2)}
+ <div class="a" style="left:64px;top:470px;display:grid;grid-template-columns:1fr 1fr;gap:16px;width:952px">${st.map((s,i)=>`<div class="glass" style="padding:22px"><div class="k">Step 0${i+1}</div><div class="s" style="margin-top:10px">${s}</div></div>`).join("")}</div>
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
-D.r11=()=>{const p=P("11"),k="r11",h=700,w=cw(k,h);return `<div class="art st" data-id="r11" style="background:var(--deep)">
- ${svg(1080,1920,wave(1080,760,90,160,"#84C73D",.5,4)+wave(1080,760,50,70,"#E88A20",.45,3,2))}
- ${glow(540,560,420,.18)}${floor(540,960,w*1.6)}${cut(k,540-w/2,260,{h,base:1})}
- ${svg(1080,1920,wave(1080,1100,60,140,"#84C73D",.9,4))}
+D.r11=()=>{const p=P("11");return `<div class="art st" data-id="r11" style="background:var(--deep)">${base("","")}
+ ${ph5("r11",{x:0,y:0,w:900,h:1300},{fx:.5,fy:.4,fade:[["r",220],["b",320]]})}
+ ${glowsvg(1080,1920,wave(1080,1180,70,150,"#84C73D",.95,4)+wave(1080,1180,36,64,"#E88A20",.8,3,2))}
  ${logo()}
  ${K(M,1380,"Spooky season · Watch")}
  ${T(M,1422,952,p.h1,p.h2)}
  ${Sx(M,1600,952,"Like ghost hunters, with better equipment.")}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
-D.r18=()=>{const p=P("18"),k="r18",h=1300,w=cw(k,h);return `<div class="art st" data-id="r18">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- ${cut(k,1080-w,120,{h})}
- ${svg(1080,1920,`<g stroke="#84C73D" stroke-width="5"><circle cx="${1080-w/2}" cy="420" r="150"/><path d="M${1080-w/2} 230v100M${1080-w/2} 510v100M${1080-w/2-190} 420h100M${1080-w/2+90} 420h100"/></g>`)}
+D.r18=()=>{const p=P("18");return `<div class="art st" data-id="r18">${base("dots")}
+ ${ph5("r18",{x:280,y:0,w:800,h:1500},{fx:.55,fy:.35,ax:.5,ay:.35,fade:[["l",260],["b",280]]})}
+ ${glowsvg(1080,1920,`<g stroke="#FEFEFE" stroke-width="5"><circle cx="720" cy="440" r="150"/><path d="M720 250v100M720 530v100M530 440h100M810 440h100"/></g>`)}
  ${logo()}
- ${K(64,1480,"Watch till the end")}
+ ${K(M,1480,"Watch till the end")}
  ${T(M,1522,952,p.h1,p.h2)}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
-D.r25=()=>{const p=P("25"),k="r25",w=700,h=ch(k,w),st=["Site work","Steel","Antennas","Power, test"];return `<div class="art st" data-id="r25">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${cut(k,1080-w,0,{w})}
+D.r25=()=>{const p=P("25"),st=["Site work","Steel","Antennas","Power, test"];return `<div class="art st" data-id="r25">${base("lat")}
+ ${ph5("r25",{x:200,y:0,w:880,h:1400},{fx:.65,fy:.4,fade:[["l",300],["b",300]]})}
+ <div class="a" style="left:64px;top:300px;width:420px">
+  <div style="position:absolute;left:14px;top:14px;bottom:14px;width:4px;background:rgba(208,217,232,.35)"></div>
+  ${st.map((s,i)=>`<div style="position:relative;display:flex;align-items:center;gap:22px;margin-bottom:${i<3?110:0}px"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:var(--g);box-shadow:0 0 18px rgba(132,199,61,.8)"></span><span class="lbl glass" style="padding:14px 18px">${s}</span></div>`).join("")}</div>
  ${logo()}
- ${K(M,1370,"Turnkey tower build · Watch")}
- ${T(M,1412,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:1610px;width:952px">
-  <div style="position:absolute;left:15px;right:15px;top:13px;height:4px;background:rgba(208,217,232,.3)"></div>
-  <div style="display:flex;justify-content:space-between;position:relative">${st.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==st.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div>
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-
-/* ===== v4: pop-out photos (background removed only above the subject) + big brand graphics ===== */
-const PM = window.POPMETA;
-const shadow4 = "filter:drop-shadow(0 30px 40px rgba(0,0,0,.45)) drop-shadow(0 6px 12px rgba(0,0,0,.3))";
-function pop(k,x,y,{h,w,st="",base=0}){const m=PM[k];if(h==null)h=Math.round(w*m.h/m.w);if(w==null)w=Math.round(h*m.w/m.h);
- return `<img class="cut" data-k="${k}" data-base="${base?1:0}" src="pop/${k}.png" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${shadow4};${st}">`}
-const pw=(k,h)=>Math.round(h*PM[k].w/PM[k].h), phh=(k,w)=>Math.round(w*PM[k].h/PM[k].w);
-const G={
- /* concentric brand rings: slate band, green line, deep core */
- rings:(cx,cy,r)=>svg(W,2000,`<defs><radialGradient id="rg${cx}${cy}"><stop offset="0" stop-color="#3C5072"/><stop offset="1" stop-color="#2A3852"/></radialGradient></defs>
-  <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#rg${cx}${cy})"/><circle cx="${cx}" cy="${cy}" r="${r+34}" stroke="#84C73D" stroke-width="10"/>
-  <circle cx="${cx}" cy="${cy}" r="${r+90}" stroke="#3C5072" stroke-width="44" stroke-opacity=".7"/><circle cx="${cx}" cy="${cy}" r="${r+170}" stroke="#D0D9E8" stroke-opacity=".12" stroke-width="3"/>`),
- /* solid Apple Green disc */
- disc:(cx,cy,r,op=1)=>svg(W,2000,`<circle cx="${cx}" cy="${cy}" r="${r}" fill="#84C73D" fill-opacity="${op}"/><circle cx="${cx}" cy="${cy}" r="${r+26}" stroke="#84C73D" stroke-opacity=".35" stroke-width="4"/>`),
- /* giant signal bars */
- bars:(x,base,bw,gap,hmax)=>svg(W,2000,[0,1,2,3].map(i=>`<rect x="${x+i*(bw+gap)}" y="${base-hmax*(i+1)/4}" width="${bw}" height="${hmax*(i+1)/4}" fill="${i==3?"#84C73D":"#3C5072"}"/>`).join("")),
- /* giant RF broadcast: thick arcs from a point */
- broadcast:(cx,cy,r0,step,n=4)=>svg(W,2000,Array.from({length:n},(_,i)=>`<path d="M${cx-(r0+i*step)*.7} ${cy-(r0+i*step)*.7}A${r0+i*step} ${r0+i*step} 0 0 1 ${cx+(r0+i*step)*.7} ${cy-(r0+i*step)*.7}" stroke="${i%2?"#3C5072":"#84C73D"}" stroke-width="${i%2?46:22}" stroke-linecap="round"/>`).join("")+`<circle cx="${cx}" cy="${cy}" r="${r0*.45}" fill="#84C73D"/>`),
- /* big hexagon, slate fill with green edge */
- hex:(cx,cy,r)=>{const p=[...Array(6)].map((_,i)=>{const a=Math.PI/3*i-Math.PI/2;return `${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`}).join(" ");const p2=[...Array(6)].map((_,i)=>{const a=Math.PI/3*i-Math.PI/2;return `${(cx+(r+40)*Math.cos(a)).toFixed(1)},${(cy+(r+40)*Math.sin(a)).toFixed(1)}`}).join(" ");return svg(W,2000,`<polygon points="${p}" fill="#3C5072"/><polygon points="${p2}" stroke="#84C73D" stroke-width="8"/>`)},
- /* giant sine band */
- band:(y,amp,len,th)=>{let d=`M0 ${y}`;for(let x=0;x<=W;x+=8)d+=` L${x} ${(y+Math.sin(x/len*2*Math.PI)*amp).toFixed(1)}`;return svg(W,2000,`<path d="${d}" stroke="#3C5072" stroke-width="${th}"/><path d="${d}" stroke="#84C73D" stroke-width="10" transform="translate(0 ${th/2+14})"/>`)},
- /* big green slab, slanted */
- slab:(x0,x1,y0,y1,sk=80)=>svg(W,2000,`<polygon points="${x0+sk},${y0} ${x1+sk},${y0} ${x1-sk},${y1} ${x0-sk},${y1}" fill="#84C73D"/>`),
- /* EWS tower mark, huge and faint */
- mark:(x,y,w,op=.1)=>`<img src="logo-white.svg" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;opacity:${op}">`
-};
-
-D.d01=()=>{const p=P("01"),k="d01",w=760,h=phh(k,w);return `<div class="art sq" data-id="d01">
- ${bgNavy(`<div class="a grid" style="inset:0;opacity:.7"></div>`)}
- ${G.rings(740,300,210)}
- ${pop(k,1080-w,600-h,{w})}
- ${logo()}
- ${K(M,660,"National Fire Pup Day")}
- ${T(M,702,600,p.h1,p.h2)}
- ${Sx(700,702,316,"Dalmatians cleared the road for fire crews. We clear the signal indoors.")}
- ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}
- ${FOOT("right:64px;bottom:64px","right")}</div>`};
-
-D.d03=()=>{const p=P("03"),k="d03",w=640,h=phh(k,w);return `<div class="art sq" data-id="d03">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- ${G.disc(300,1080-h+120,280)}
- ${pop(k,0,1080-h,{w})}
- ${logo()}
- ${K(560,96,"National Techies Day","width:456px;text-align:right")}
- ${T(M,200,952,p.h1,p.h2)}
- ${Sx(700,440,316,"Tower climbers to iBwave certified RF engineers. Where's your best job-site view?")}
- ${CTA("Talk to our team","right:64px;top:760px")}
- ${FOOT("right:64px;bottom:64px","right")}</div>`};
-
-D.d05=()=>{const p=P("05"),k="d05",w=540,h=phh(k,w);return `<div class="art sq" data-id="d05" style="background:var(--deep)">
- <div class="a lines" style="inset:0"></div>
- ${G.bars(560,1080-h+140,100,20,560)}
- ${pop(k,1080-w,1080-h,{w})}
- ${logo()}
- ${K(M,300,"Fire Prevention Week · Safe charging")}
- <div class="a t" style="left:64px;top:342px;width:440px"><span>Charged</span><span>up about</span><span class="g">safety</span></div>
- ${Sx(M,672,420,"EVITP certified electricians. The right circuit, the right install.")}
- ${CTA("Ask about EV installs","left:64px;bottom:64px")}
- ${WEBONLY("left:64px;top:860px")}</div>`};
-
-D.d06=()=>{const p=P("06"),k="d06",h=880,w=pw(k,h),x=0,y=1080-h;const lead=(tx,ty,px,py)=>`<path d="M${tx} ${ty}H${px+40}L${px} ${py}" stroke="#84C73D" stroke-width="3"/><circle cx="${px}" cy="${py}" r="8" fill="#84C73D"/>`;return `<div class="art sq" data-id="d06">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${G.hex(w/2,560,330)}
- ${pop(k,x,y,{h})}
- ${svg(1080,1080,lead(520,512,x+w-70,y+140)+lead(520,632,x+w-60,y+420)+lead(520,752,x+w-70,y+660))}
- ${logo()}
- ${K(520,160,"Tower Tuesday")}
- <div class="a t" style="left:520px;top:202px;width:496px"><span>From</span><span>tower to</span><span class="g">stairwell</span></div>
- ${tag(520,500,"Donor antenna")}${tag(520,620,"Head-end")}${tag(520,740,"Every floor")}
- ${CTA("Talk to an RF engineer","right:64px;bottom:64px")}
- ${WEBONLY("left:520px;top:880px")}</div>`};
-
-D.d08=()=>{const p=P("08"),k="d08",w=1080,h=phh(k,w),steps=["Survey","Design","Install","Test","Maintain"];return `<div class="art sq" data-id="d08">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${G.broadcast(540,1080-h+240,140,90,4)}
- ${pop(k,0,1080-h,{w})}
- ${logo()}
- ${CTA("Talk to an RF engineer","right:64px;top:64px")}
- ${K(M,200,"Fire Prevention Week")}
- ${T(M,242,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:430px;width:952px">
-  <div style="position:absolute;left:15px;right:15px;top:13px;height:4px;background:rgba(208,217,232,.3)"></div>
-  <div style="display:flex;justify-content:space-between;position:relative">${steps.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==steps.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div>
- ${WEBONLY("right:64px;top:520px","right")}</div>`};
-
-D.d09=()=>{const p=P("09"),k="d09",h=1000,w=pw(k,h);return `<div class="art sq" data-id="d09">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${G.slab(60,380,0,1080,90)}
- ${pop(k,0,1080-h,{h})}
- ${logo(700,64)}
- ${K(600,236,"Did you know Friday")}
- ${T(600,278,416,"From 1871","to today")}
- ${svg(416,90,`<path d="M16 30H400" stroke="#84C73D" stroke-width="4" stroke-dasharray="14 12"/><circle cx="16" cy="30" r="14" fill="#84C73D"/><circle cx="400" cy="30" r="14" fill="#2A3852" stroke="#84C73D" stroke-width="6"/>`,"left:600px;top:586px")}
- <div class="a lbl" style="left:600px;top:646px">1871</div><div class="a lbl" style="left:916px;top:646px;width:100px;text-align:right">2026</div>
- ${Sx(600,700,416,"Fire Prevention Week marks the Great Chicago Fire. Today's codes cover radio inside buildings.")}
- ${CTA("Talk to an engineer","left:600px;bottom:64px")}</div>`};
-
-D.d13=()=>{const p=P("13"),k="d13",w=760,h=phh(k,w);return `<div class="art sq" data-id="d13" style="background:var(--deep)">
- ${bgNavy("")}
- ${G.band(560,70,720,150)}
- ${pop(k,1080-w,1080-h,{w})}
- ${logo()}
- ${K(M,200,"Disaster Risk Reduction Day")}
- ${T(M,242,700,p.h1,p.h2)}
- ${Sx(M,410,440,"Inspections and upgrades that keep sites carrying calls.")}
- ${CTA("Talk to our tower team","left:64px;bottom:64px")}
- ${WEBONLY("left:64px;top:560px")}</div>`};
-
-D.d15=()=>{const p=P("15"),k="d15",h=660,w=pw(k,h);const ecg="M0 40 L180 40 L210 40 L230 6 L256 74 L278 20 L292 40 L1080 40";return `<div class="art sq" data-id="d15">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${G.rings(1080-w/2,1080-h/2,210)}
- ${svg(1080,80,`<path d="${ecg}" stroke="#84C73D" stroke-width="6" stroke-linejoin="round"/>`,"top:680px")}
- ${pop(k,1080-w,1080-h,{h})}
- ${logo()}
- ${K(M,200,"International ShakeOut Day")}
- ${T(M,242,952,"Drill day","test day")}
- ${Sx(M,440,330,"Most places require a yearly radio test. We run it and file the report.")}
- ${CTA("Book your test","left:64px;top:800px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-
-D.d16=()=>{const k="d16",w=700,h=phh(k,w);return `<div class="art sq" data-id="d16">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- <div class="a n" style="left:64px;top:200px">80%</div>
- ${G.broadcast(730,340,120,80,4)}
- ${pop(k,1080-w,620-h,{w})}
- ${logo()}
- ${T(M,700,952,"of mobile data","is used indoors")}
- ${K(M,864,"Source: Ericsson","color:#9DAFCB")}
- ${CTA("Let's talk coverage","left:64px;bottom:64px")}
- ${FOOT("right:64px;bottom:64px","right")}</div>`};
-
-D.d19=()=>{const p=P("19"),k="d19",h=960,w=pw(k,h);return `<div class="art sq" data-id="d19">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${G.hex(1080-w/2,470,300)}
- ${pop(k,1080-w,1080-h,{h})}
- ${logo()}
- ${K(M,220,"Telecom staffing")}
- <div class="a t" style="left:64px;top:262px;width:400px"><span>Need a</span><span>crew?</span><span class="g">We have</span><span class="g">one</span></div>
- <div class="a" style="left:64px;top:600px;display:grid;gap:12px;justify-items:start">${["Field technicians","RF engineers","Project support"].map((c,i)=>`<span class="chip ${i==0?"on":""}" style="background:rgba(42,56,82,.85)">${c}</span>`).join("")}</div>
- ${CTA("Tell us who you need","left:64px;top:840px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-
-D.d20=()=>{const p=P("20"),k="d20",h=700,w=pw(k,h),x=1016-w;let t="";for(let i=0;i<=24;i++){const y=i*30,maj=i%4==0;t+=`<path d="M0 ${y+2}h${maj?44:22}" stroke="${maj?"#84C73D":"#D0D9E8"}" stroke-opacity="${maj?1:.4}" stroke-width="3"/>`}return `<div class="art sq" data-id="d20">
- ${bgNavy(`<div class="a lines" style="inset:0"></div>`)}
- ${G.rings(x+w*.6,330,230)}
- ${svg(60,730,t,"left:1016px;top:120px;transform:scaleX(-1);transform-origin:30px 0")}
- ${pop(k,x,0,{h})}
- <div class="a occ" style="left:${x-40}px;top:${h-40}px;min-width:400px;width:${Math.round(w*.72)+80}px;background:#FEFEFE;color:#1C1F26;padding:18px 22px;box-shadow:0 18px 30px rgba(0,0,0,.4);display:flex;gap:14px;align-items:center"><span style="width:14px;height:14px;background:#84C73D;flex:none"></span><span class="lbl" style="color:#1C1F26">FAA filing first</span></div>
- ${logo()}
- ${K(M,220,"Air Traffic Controller Day")}
- <div class="a t" style="left:64px;top:262px;width:400px"><span>Clear</span><span>skies</span><span class="g">clear</span><span class="g">towers</span></div>
- ${Sx(M,600,Math.min(360,x-80),"Tall structures near airports often need an FAA filing first. We handle it.")}
- ${CTA("Ask about FAA filings","left:64px;bottom:64px")}</div>`};
-D.d22=()=>{const p=P("22"),k="d22",w=780,h=phh(k,w);let seats="";for(let r=0;r<9;r++)seats+=`<path d="M0 ${720+r*44} Q540 ${680+r*44} 1080 ${720+r*44}" stroke="#D0D9E8" stroke-opacity="${.05+r*.012}" stroke-width="10"/>`;return `<div class="art sq" data-id="d22">
- ${bgNavy(svg(1080,1080,seats))}
- ${G.bars(600,600,86,22,480)}
- ${pop(k,0,200,{w})}
- <div class="a occ" style="right:64px;top:250px;background:#1C1F26;padding:16px 22px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 30px rgba(0,0,0,.4)"><svg width="52" height="48">${bars(4)}</svg><span class="lbl">Full bars</span></div>
- ${logo()}
- ${K(M,640,"Caps Lock Day")}
- ${T(M,682,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:850px;display:flex;gap:12px">${["Design","Install","Tune"].map(c=>`<span class="chip">${c}</span>`).join("")}</div>
- ${CTA("Let's talk venues","right:64px;top:850px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-
-D.d23=()=>{const p=P("23"),k="d23",h=760,w=pw(k,h);return `<div class="art sq" data-id="d23">
- ${bgNavy(`<div class="a" style="inset:0;background:repeating-linear-gradient(115deg,rgba(208,217,232,0) 0 90px,rgba(208,217,232,.07) 90px 150px,rgba(208,217,232,0) 150px 230px)"></div>`)}
- ${G.slab(1080-w+80,1100,0,1080,120)}
- ${pop(k,1080-w,1080-h,{h})}
- ${logo()}
- ${K(M,220,"Did you know Friday")}
- <div class="a t" style="left:64px;top:262px;width:380px"><span>Green</span><span>builds</span><span class="g">block</span><span class="g">signal</span></div>
- ${Sx(M,600,340,"Coatings that keep heat out also keep signal out.")}
- ${CTA("Talk to an engineer","left:64px;top:780px")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-
-D.d26=()=>{const k="d26",w=880,h=phh(k,w);return `<div class="art sq" data-id="d26">
- ${bgNavy(`<div class="a grid" style="inset:0"></div>`)}
- ${G.hex(600,650,230)}
- ${pop(k,300,450,{w:700,st:"transform:rotate(-6deg)"})}
- ${logo()}
- ${K(M,200,"Healthcare DAS")}
- ${T(M,242,952,"60+ hospital","systems delivered")}
- ${CTA("Talk about your campus","left:64px;bottom:64px")}
- ${FOOT("right:64px;bottom:64px","right")}</div>`};
-
-D.d27=()=>{const p=P("27"),k="d27",h=1000,w=pw(k,h),x=1080-w;return `<div class="art sq" data-id="d27">
- ${bgNavy(svg(1080,1080,contour(860,420,9,52,2,.2)))}
- ${G.broadcast(x+w*.55,330,110,80,4)}
- ${pop(k,x,1080-h,{h})}
- ${logo()}
- ${K(M,220,"Tower Tuesday")}
- <div class="a" style="left:64px;top:262px;display:flex;gap:16px">${["9","1","1"].map(n=>`<span class="n" style="width:160px;height:210px;border:4px solid var(--g);display:grid;place-items:center;background:rgba(28,31,38,.5)">${n}</span>`).join("")}</div>
- <div class="a t" style="left:64px;top:510px;width:${x-80}px"><span>Calls are</span><span class="g">mostly mobile</span></div>
- ${Sx(M,760,x-80,"In many areas, 80% or more of 911 calls come from mobile phones.")}
- ${CTA("Talk to our tower team","left:64px;bottom:64px")}</div>`};
-
-D.d28=()=>{const p=P("28"),k="d28",h=600,w=pw(k,h);return `<div class="art sq" data-id="d28">
- ${bgNavy(svg(1080,1080,arcs(540,300,10,56,240,"#D0D9E8",.2,2)))}
- ${G.disc(540+60,300,250,.95)}
- ${pop(k,540-w/2+60,0,{h})}
- ${logo()}
- ${K(64,650,"National First Responders Day","width:952px;text-align:center")}
- <div class="a t" style="left:64px;top:692px;width:952px;text-align:center"><span>${esc(p.h1)}</span><span class="g">${esc(p.h2)}</span></div>
- ${Sx(140,856,800,"To the teams who work inside the buildings we build: thank you. Keeping your radios working is our job.","text-align:center")}
- ${WEBONLY("right:64px;bottom:64px","right")}</div>`};
-
-D.d29=()=>{const p=P("29"),k="d29",w=700,h=phh(k,w);return `<div class="art sq" data-id="d29" style="background:var(--deep)">
- <div class="a grid" style="inset:0;opacity:.6"></div>
- ${G.band(880,40,540,110)}
- ${pop(k,0,1080-h,{w})}
- <div class="a mono" style="left:560px;top:440px;width:456px;background:#11141A;border:2px solid rgba(132,199,61,.5);padding:22px 24px;color:#9DD45C;box-shadow:0 24px 40px rgba(0,0,0,.45)">
-  <div style="color:#8A93A3">OCT 29, 1969</div><div style="color:#8A93A3">UCLA → SRI</div><div>&gt; SEND LOGIN</div><div>&nbsp; L &nbsp;received</div><div>&nbsp; O &nbsp;received</div><div style="color:#F29A9A">&nbsp; G &nbsp;CRASH_</div></div>
- ${logo()}
- ${K(M,200,"International Internet Day")}
- ${T(M,242,952,p.h1,p.h2)}
- ${CTA("Talk to an RF engineer","right:64px;bottom:64px")}</div>`};
-
-D.d31=()=>{const p=P("31"),k="d31",h=1000,w=pw(k,h);return `<div class="art sq" data-id="d31" style="background:var(--deep)">
- <div class="a" style="inset:0;background:radial-gradient(70% 60% at 78% 20%,#33304a 0%,#1C1F26 70%)"></div>
- ${G.broadcast(820,260,120,84,4)}
- ${floor(1080-w/2,1060,w*1.6)}
- ${pop(k,1080-w,1080-h,{h})}
- ${logo()}
- ${K(M,300,"Happy Halloween")}
- <div class="a t" style="left:64px;top:342px;width:${1080-w-120}px"><span>No tricks</span><span class="g">just signal</span></div>
- ${Sx(M,520,480,"The only dead zones we like are in haunted houses.")}
- ${CTA("Let's talk coverage","left:64px;bottom:64px")}
- ${WEBONLY("left:64px;top:700px")}</div>`};
-
-Object.assign(COVER,{
- c07:()=>{const k="c07",h=1100,w=pw(k,h);return `<div class="a grid" style="inset:0"></div>
-  ${G.disc(1080-w/2,560,300)}
-  ${pop(k,1080-w,1350-h,{h})}
-  ${logo()}
-  ${K(M,330,"Fire Prevention Week · Swipe")}
-  <div class="a n" style="left:64px;top:372px">5</div>
-  <div class="a t" style="left:64px;top:580px;width:480px"><span>Areas we</span><span class="g">always</span><span class="g">test</span></div>
-  ${Sx(M,830,440,"Codes hold these spaces to a higher standard, so we do too.")}`},
- c14:()=>{const k="c14",w=1080,h=phh(k,w);return `<div class="a dots" style="inset:0"></div>
-  ${G.rings(560,1350-h+260,300)}
-  ${pop(k,0,1350-h,{w})}
-  ${logo()}
-  ${K(M,200,"World Standards Day · Phrasebook")}
-  ${T(M,242,952,"We speak","fire code")}
-  <div class="a" style="left:64px;top:430px;display:flex;flex-wrap:wrap;gap:12px;width:952px">${CODES.map((c,i)=>`<span class="chip ${i==0?"on":""}">${c[0]}</span>`).join("")}</div>`},
- c21:()=>{const k="c21c",w=1000,h=phh(k,w);return `<div class="a lat" style="inset:0"></div>
-  ${G.slab(200,900,0,h,100)}
-  ${pop(k,40,0,{w})}
-  <div class="a" style="left:0;top:${h+40}px;width:1080px;height:48px;background:${tape};box-shadow:0 14px 24px rgba(0,0,0,.35)"></div>
-  ${logo(64,h+130)}
-  ${K(M,h+230,"Pre-construction · Swipe")}
-  ${T(M,h+272,952,"Call before","the drywall")}`},
- c30:()=>{const k="c30",h=780,w=pw(k,h);return `<div class="a dots" style="inset:0"></div>
-  ${G.hex(1080-w/2,1350-h+160,260)}
-  ${pop(k,1080-w,1350-h,{h})}
-  ${logo()}
-  <div class="a occ" style="left:64px;top:400px;width:620px;background:#FEFEFE;padding:52px 48px 44px;box-shadow:0 40px 80px rgba(0,0,0,.45)">
-   <div style="position:absolute;left:50%;top:-28px;transform:translateX(-50%);width:180px;height:52px;background:var(--gun);border-radius:6px"></div>
-   <div class="k" style="color:#4B7F16">National Checklist Day</div>
-   <div class="t" style="color:#2A3852;margin-top:14px"><span>Inspection</span><span style="color:#4B7F16">checklist</span></div>
-   <div class="s" style="margin-top:26px;color:#434853">Five things to confirm before your fire authority walks the building.</div></div>`}
-});
-
-D.r11=()=>{const p=P("11"),k="r11",h=700,w=pw(k,h);return `<div class="art st" data-id="r11" style="background:var(--deep)">
- ${G.band(560,90,360,150)}
- ${svg(1080,1920,wave(1080,760,50,70,"#E88A20",.5,3,2))}
- ${floor(540,1250,w*.7)}${pop(k,540-w/2,1250-h,{h,base:1})}
- ${logo()}
- ${K(M,1380,"Spooky season · Watch")}
- ${T(M,1422,952,p.h1,p.h2)}
- ${Sx(M,1600,952,"Like ghost hunters, with better equipment.")}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-D.r18=()=>{const p=P("18"),k="r18",h=1340,w=pw(k,h),x=1080-w;return `<div class="art st" data-id="r18">
- ${bgNavy(`<div class="a dots" style="inset:0"></div>`)}
- ${G.disc(x+w*.5,560,340,.9)}
- ${pop(k,x,1380-h,{h})}
- ${svg(1080,1920,`<g stroke="#FEFEFE" stroke-width="5"><circle cx="${x+w*.5}" cy="420" r="150"/><path d="M${x+w*.5} 230v100M${x+w*.5} 510v100M${x+w*.5-190} 420h100M${x+w*.5+90} 420h100"/></g>`)}
- ${logo()}
- ${K(64,1480,"Watch till the end")}
- ${T(M,1522,952,p.h1,p.h2)}
- ${WEBONLY("left:64px;bottom:64px")}</div>`};
-D.r25=()=>{const p=P("25"),k="r25",w=760,h=phh(k,w),st=["Site work","Steel","Antennas","Power, test"];return `<div class="art st" data-id="r25">
- ${bgNavy(`<div class="a lat" style="inset:0"></div>`)}
- ${G.hex(1080-w/2,560,300)}
- ${pop(k,1080-w,0,{w})}
- ${logo()}
- ${K(M,1370,"Turnkey tower build · Watch")}
- ${T(M,1412,952,p.h1,p.h2)}
- <div class="a" style="left:64px;top:1610px;width:952px">
-  <div style="position:absolute;left:15px;right:15px;top:13px;height:4px;background:rgba(208,217,232,.3)"></div>
-  <div style="display:flex;justify-content:space-between;position:relative">${st.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==st.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div>
+ ${K(M,1450,"Turnkey tower build · Watch")}
+ ${T(M,1492,952,p.h1,p.h2)}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 
 const order=["d01","d02","d03","d05","d06","d08","d09","d12","d13","d15","d16","d19","d20","d22","d23","d26","d27","d28","d29","d31","c07","c14","c21","c30","r04","r11","r18","r25"];
@@ -1811,20 +745,16 @@ Promise.all([document.fonts.ready,...[...document.images].map(i=>i.complete?1:ne
  /* one photo per post: a carousel's slides must not repeat a photo */
  const byPost={};document.querySelectorAll(".art").forEach(a=>{const post=a.dataset.id.split("-")[0];(a.dataset.photos||"").split(",").filter(Boolean).forEach(k=>{(byPost[post]=byPost[post]||[]).push(k)})});
  for(const p in byPost){const l=byPost[p];if(new Set(l).size!==l.length)qa.push(`${p}: a photo is used more than once`)}
- /* v3: cut-outs — faces and heads never cropped or covered, cut edges hidden, no upscaling */
+ /* v5: faces and heads fully inside the solid part of their photo section, never under text or cards */
  document.querySelectorAll(".art").forEach(art=>{const id=art.dataset.id,A=art.getBoundingClientRect(),H=A.height;
-  const txt=[...art.querySelectorAll(".k,.t,.s,.cta,.f,.n,.lbl,.chip,.logo,.mono,.occ")].map(e=>{const r=e.getBoundingClientRect();return{e,x:r.left-A.left,y:r.top-A.top,r:r.right-A.left,b:r.bottom-A.top}});
-  const occ=txt.filter(o=>o.e.classList.contains("occ"));
-  art.querySelectorAll("img.cut").forEach(im=>{const k=im.dataset.k,m=(im.src.includes("/pop/")?POPMETA:CUTMETA)[k],r=im.getBoundingClientRect(),x=r.left-A.left,y=r.top-A.top,w=r.width,h=r.height;
-   const sc=parseFloat(im.style.width)/im.naturalWidth;if(sc>1.25)qa.push(`${id}: cut-out ${k} upscaled ${sc.toFixed(2)}x`);
-   (m.faces||[]).forEach(f=>{const fx=x+f[0]*w,fy=y+f[1]*h,fw=f[2]*w,fh=f[3]*h;const hx=fx-fw*.15,hy=fy-fh*.6,hr=fx+fw*1.15,hb=fy+fh;
-    if(hx<0||hy<0||hr>W||hb>H)qa.push(`${id}: head/face of ${k} cropped by the canvas (${hx|0},${hy|0},${hr|0},${hb|0})`);
-    txt.forEach(t=>{if(t.x<hr&&hx<t.r&&t.y<hb&&hy<t.b)qa.push(`${id}: "${t.e.textContent.trim().slice(0,16)||t.e.className}" covers a face in ${k}`)})});
-   if(im.dataset.card==1)return;
-   const cov=(x0,x1,y0,y1)=>{x0=Math.max(0,x0);x1=Math.min(W,x1);y0=Math.max(0,y0);y1=Math.min(H,y1);if(x1<=x0||y1<=y0)return true;return occ.some(o=>o.x<=x0+1&&o.r>=x1-1&&o.y<=y0+1&&o.b>=y1-1)};
-   const E=m.edge||{},ok={
-    l:s=>x<=2||cov(x,x+2,y+s[0]*h,y+s[1]*h), r:s=>x+w>=W-2||cov(x+w-2,x+w,y+s[0]*h,y+s[1]*h),
-    t:s=>y<=2||cov(x+s[0]*w,x+s[1]*w,y,y+2), b:s=>y+h>=H-2||im.dataset.base==1||cov(x+s[0]*w,x+s[1]*w,y+h-2,y+h)};
-   for(const e in E)if(!(m.mode=="pop"&&(e=="b"||(e!="t"&&E[e][0]>=m.cut-.01)))&&!ok[e](E[e]))qa.push(`${id}: cut edge "${e}" of ${k} shows inside the canvas`)})});
+  const top=[...art.querySelectorAll(".k,.t,.s,.cta,.f,.n,.lbl,.chip,.logo,.mono,.occ")].map(e=>{const r=e.getBoundingClientRect();return{e,x:r.left-A.left,y:r.top-A.top,r:r.right-A.left,b:r.bottom-A.top}});
+  art.querySelectorAll(".ph5").forEach(bx=>{const im=bx.querySelector("img"),k=im.dataset.k,n=PHOTOS[k],B=bx.getBoundingClientRect(),I=im.getBoundingClientRect();
+   const bx0=B.left-A.left,by0=B.top-A.top,bx1=B.right-A.left,by1=B.bottom-A.top;let sx0=bx0,sy0=by0,sx1=bx1,sy1=by1;
+   JSON.parse(bx.dataset.fade).forEach(([sd,len])=>{if(sd=="l")sx0=bx0+len*.7;if(sd=="r")sx1=bx1-len*.7;if(sd=="t")sy0=by0+len*.7;if(sd=="b")sy1=by1-len*.7});
+   const s=I.width/n.w;
+   n.faces.forEach(f=>{const fx=I.left-A.left+f[0]*s,fy=I.top-A.top+f[1]*s,fw=f[2]*s,fh=f[3]*s;const hx=fx-fw*.15,hy=fy-fh*.6,hr=fx+fw*1.15,hb=fy+fh;
+    if(hr<bx0||hx>bx1||hb<by0||hy>by1)return; /* face cropped away entirely: not in the post */
+    if(hx<Math.max(sx0,0)-1||hy<Math.max(sy0,0)-1||hr>Math.min(sx1,W)+1||hb>Math.min(sy1,H)+1)qa.push(`${id}: face in ${k} is cropped or faded (${hx|0},${hy|0},${hr|0},${hb|0})`);
+    top.forEach(t=>{if(t.x<hr&&hx<t.r&&t.y<hb&&hy<t.b)qa.push(`${id}: "${t.e.textContent.trim().slice(0,16)||t.e.className}" covers a face in ${k}`)})})})});
  window.QA=qa;document.body.dataset.ready=1});
 </script></body></html>
