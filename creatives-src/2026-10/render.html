@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>EWS creatives v5</title>
+<html><head><meta charset="utf-8"><title>EWS creatives v6</title>
 <style>
 @font-face{font-family:M;src:url(montserrat.woff2) format("woff2");font-weight:100 900}
 /* ===== EWS creative system — fixed on every graphic =====
@@ -30,6 +30,7 @@ body{background:#888;font-family:M,sans-serif;color:var(--w)}
 .lines{background-image:repeating-linear-gradient(0deg,rgba(208,217,232,.06) 0 1px,transparent 1px 22px)}
 .glass{background:rgba(28,31,38,.5);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(254,254,254,.16);box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);padding:24px 28px}
 .chip.glass{padding:12px 18px}
+.subimg{filter:brightness(.97) saturate(.96)}
 .tick{display:flex;gap:18px;align-items:flex-start}.tick i{flex:none;width:18px;height:18px;background:var(--g);margin-top:12px}
 </style></head><body><div id="out"></div>
 <script src="posts.js"></script>
@@ -347,7 +348,7 @@ const PRE=[["Early coverage survey","Know where signal will fall short before wa
 const tape=`repeating-linear-gradient(-45deg,#84C73D 0 34px,#2A3852 34px 68px)`;
 D.c21=()=>{const o=[],N=6;
  o.push(shell("c21-1",0,N,COVER5.c21()));
- PRE.forEach((s,i)=>o.push(shell(`c21-${i+2}`,i+1,N,`${s[2]?`${base("grid")}${ph5(s[2],{x:540,y:0,w:540,h:1350},{fx:.5,fy:0,ay:0,zoom:1.1,fade:[["l",150]]})}<div class="a" style="left:540px;top:1180px;width:540px;height:40px;background:${tape};box-shadow:0 14px 24px rgba(0,0,0,.4)"></div>`:`<div class="a grid" style="inset:0"></div><div class="a" style="left:0;top:1060px;width:1080px;height:40px;background:${tape}"></div>${icon(s[3],680,760,1.2)}`}
+ PRE.forEach((s,i)=>o.push(shell(`c21-${i+2}`,i+1,N,`${s[2]?`${base("grid")}${ph6(s[2],{x:540,y:0,w:540,h:1350},{x:540,y:s[2]=="c21b"?820:0,w:540,h:s[2]=="c21b"?530:1350},{fx:.5,fy:0,ay:0,zoom:1.1,fade:[["l",150]]})}<div class="a" style="left:540px;top:1180px;width:540px;height:40px;background:${tape};box-shadow:0 14px 24px rgba(0,0,0,.4)"></div>`:`<div class="a grid" style="inset:0"></div><div class="a" style="left:0;top:1060px;width:1080px;height:40px;background:${tape}"></div>${icon(s[3],680,760,1.2)}`}
   <div class="a lbl" style="left:64px;top:180px;background:var(--g);color:var(--deep);padding:10px 18px">Step 0${i+1}</div>
   <div class="a" style="left:64px;top:260px;width:${s[2]?520:880}px;display:flex;flex-direction:column;gap:28px"><div class="t">${esc(s[0])}</div><div class="s">${esc(s[1])}</div></div>`)));
  o.push(shell("c21-6",5,N,`<div class="a" style="left:0;top:64px;width:1080px;height:40px;background:${tape}"></div>
@@ -446,7 +447,7 @@ const pill=(t,on)=>`<span class="lbl" style="display:inline-flex;align-items:cen
 
 /* ================= v5 IMAGE POSTS ================= */
 D.d01=()=>{const p=P("01");return `<div class="art sq" data-id="d01">${base("grid")}
- ${ph5("d01",{x:280,y:380,w:800,h:700},{fx:.5,fy:.55,fade:[["t",240],["l",260]]})}
+ ${ph6("d01",{x:280,y:380,w:800,h:700},{x:280,y:560,w:800,h:520},{fx:.5,fy:.55,fade:[["l",260]],orb:{cx:760,cy:640,rx:260,ry:60}})}
  ${spill(700,700,420)}
  ${glowsvg(1080,1080,arcs(760,700,6,70,90,"#84C73D",.9,3))}
  ${logo()}
@@ -470,17 +471,17 @@ D.d02=()=>{const p=P("02");return `<div class="art sq" data-id="d02">${base("dot
  ${CTA("Let's talk facilities","right:64px;bottom:64px")}</div>`};
 
 D.d03=()=>{const p=P("03");return `<div class="art sq" data-id="d03">${base("lat")}
- ${ph5("d03",{x:0,y:0,w:1080,h:700},{fx:.5,fy:.27,ax:.5,ay:0,fade:[["b",60]]})}
+ ${ph6("d03",{x:0,y:0,w:1080,h:700},{x:0,y:330,w:1080,h:370},{fx:.5,fy:.27,ax:.5,ay:0,fade:[["b",60]],orb:{cx:760,cy:360,rx:200,ry:40}})}
  <div class="a" style="left:0;top:0;width:1080px;height:240px;background:linear-gradient(rgba(28,35,52,.65),rgba(28,35,52,0))"></div>
  ${glowsvg(1080,1080,`<path d="M0 700H1080" stroke="#84C73D" stroke-width="3"/>`+[0,1,2,3,4,5,6,7,8].map(i=>`<path d="M${64+i*119} 688v24" stroke="#84C73D" stroke-width="3"/>`).join(""))}
- ${glass(640,440,`<div class="k">Climbers to RF engineers</div><div class="s" style="margin-top:8px">Your best job-site view?</div>`,"width:376px")}
+ ${glass(640,520,`<div class="k">Climbers to RF engineers</div><div class="s" style="margin-top:8px">Your best job-site view?</div>`,"width:376px")}
  ${logo(866,64)}
  ${K(M,740,"National Techies Day")}
  ${T(M,782,952,p.h1,p.h2)}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
 D.d05=()=>{const p=P("05");return `<div class="art sq" data-id="d05">${base("lines")}
- ${ph5("d05",{x:380,y:240,w:700,h:840},{fx:.55,fy:0,ay:0,fade:[["t",220],["l",220]]})}
+ ${ph6("d05",{x:380,y:240,w:700,h:840},{x:380,y:600,w:700,h:480},{fx:.55,fy:0,ay:0,fade:[["l",220]],orb:{cx:790,cy:620,rx:240,ry:56}})}
  ${spill(760,640,380)}
  ${glowsvg(1080,1080,`<path d="M0 560 H340 L380 500 L420 620 L460 470 L500 560 H1080" stroke="#84C73D" stroke-width="4" stroke-linejoin="round"/>`)}
  ${logo()}
@@ -492,7 +493,7 @@ D.d05=()=>{const p=P("05");return `<div class="art sq" data-id="d05">${base("lin
  ${WEBONLY("left:64px;top:880px")}</div>`};
 
 D.d06=()=>{const p=P("06");const L=(ty,px,py)=>`<path d="M360 ${ty}H${px-60}L${px} ${py}" stroke="#84C73D" stroke-width="3"/><circle cx="${px}" cy="${py}" r="9" fill="#84C73D"/><circle cx="${px}" cy="${py}" r="18" stroke="#84C73D" stroke-width="2"/>`;return `<div class="art sq" data-id="d06">${base("grid")}
- ${ph5("d06",{x:520,y:0,w:560,h:1080},{fx:.5,fy:.45,fade:[["l",200]]})}
+ ${ph6("d06",{x:520,y:0,w:560,h:1080},{x:520,y:330,w:560,h:750},{fx:.5,fy:.45,fade:[["l",200]],orb:{cx:840,cy:300,rx:180,ry:44}})}
  ${spill(620,540,300)}
  ${glowsvg(1080,1080,L(606,760,170)+L(716,800,430)+L(826,780,700))}
  ${logo()}
@@ -504,7 +505,7 @@ D.d06=()=>{const p=P("06");const L=(ty,px,py)=>`<path d="M360 ${ty}H${px-60}L${p
  ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
 
 D.d08=()=>{const p=P("08"),steps=["Survey","Design","Install","Test","Maintain"];return `<div class="art sq" data-id="d08">${base("lat")}
- ${ph5("d08",{x:0,y:540,w:1080,h:540},{fx:.5,fy:.5,fade:[["t",60]],tint:"background:radial-gradient(24% 20% at 93% 5%,rgba(28,35,52,1) 40%,rgba(28,35,52,0))"})}
+ ${ph6("d08",{x:0,y:540,w:1080,h:540},{x:0,y:800,w:1080,h:280},{fx:.5,fy:.5,fade:[],orb:{cx:540,cy:1000,rx:560,ry:40,rot:-3}})}
  ${glowsvg(1080,1080,arcs(540,1080,6,90,620,"#84C73D",.5,2))}
  ${logo()}
  ${CTA("Talk to an RF engineer","right:64px;top:64px")}
@@ -515,7 +516,7 @@ D.d08=()=>{const p=P("08"),steps=["Survey","Design","Install","Test","Maintain"]
   <div style="display:flex;justify-content:space-between;position:relative">${steps.map((s,i)=>`<div style="display:flex;flex-direction:column;align-items:${i==0?"flex-start":i==steps.length-1?"flex-end":"center"}"><span style="width:30px;height:30px;border-radius:50%;background:var(--g);box-shadow:0 0 16px rgba(132,199,61,.8)"></span><span class="lbl" style="margin-top:14px">${s}</span></div>`).join("")}</div></div></div>`};
 
 D.d09=()=>{const p=P("09");return `<div class="art sq" data-id="d09">${base("lat")}
- ${ph5("d09",{x:0,y:0,w:500,h:1080},{fx:.5,fy:.45,fade:[["r",200]]})}
+ ${ph6("d09",{x:0,y:0,w:500,h:1080},{x:0,y:540,w:500,h:540},{fx:.5,fy:.45,fade:[["r",200]],orb:{cx:250,cy:520,rx:230,ry:50}})}
  ${glowsvg(1080,1080,`<path d="M0 640H1080" stroke="#84C73D" stroke-width="3" stroke-dasharray="14 12"/><circle cx="560" cy="640" r="14" fill="#84C73D"/><circle cx="1000" cy="640" r="14" fill="#2A3852" stroke="#84C73D" stroke-width="6"/>`)}
  ${logo(866,64)}
  ${K(560,236,"Did you know Friday")}
@@ -526,7 +527,7 @@ D.d09=()=>{const p=P("09");return `<div class="art sq" data-id="d09">${base("lat
  ${CTA("Talk to an engineer","right:64px;bottom:64px")}</div>`};
 
 D.d12=()=>{const p=P("12");let spark="M0 30";for(let x=0;x<=1080;x+=16)spark+=` L${x} ${(30-12*Math.sin(x/70)-8*Math.sin(x/23)).toFixed(1)}`;return `<div class="art sq" data-id="d12" style="background:var(--deep)">${base("grid","opacity:.6")}
- ${ph5("d12",{x:0,y:0,w:1080,h:660},{fx:.5,fy:.5,fade:[["b",260]]})}
+ ${ph6("d12",{x:0,y:0,w:1080,h:660},{x:0,y:300,w:1080,h:360},{fx:.5,fy:.5,fade:[["b",200]],blend:120})}
  <div class="a" style="left:0;top:0;width:1080px;height:260px;background:linear-gradient(rgba(28,31,38,.7),transparent)"></div>
  ${glowsvg(1080,60,`<path d="${spark}" stroke="#84C73D" stroke-width="3"/>`,"top:560px")}
  ${glass(700,64,`${pill("Live · all systems normal",1)}`,"padding:16px 22px;left:auto;right:64px")}
@@ -537,7 +538,7 @@ D.d12=()=>{const p=P("12");let spark="M0 30";for(let x=0;x<=1080;x+=16)spark+=` 
  ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
 
 D.d13=()=>{const p=P("13");let s="";for(let i=0;i<4;i++)s+=wave(1080,880+i*34,26+i*6,300+i*50,i%2?"#D0D9E8":"#84C73D",.35+i*.1,2+i%2,i*.8);return `<div class="art sq" data-id="d13" style="background:var(--deep)">${base("")}
- ${ph5("d13",{x:420,y:0,w:660,h:1080},{fx:.52,fy:.45,ax:.62,fade:[["l",220]]})}
+ ${ph6("d13",{x:420,y:0,w:660,h:1080},{x:420,y:760,w:660,h:320},{fx:.52,fy:.45,ax:.62,fade:[["l",220]],orb:{cx:780,cy:990,rx:200,ry:36}})}
  ${glowsvg(1080,1080,s)}
  ${logo()}
  ${K(M,200,"Disaster Risk Reduction Day")}
@@ -547,7 +548,7 @@ D.d13=()=>{const p=P("13");let s="";for(let i=0;i<4;i++)s+=wave(1080,880+i*34,26
  ${CTA("Talk to our tower team","left:64px;bottom:64px")}</div>`};
 
 D.d15=()=>{const p=P("15");const ecg="M0 40 L420 40 L450 40 L470 6 L496 74 L518 20 L532 40 L1080 40";return `<div class="art sq" data-id="d15">${base("grid")}
- ${ph5("d15",{x:480,y:0,w:600,h:1080},{fx:.55,fy:.4,fade:[["l",160]]})}
+ ${ph6("d15",{x:480,y:0,w:600,h:1080},{x:480,y:640,w:600,h:440},{fx:.55,fy:.4,fade:[["l",160]],orb:{cx:790,cy:560,rx:300,ry:60}})}
  ${glowsvg(1080,80,`<path d="${ecg}" stroke="#84C73D" stroke-width="5" stroke-linejoin="round"/>`,"top:900px")}
  ${logo()}
  ${K(M,200,"International ShakeOut Day")}
@@ -557,7 +558,7 @@ D.d15=()=>{const p=P("15");const ecg="M0 40 L420 40 L450 40 L470 6 L496 74 L518 
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 
 D.d16=()=>{return `<div class="art sq" data-id="d16">${base("dots")}
- ${ph5("d16",{x:300,y:0,w:780,h:640},{fx:.4,fy:.3,fade:[["l",260],["b",200]]})}
+ ${ph6("d16",{x:300,y:0,w:780,h:640},{x:300,y:260,w:780,h:380},{fx:.4,fy:.3,fade:[["l",260],["b",200]],blend:120,orb:{cx:780,cy:250,rx:230,ry:56}})}
  ${glowsvg(1080,1080,arcs(700,260,5,60,80,"#84C73D",.9,3))}
  ${logo()}
  <div class="a n" style="left:64px;top:200px;text-shadow:0 20px 40px rgba(0,0,0,.45)">80%</div>
@@ -567,7 +568,7 @@ D.d16=()=>{return `<div class="art sq" data-id="d16">${base("dots")}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
 D.d19=()=>{const p=P("19");return `<div class="art sq" data-id="d19">${base("grid")}
- ${ph5("d19",{x:0,y:0,w:1080,h:640},{fx:.6,fy:.3,fade:[["b",240]]})}
+ ${ph6("d19",{x:0,y:0,w:1080,h:640},{x:0,y:360,w:1080,h:280},{fx:.6,fy:.3,fade:[["b",160]],blend:120,orb:{cx:810,cy:330,rx:190,ry:48}})}
  <div class="a" style="left:0;top:0;width:600px;height:640px;background:linear-gradient(90deg,rgba(28,35,52,.85),rgba(28,35,52,0))"></div>
  ${logo()}
  ${K(M,200,"Telecom staffing")}
@@ -577,7 +578,7 @@ D.d19=()=>{const p=P("19");return `<div class="art sq" data-id="d19">${base("gri
  ${WEBONLY("right:64px;bottom:64px","right")}</div>`};
 
 D.d20=()=>{const p=P("20");return `<div class="art sq" data-id="d20">${base("lines")}
- ${ph5("d20",{x:0,y:0,w:1080,h:640},{fx:.58,fy:0,ay:0,zoom:1.51,fade:[["b",220]]})}
+ ${ph6("d20",{x:0,y:0,w:1080,h:640},{x:0,y:360,w:1080,h:280},{fx:.58,fy:0,ay:0,zoom:1.51,fade:[["b",160]],blend:120})}
  ${glowsvg(1080,1080,arcs(1080,0,6,90,300,"#84C73D",.6,2))}
  ${glass(640,480,`<div class="k">FAA Form 7460-1</div><div class="lbl" style="margin-top:8px">Filed first</div>`,"width:376px")}
  ${logo()}
@@ -587,7 +588,7 @@ D.d20=()=>{const p=P("20");return `<div class="art sq" data-id="d20">${base("lin
  ${CTA("Ask about FAA filings","left:64px;bottom:64px")}</div>`};
 
 D.d22=()=>{const p=P("22");return `<div class="art sq" data-id="d22">${base("")}
- ${ph5("d22b",{x:0,y:0,w:1080,h:1040},{fx:.5,fy:.4,fade:[["b",120]]})}
+ ${ph6("d22b",{x:0,y:0,w:1080,h:1040},{x:0,y:560,w:1080,h:480},{fx:.5,fy:.4,fade:[["b",120]],orb:{cx:560,cy:330,rx:470,ry:80,rot:-8}})}
  <div class="a" style="inset:0;background:linear-gradient(200deg,rgba(28,35,52,0) 30%,rgba(28,35,52,.92) 62%)"></div>
  ${glass(760,480,`<svg width="200" height="150" style="display:block">${[0,1,2,3].map(i=>`<rect x="${i*52}" y="${150-(i+1)*36}" width="36" height="${(i+1)*36}" fill="#84C73D"/>`).join("")}</svg><div class="lbl" style="margin-top:14px">Full bars</div>`,"padding:26px")}
  ${logo()}
@@ -599,7 +600,7 @@ D.d22=()=>{const p=P("22");return `<div class="art sq" data-id="d22">${base("")}
 
 D.d23=()=>{const p=P("23");return `<div class="art sq" data-id="d23">${base("")}
  <div class="a" style="inset:0;background:repeating-linear-gradient(115deg,rgba(208,217,232,0) 0 90px,rgba(208,217,232,.06) 90px 150px,rgba(208,217,232,0) 150px 230px)"></div>
- ${ph5("d23",{x:0,y:0,w:620,h:1080},{fx:.59,fy:.38,fade:[["r",160]]})}
+ ${ph6("d23",{x:0,y:0,w:620,h:1080},{x:0,y:700,w:620,h:380},{fx:.59,fy:.38,fade:[["r",160]],orb:{cx:290,cy:640,rx:220,ry:56}})}
  ${glass(380,700,`<div class="k">Low-E glass</div><div class="mono" style="margin-top:8px;color:#FEFEFE">up to −40 dB</div>`,"width:330px")}
  ${logo(866,64)}
  ${K(600,220,"Did you know Friday")}
@@ -608,18 +609,17 @@ D.d23=()=>{const p=P("23");return `<div class="art sq" data-id="d23">${base("")}
  ${CTA("Talk to an engineer","right:64px;bottom:64px")}</div>`};
 
 D.d26=()=>{return `<div class="art sq" data-id="d26">${base("grid")}
- ${ph5("hm_3d",{x:0,y:400,w:1080,h:560},{fx:.5,fy:.5,fade:[["t",180],["b",140]],grade:0})}
+ ${ph6("hm_3d",{x:0,y:400,w:1080,h:560},{x:0,y:640,w:1080,h:320},{fx:.5,fy:.5,fade:[["b",140]],grade:0,orb:{cx:560,cy:640,rx:440,ry:60}})}
  ${glowsvg(1080,1080,arcs(540,1080,5,100,500,"#84C73D",.4,2))}
  ${logo()}
  ${K(M,200,"Healthcare DAS")}
  ${T(M,242,700,"60+ hospital","systems delivered")}
- ${glass(700,500,`<div class="k">Predicted</div><div class="lbl" style="margin-top:8px">700 MHz coverage</div>`,"width:316px")}
  ${CTA("Talk about your campus","left:64px;bottom:64px")}
  ${FOOT("right:64px;bottom:64px","right")}</div>`};
 
 D.d27=()=>{const p=P("27");return `<div class="art sq" data-id="d27">${base("")}
  ${svg(1080,1080,contour(300,700,9,52,2,.18))}
- ${ph5("d27",{x:600,y:0,w:480,h:1080},{fx:.5,fy:.45,fade:[["l",200]]})}
+ ${ph6("d27",{x:600,y:0,w:480,h:1080},{x:600,y:640,w:480,h:440},{fx:.5,fy:.45,fade:[["l",200]],orb:{cx:860,cy:300,rx:160,ry:40}})}
  ${glowsvg(1080,1080,arcs(860,120,4,60,60,"#84C73D",.9,3))}
  ${logo()}
  ${K(M,220,"Tower Tuesday")}
@@ -629,7 +629,7 @@ D.d27=()=>{const p=P("27");return `<div class="art sq" data-id="d27">${base("")}
  ${CTA("Talk to our tower team","left:64px;bottom:64px")}</div>`};
 
 D.d28=()=>{const p=P("28");return `<div class="art sq" data-id="d28">${base("")}
- ${ph5("d28",{x:0,y:0,w:1080,h:640},{fx:.55,fy:.4,fade:[["b",220]]})}
+ ${ph6("d28",{x:0,y:0,w:1080,h:640},{x:0,y:340,w:1080,h:300},{fx:.55,fy:.4,fade:[["b",140]],blend:120,orb:{cx:560,cy:330,rx:420,ry:60}})}
  ${glowsvg(1080,1080,arcs(540,640,6,70,300,"#84C73D",.45,2))}
  ${logo()}
  ${K(64,640,"National First Responders Day","width:952px;text-align:center")}
@@ -638,7 +638,7 @@ D.d28=()=>{const p=P("28");return `<div class="art sq" data-id="d28">${base("")}
  ${WEBONLY("left:64px;bottom:64px;width:952px","center")}</div>`};
 
 D.d29=()=>{const p=P("29");return `<div class="art sq" data-id="d29" style="background:var(--deep)">${base("grid","opacity:.5")}
- ${ph5("d29",{x:460,y:0,w:620,h:1080},{fx:.42,fy:.55,fade:[["l",240]]})}
+ ${ph6("d29",{x:460,y:0,w:620,h:1080},{x:460,y:720,w:620,h:360},{fx:.42,fy:.55,fade:[["l",240]],orb:{cx:860,cy:420,rx:180,ry:46}})}
  ${glass(360,560,`<div class="mono" style="color:#9DD45C"><div style="color:#8A93A3">OCT 29, 1969</div><div style="color:#8A93A3">UCLA → SRI</div><div>&gt; SEND LOGIN</div><div>&nbsp; L &nbsp;received</div><div>&nbsp; O &nbsp;received</div><div style="color:#F29A9A">&nbsp; G &nbsp;CRASH_</div></div>`,"width:420px;background:rgba(17,20,26,.78)")}
  ${logo()}
  ${K(M,200,"International Internet Day")}
@@ -646,7 +646,7 @@ D.d29=()=>{const p=P("29");return `<div class="art sq" data-id="d29" style="back
  ${CTA("Talk to an RF engineer","left:64px;bottom:64px")}</div>`};
 
 D.d31=()=>{const p=P("31");return `<div class="art sq" data-id="d31" style="background:var(--deep)">${base("")}
- ${ph5("d31",{x:440,y:0,w:640,h:1080},{fx:.5,fy:.55,fade:[["l",320]],grade:0})}
+ ${ph6("d31",{x:440,y:0,w:640,h:1080},{x:440,y:640,w:640,h:440},{fx:.5,fy:.55,fade:[["l",320]],grade:0,orb:{cx:760,cy:520,rx:200,ry:44}})}
  <div class="a" style="left:440px;top:0;width:640px;height:1080px;background:linear-gradient(90deg,rgba(28,35,52,.9),rgba(28,35,52,0) 50%)"></div>
  ${glowsvg(1080,1080,arcs(760,540,5,60,40,"#84C73D",.85,3))}
  ${logo()}
@@ -659,14 +659,14 @@ D.d31=()=>{const p=P("31");return `<div class="art sq" data-id="d31" style="back
 /* ================= v5 carousel covers ================= */
 const COVER5={
  c07:()=>`${base("grid")}
-  ${ph5("c07w",{x:300,y:0,w:780,h:960},{fx:.5,fy:.3,ay:.35,fade:[["l",260],["b",260]]})}
+  ${ph6("c07w",{x:300,y:0,w:780,h:960},{x:560,y:560,w:520,h:400},{fx:.5,fy:.3,ay:.35,fade:[["l",160],["b",160]],blend:140,orb:{cx:720,cy:430,rx:250,ry:50}})}
   ${logo()}
   ${K(M,560,"Fire Prevention Week · Swipe")}
   <div class="a n" style="left:64px;top:602px;text-shadow:0 24px 48px rgba(0,0,0,.5)">5</div>
   <div class="a t" style="left:64px;top:800px;width:640px"><span>Areas we</span><span class="g">always test</span></div>
   ${Sx(M,980,640,"Codes hold these spaces to a higher standard, so we do too.")}`,
  c14:()=>`${base("dots")}
-  ${ph5("c14",{x:180,y:470,w:900,h:816},{fx:.5,fy:.4,fade:[["l",160],["t",120]]})}
+  ${ph6("c14",{x:180,y:470,w:900,h:816},{x:180,y:800,w:900,h:486},{fx:.5,fy:.4,fade:[["l",160]],orb:{cx:760,cy:820,rx:150,ry:30}})}
   ${logo()}
   ${K(M,200,"World Standards Day · Phrasebook")}
   ${T(M,242,952,"We speak","fire code")}
@@ -690,14 +690,14 @@ const COVER5={
 
 /* ================= v5 reel covers ================= */
 D.r04=()=>{const p=P("04"),st=["Model the building","Map what blocks signal","Predict coverage","Build, test, hand off"];return `<div class="art st" data-id="r04">${base("grid")}
- ${ph5("r04",{x:40,y:660,w:1040,h:1260},{fx:.5,fy:.5,fade:[["t",300],["l",120]]})}
+ ${ph6("r04",{x:40,y:660,w:1040,h:1260},{x:40,y:1220,w:1040,h:700},{fx:.5,fy:.5,fade:[["l",120]],blend:220,orb:{cx:560,cy:1060,rx:400,ry:60,rot:-6}})}
  ${logo()}
  ${K(M,200,"Fire Prevention Week · Watch")}
  ${T(M,242,952,p.h1,p.h2)}
  <div class="a" style="left:64px;top:470px;display:grid;grid-template-columns:1fr 1fr;gap:16px;width:952px">${st.map((s,i)=>`<div class="glass" style="padding:22px"><div class="k">Step 0${i+1}</div><div class="s" style="margin-top:10px">${s}</div></div>`).join("")}</div>
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 D.r11=()=>{const p=P("11");return `<div class="art st" data-id="r11" style="background:var(--deep)">${base("","")}
- ${ph5("r11",{x:0,y:0,w:900,h:1300},{fx:.5,fy:.4,fade:[["r",220],["b",320]]})}
+ ${ph6("r11",{x:0,y:0,w:900,h:1300},{x:0,y:760,w:900,h:540},{fx:.5,fy:.4,fade:[["r",220],["b",320]],orb:{cx:450,cy:600,rx:300,ry:70}})}
  ${glowsvg(1080,1920,wave(1080,1180,70,150,"#84C73D",.95,4)+wave(1080,1180,36,64,"#E88A20",.8,3,2))}
  ${logo()}
  ${K(M,1380,"Spooky season · Watch")}
@@ -705,14 +705,14 @@ D.r11=()=>{const p=P("11");return `<div class="art st" data-id="r11" style="back
  ${Sx(M,1600,952,"Like ghost hunters, with better equipment.")}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 D.r18=()=>{const p=P("18");return `<div class="art st" data-id="r18">${base("dots")}
- ${ph5("r18",{x:280,y:0,w:800,h:1500},{fx:.55,fy:.35,ax:.5,ay:.35,fade:[["l",260],["b",280]]})}
+ ${ph6("r18",{x:280,y:0,w:800,h:1500},{x:280,y:1000,w:800,h:500},{fx:.55,fy:.35,ax:.5,ay:.35,fade:[["l",260],["b",280]],orb:{cx:720,cy:700,rx:300,ry:70}})}
  ${glowsvg(1080,1920,`<g stroke="#FEFEFE" stroke-width="5"><circle cx="720" cy="440" r="150"/><path d="M720 250v100M720 530v100M530 440h100M810 440h100"/></g>`)}
  ${logo()}
  ${K(M,1480,"Watch till the end")}
  ${T(M,1522,952,p.h1,p.h2)}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
 D.r25=()=>{const p=P("25"),st=["Site work","Steel","Antennas","Power, test"];return `<div class="art st" data-id="r25">${base("lat")}
- ${ph5("r25",{x:200,y:0,w:880,h:1400},{fx:.65,fy:.4,fade:[["l",300],["b",300]]})}
+ ${ph6("r25",{x:200,y:0,w:880,h:1400},{x:200,y:900,w:880,h:500},{fx:.65,fy:.4,fade:[["l",300],["b",300]],orb:{cx:720,cy:500,rx:300,ry:70}})}
  <div class="a" style="left:64px;top:300px;width:420px">
   <div style="position:absolute;left:14px;top:14px;bottom:14px;width:4px;background:rgba(208,217,232,.35)"></div>
   ${st.map((s,i)=>`<div style="position:relative;display:flex;align-items:center;gap:22px;margin-bottom:${i<3?110:0}px"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:var(--g);box-shadow:0 0 18px rgba(132,199,61,.8)"></span><span class="lbl glass" style="padding:14px 18px">${s}</span></div>`).join("")}</div>
@@ -720,6 +720,37 @@ D.r25=()=>{const p=P("25"),st=["Site work","Steel","Antennas","Power, test"];ret
  ${K(M,1450,"Turnkey tower build · Watch")}
  ${T(M,1492,952,p.h1,p.h2)}
  ${WEBONLY("left:64px;bottom:64px")}</div>`};
+
+/* ===== v6: full photo panel + subject breaking out of it + sandwiched brand graphics =====
+   F = where the whole photo sits (cover fit, focal point); P = the part of F where the full photo shows.
+   Outside P (toward "dir") only the subject remains: the background dissolves over "blend" px.
+   An orbit graphic is drawn twice: its far half behind the photo, its near half in front of the subject. */
+function fadeMask(list){const dir={l:"to right",r:"to left",t:"to bottom",b:"to top"};
+ const m=list.map(([sd,len])=>`linear-gradient(${dir[sd]},transparent 0,rgba(0,0,0,.55) ${Math.round(len*.45)}px,#000 ${len}px)`).join(",");
+ return m?`-webkit-mask-image:${m};mask-image:${m};-webkit-mask-composite:source-in;mask-composite:intersect;`:""}
+function solidOf(x,y,w,h,list){let x0=x,y0=y,x1=x+w,y1=y+h;list.forEach(([sd,len])=>{if(sd=="l")x0=x+len*.7;if(sd=="r")x1=x+w-len*.7;if(sd=="t")y0=y+len*.7;if(sd=="b")y1=y+h-len*.7});return [x0,y0,x1,y1].map(Math.round).join(",")}
+function orbit(o){const {cx,cy,rx,ry,rot=-14,n=2,gap=38}=o;let e="";for(let i=0;i<n;i++)e+=`<ellipse cx="${cx}" cy="${cy}" rx="${rx+i*gap}" ry="${ry+i*gap*.4}" stroke="#84C73D" stroke-opacity="${i?.45:1}" stroke-width="${i?3:6}" transform="rotate(${rot} ${cx} ${cy})"/>`;
+ const id="o"+cx+"_"+cy+"_"+rx;
+ const pts=[];const R=rot*Math.PI/180;for(let i=0;i<72;i++){const t=i/72*2*Math.PI;for(let j=0;j<n;j++){const a=rx+j*gap,b=ry+j*gap*.4,x=a*Math.cos(t),y=b*Math.sin(t);pts.push([Math.round(cx+x*Math.cos(R)-y*Math.sin(R)),Math.round(cy+x*Math.sin(R)+y*Math.cos(R)),y>0?1:0])}}
+ return {back:`<i class="orbpts" data-pts='${JSON.stringify(pts)}' style="display:none"></i>`+svg(W,2000,e,"filter:drop-shadow(0 0 10px rgba(132,199,61,.6))"),
+  front:svg(W,2000,`<defs><clipPath id="${id}"><rect x="0" y="${cy}" width="${W}" height="2000" transform="rotate(${rot} ${cx} ${cy})"/></clipPath></defs><g clip-path="url(#${id})">${e}</g>`,"filter:drop-shadow(0 0 10px rgba(132,199,61,.6)) drop-shadow(0 10px 14px rgba(0,0,0,.45))")}}
+function ph6(k,F,P,{fx=.5,fy=.5,ax=.5,ay=.5,zoom=1,fade=[],blend=160,dir="up",grade=1,tint="",orb=null}={}){
+ const n=NAT[k],s=Math.max(F.w/n.w,F.h/n.h)*zoom,iw=n.w*s,ih=n.h*s;
+ let ix=ax*F.w-fx*iw,iy=ay*F.h-fy*ih;ix=Math.min(0,Math.max(F.w-iw,ix));iy=Math.min(0,Math.max(F.h-ih,iy));
+ const X=F.x+ix,Y=F.y+iy;  /* image position on the canvas */
+ const img=(src,cls="")=>(bx,by)=>`<img data-k="${k}" class="${cls}" src="${src}" style="position:absolute;left:${(X-bx).toFixed(1)}px;top:${(Y-by).toFixed(1)}px;width:${iw.toFixed(1)}px;height:${ih.toFixed(1)}px;max-width:none">`;
+ const pf=fade.concat([[dir=="up"?"t":"b",blend]]);
+ const panel=`<div class="box ph5" data-k="${k}" data-solid="${solidOf(P.x,P.y,P.w,P.h,pf)}" style="left:${P.x}px;top:${P.y}px;width:${P.w}px;height:${P.h}px;${fadeMask(pf)}">
+  ${img(`ph/${k}.jpg`)(P.x,P.y)}
+  ${grade?`<div class="a" style="inset:0;background:linear-gradient(180deg,rgba(28,31,38,.12),rgba(28,31,38,.42));mix-blend-mode:multiply"></div><div class="a" style="inset:0;background:rgba(42,56,82,.22);mix-blend-mode:soft-light"></div>`:""}
+  ${tint?`<div class="a" style="inset:0;${tint}"></div>`:""}</div>`;
+ /* subject layer: same pixels, spans from the frame edge through the panel, keeps the panel's side fades */
+ const sy=dir=="up"?Math.min(F.y,P.y):P.y, sh=dir=="up"?P.y+P.h-sy:Math.max(F.y+F.h,P.y+P.h)-P.y;
+ const sf=fade.filter(([sd])=>sd!=(dir=="up"?"t":"b"));
+ const subj=`<div class="box ph5 subj" data-k="${k}" data-solid="${solidOf(P.x,sy,P.w,sh,sf)}" style="left:${P.x}px;top:${sy}px;width:${P.w}px;height:${sh}px;${fadeMask(sf)};filter:drop-shadow(0 24px 30px rgba(0,0,0,.45))">
+  ${img(`sub/${k}.png`,"subimg")(P.x,sy)}</div>`;
+ const o=orb?orbit(orb):{back:"",front:""};
+ return o.back+panel+subj+o.front}
 
 const order=["d01","d02","d03","d05","d06","d08","d09","d12","d13","d15","d16","d19","d20","d22","d23","d26","d27","d28","d29","d31","c07","c14","c21","c30","r04","r11","r18","r25"];
 const only=(location.hash||"").slice(1);
@@ -745,16 +776,20 @@ Promise.all([document.fonts.ready,...[...document.images].map(i=>i.complete?1:ne
  /* one photo per post: a carousel's slides must not repeat a photo */
  const byPost={};document.querySelectorAll(".art").forEach(a=>{const post=a.dataset.id.split("-")[0];(a.dataset.photos||"").split(",").filter(Boolean).forEach(k=>{(byPost[post]=byPost[post]||[]).push(k)})});
  for(const p in byPost){const l=byPost[p];if(new Set(l).size!==l.length)qa.push(`${p}: a photo is used more than once`)}
- /* v5: faces and heads fully inside the solid part of their photo section, never under text or cards */
+ /* v6: every face sits in the solid part of its photo (panel or subject layer), never under text or cards */
  document.querySelectorAll(".art").forEach(art=>{const id=art.dataset.id,A=art.getBoundingClientRect(),H=A.height;
   const top=[...art.querySelectorAll(".k,.t,.s,.cta,.f,.n,.lbl,.chip,.logo,.mono,.occ")].map(e=>{const r=e.getBoundingClientRect();return{e,x:r.left-A.left,y:r.top-A.top,r:r.right-A.left,b:r.bottom-A.top}});
-  art.querySelectorAll(".ph5").forEach(bx=>{const im=bx.querySelector("img"),k=im.dataset.k,n=PHOTOS[k],B=bx.getBoundingClientRect(),I=im.getBoundingClientRect();
-   const bx0=B.left-A.left,by0=B.top-A.top,bx1=B.right-A.left,by1=B.bottom-A.top;let sx0=bx0,sy0=by0,sx1=bx1,sy1=by1;
-   JSON.parse(bx.dataset.fade).forEach(([sd,len])=>{if(sd=="l")sx0=bx0+len*.7;if(sd=="r")sx1=bx1-len*.7;if(sd=="t")sy0=by0+len*.7;if(sd=="b")sy1=by1-len*.7});
-   const s=I.width/n.w;
-   n.faces.forEach(f=>{const fx=I.left-A.left+f[0]*s,fy=I.top-A.top+f[1]*s,fw=f[2]*s,fh=f[3]*s;const hx=fx-fw*.15,hy=fy-fh*.6,hr=fx+fw*1.15,hb=fy+fh;
-    if(hr<bx0||hx>bx1||hb<by0||hy>by1)return; /* face cropped away entirely: not in the post */
-    if(hx<Math.max(sx0,0)-1||hy<Math.max(sy0,0)-1||hr>Math.min(sx1,W)+1||hb>Math.min(sy1,H)+1)qa.push(`${id}: face in ${k} is cropped or faded (${hx|0},${hy|0},${hr|0},${hb|0})`);
-    top.forEach(t=>{if(t.x<hr&&hx<t.r&&t.y<hb&&hy<t.b)qa.push(`${id}: "${t.e.textContent.trim().slice(0,16)||t.e.className}" covers a face in ${k}`)})})})});
+  const boxes=[...art.querySelectorAll(".ph5")].map(bx=>{const B=bx.getBoundingClientRect(),b=[B.left-A.left,B.top-A.top,B.right-A.left,B.bottom-A.top];let s;
+   if(bx.dataset.solid)s=bx.dataset.solid.split(",").map(Number);else{s=b.slice();JSON.parse(bx.dataset.fade||"[]").forEach(([sd,len])=>{if(sd=="l")s[0]=b[0]+len*.7;if(sd=="r")s[2]=b[2]-len*.7;if(sd=="t")s[1]=b[1]+len*.7;if(sd=="b")s[3]=b[3]-len*.7})}
+   return{k:bx.querySelector("img").dataset.k,img:bx.querySelector("img"),b,s}});
+  const seen=new Set();boxes.forEach(bx=>{if(seen.has(bx.k))return;seen.add(bx.k);const n=PHOTOS[bx.k],I=bx.img.getBoundingClientRect(),sc=I.width/n.w;
+   n.faces.forEach(f=>{const fx=I.left-A.left+f[0]*sc,fy=I.top-A.top+f[1]*sc,fw=f[2]*sc,fh=f[3]*sc;const hx=fx-fw*.15,hy=fy-fh*.6,hr=fx+fw*1.15,hb=fy+fh;
+    const mine=boxes.filter(o=>o.k==bx.k);
+    if(!mine.some(o=>hr>o.b[0]&&hx<o.b[2]&&hb>o.b[1]&&hy<o.b[3]))return;
+    if(hx<-1||hy<-1||hr>W+1||hb>H+1||!mine.some(o=>hx>=o.s[0]-1&&hy>=o.s[1]-1&&hr<=o.s[2]+1&&hb<=o.s[3]+1))qa.push(`${id}: face in ${bx.k} is cropped or faded (${hx|0},${hy|0},${hr|0},${hb|0})`);
+    top.forEach(t=>{if(t.x<hr&&hx<t.r&&t.y<hb&&hy<t.b)qa.push(`${id}: "${t.e.textContent.trim().slice(0,16)||t.e.className}" covers a face in ${bx.k}`)});
+    art.querySelectorAll(".orbpts").forEach(o=>{if(JSON.parse(o.dataset.pts).some(([x,y,f])=>f&&x>hx&&x<hr&&y>hy&&y<hb))qa.push(`${id}: orbit ring crosses a face in ${bx.k}`)})})});
+  /* orbit rings never run through text */
+  art.querySelectorAll(".orbpts").forEach(o=>{const hit=new Set();JSON.parse(o.dataset.pts).forEach(([x,y])=>top.forEach(t=>{if(!t.e.classList.contains("occ")&&x>t.x-6&&x<t.r+6&&y>t.y-6&&y<t.b+6)hit.add(t.e.textContent.trim().slice(0,16)||t.e.className)}));hit.forEach(h=>qa.push(`${id}: orbit ring crosses "${h}"`))})});
  window.QA=qa;document.body.dataset.ready=1});
 </script></body></html>

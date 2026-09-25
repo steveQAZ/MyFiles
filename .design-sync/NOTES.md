@@ -33,11 +33,12 @@ No design-system sync has run from this repo yet: it holds no component library.
 ## Social creatives (images, carousels, reel covers)
 
 - Photos come from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). When no photo there matches the topic (EV charger, Dalmatian, firefighters, NOC, warehouse), use a free-license Pexels or Pixabay photo, saved first to the Drive folder `27 Stock - Licensed (Pexels & Pixabay)`. Each photo must match the post's subject; keep watermarks and timestamp overlays out of frame.
-- **Full photos, never background-removed (from Oct 2026 v5).** Each photo sits in its own section of the canvas (a side column, a top or bottom band, or a corner block), balanced against the text section.
-- **Depth stack, back to front:** navy base with a pattern → graded photo section (navy multiply + soft-light tint) with a gradient fade into the navy on the side facing the text → brand overlay crossing the seam (RF arcs, waves, ECG, dashed timelines, with a green glow) → frosted glass cards (blur, thin light border, deep shadow) overlapping the photo edge → text.
-- The photo's hard edge never shows on the text side: it always fades out through a gradient mask. Canvas edges may cut the photo.
-- Text sits on the navy side or the faded part of the gradient, never on the solid photo. Glass cards and brand overlays may sit over the photo.
-- **Never crop or cover a face or head.** Heads stay inside the solid (unfaded) part of the photo section with room above; no text, logo or card covers them. The renderer QA checks detected faces on every export.
+- **Break-out photos (from Oct 2026 v6).** Keep the full photo in its own section (side column, band or corner block), but dissolve the background on one side, usually above the subject, so the subject breaks out of the section over the navy. Never remove the whole background. Photos with no clear subject (a warehouse aisle, a trench, a wide crew shot) stay as full photo sections.
+- **Sandwich depth:** the same brand graphic sits both behind and in front of the subject. The standard piece is a glowing Apple Green orbit ring: its far half runs behind the head or top of the subject, its near half passes in front of the body. It must never cross text or a face.
+- **Depth stack, back to front:** navy base with a pattern → back half of the orbit and seam overlays → graded photo panel, faded into the navy on the text side → subject layer (same pixels, background removed, soft drop shadow) → front half of the orbit → frosted glass cards → text.
+- Subject edges are seamless: soft BiRefNet mask, specks removed, 1px choke, 0.8px feather, edge colour decontamination.
+- Text sits on the navy side or the faded part of the gradient, never on the solid photo or the subject.
+- **Never crop or cover a face or head.** Heads stay inside the solid part of the photo panel or the subject layer, with room above; no text, logo, card or front orbit ring covers them. The renderer QA checks detected faces on every export.
 - Style: EWS navy (`#2A3852` / `#1C1F26`), uppercase Montserrat 900 headline with the second line in Apple Green, green CTA block, white logo, phone + engineeringwireless.com. Text and photo are clearly separated, and the text side carries a technical background: blueprint grid, RF arcs, sine waves, contour lines, lattice, or dot matrix.
 - **Permanent spec (every graphic):** 64px margin on all four sides; all text, logos and buttons stay inside it (photos may bleed to the edge).
 - **Fixed type sizes, never changed per post:** kicker 22px · title 76px (Montserrat 900) · subtext 28px · CTA 26px · labels/chips 22px · footer 24px · big numerals 200px. Titles wrap onto more lines rather than shrink. Logo 150px wide at the top-left margin (carousel slide footers use 100px).
@@ -53,7 +54,7 @@ No design-system sync has run from this repo yet: it holds no component library.
 - No EV charger, Dalmatian or firefighter photos exist in the stock folder yet. Oct 1, 5 and 28 use interim EWS cut-outs until Pexels/Pixabay photos are added.
 
 ### Layout registry: used, do not repeat
-v5 layouts, current (full photo sections with gradient fades, seam overlays and glass cards):
+v6 layouts, current. Same sections as the v5 table below, now with the subject breaking out of its panel and a sandwiched orbit ring (Oct 2, 21 cover and 30 cover stay full photo sections):
 
 | Post | Layout |
 |---|---|
