@@ -34,6 +34,15 @@ No design-system sync has run from this repo yet: it holds no component library.
 
 - Photos come **only** from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). Each photo must match the post's subject; crop to the subject and keep watermarks and timestamp overlays out of frame.
 - Style: EWS navy (`#2A3852` / `#1C1F26`), uppercase Montserrat 900 headline with the second line in Apple Green, green CTA block, white logo, phone + engineeringwireless.com. Text and photo are clearly separated, and the text side carries a technical background: blueprint grid, RF arcs, sine waves, contour lines, lattice, or dot matrix.
+- **Permanent spec (every graphic):** 64px margin on all four sides; all text, logos and buttons stay inside it (photos may bleed to the edge).
+- **Fixed type sizes, never changed per post:** kicker 22px · title 76px (Montserrat 900) · subtext 28px · CTA 26px · labels/chips 22px · footer 24px · big numerals 200px. Titles wrap onto more lines rather than shrink. Logo 150px wide at the top-left margin (carousel slide footers use 100px).
+- **Website is always written `EngineeringWireless.com`** (capital E and W). Phone: `+1 (480) 968-6000`.
+- **Never stretch a photo.** Only uniform scaling or cropping (object-fit: cover or a uniform zoom). Flag any photo enlarged more than 1.25x.
+- **One photo is used once per post.** A carousel never repeats a photo across its slides, and one photo is never split into a fake before/after.
+- **No outlined or stroked text.** Numerals and headlines are solid fills.
+- **Crop out third-party logos and watermarks** (for example Top Workplaces, Centra, drink labels, #surgevisions).
+- No decorative diagrams that don't carry information.
+- Leave at least 8px between any two text elements; the renderer QA checks margins, spacing, overflow, font sizes, photo scaling and photo reuse on every export.
 - **Never reuse a layout.** Every post gets a composition that hasn't been used before. Check the registry below and add new ones to it.
 - Sizes: 1080×1080 images, 1080×1350 carousel slides, 1080×1920 reel covers.
 - No EV charger photos exist in the stock folder yet (Oct 5 used electrical metering gear).
@@ -47,7 +56,7 @@ No design-system sync has run from this repo yet: it holds no component library.
 | Oct 5 | Staggered photo triptych top; green rule; text band below |
 | Oct 6 | Rounded photo card left; vertical signal-chain nodes right |
 | Oct 8 | Photo top with viewfinder brackets; 5-step numbered process row |
-| Oct 9 | Outline year numeral, dashed arrow to "today"; offset-framed photo right |
+| Oct 9 | Dashed 1871 → 2026 timeline under the title; offset-framed photo right |
 | Oct 12 | Photo inside an app window (NOC title bar, live dot); sparkline divider |
 | Oct 13 | Full-bleed photo; navy panel with sine-wave top edge |
 | Oct 15 | Text top on grid; ECG pulse divider; photo bottom |
@@ -55,14 +64,14 @@ No design-system sync has run from this repo yet: it holds no component library.
 | Oct 19 | Photo right with slanted edge and green seam; role chips stack |
 | Oct 20 | Altitude ruler scale left of photo; text band below |
 | Oct 22 | Wide photo top with "full bars" badge; chips row |
-| Oct 23 | Photo split into 2×3 window panes; signal-bounce diagram |
+| Oct 23 | Photo right with navy window-mullion bars over it |
 | Oct 26 | Giant "60+" numeral; arch-shaped photo; tick list |
 | Oct 27 | Full-height photo column left; 9-1-1 digit boxes; contour lines |
 | Oct 28 | Centered hexagon photo with radiating arcs; centered text |
 | Oct 29 | Terminal console block; photo bottom-right fade |
 | Oct 31 | Full-bleed photo, dark fade, centered headline, rings from tower |
-| Oct 7 carousel | Outline "5" cover; floorplan slides highlighting one room each |
-| Oct 14 carousel | Phrasebook slides: code term, "in plain English", outline code watermark |
+| Oct 7 carousel | Solid "5" numeral cover; floorplan slides highlighting one room each |
+| Oct 14 carousel | Phrasebook slides: code term, "in plain English", line-art icon per code |
 | Oct 21 carousel | Caution-tape stripe system; step labels; photo half-panels |
 | Oct 30 carousel | Clipboard card cover; checkbox progress slides with "why it matters" panel |
-| Reel covers | Oct 4 photo + 2×2 step grid · Oct 11 oscilloscope waves · Oct 18 crosshair target · Oct 25 grayscale/color split |
+| Reel covers | Oct 4 photo + 2×2 step grid · Oct 11 oscilloscope waves · Oct 18 crosshair target · Oct 25 single photo + 4-step build timeline |
