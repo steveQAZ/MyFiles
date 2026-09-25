@@ -33,12 +33,14 @@ No design-system sync has run from this repo yet: it holds no component library.
 ## Social creatives (images, carousels, reel covers)
 
 - Photos come from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). When no photo there matches the topic (EV charger, Dalmatian, firefighters, NOC, warehouse), use a free-license Pexels or Pixabay photo, saved first to the Drive folder `27 Stock - Licensed (Pexels & Pixabay)`. Each photo must match the post's subject; keep watermarks and timestamp overlays out of frame.
-- **Break-out photos (from Oct 2026 v6).** Keep the full photo in its own section (side column, band or corner block), but dissolve the background on one side, usually above the subject, so the subject breaks out of the section over the navy. Never remove the whole background. Photos with no clear subject (a warehouse aisle, a trench, a wide crew shot) stay as full photo sections.
-- **Sandwich depth:** the same brand graphic sits both behind and in front of the subject. The standard piece is a glowing Apple Green orbit ring: its far half runs behind the head or top of the subject, its near half passes in front of the body. It must never cross text or a face.
-- **Depth stack, back to front:** navy base with a pattern → back half of the orbit and seam overlays → graded photo panel, faded into the navy on the text side → subject layer (same pixels, background removed, soft drop shadow) → front half of the orbit → frosted glass cards → text.
-- Subject edges are seamless: soft BiRefNet mask, specks removed, 1px choke, 0.8px feather, edge colour decontamination.
-- Text sits on the navy side or the faded part of the gradient, never on the solid photo or the subject.
-- **Never crop or cover a face or head.** Heads stay inside the solid part of the photo panel or the subject layer, with room above; no text, logo, card or front orbit ring covers them. The renderer QA checks detected faces on every export.
+- **Break-out photos (from Oct 2026 v7).** Keep the photo, but dissolve its background away from the subject so the subject breaks out over the navy. Never remove the whole background: the ground, floor or table stays, inside soft organic blobs.
+- **No visible crop lines, ever.** No rectangles, no straight gradient edges. Wherever a photo ends inside the canvas, it dissolves along a noisy, organic edge; the only straight edges allowed are the canvas edges themselves. A viewer should not be able to tell where the photo was cut.
+- **Subject layer:** same pixels as the photo, background removed with a soft BiRefNet mask, specks removed, 1px choke and edge colour decontamination, solid interior, and every detected head protected so hair is never clipped.
+- **Sandwich depth with bold graphics:** each post's graphic is drawn twice, behind the subject and (clipped to one side of a line) in front of it. Graphics are highly visible: 6–12px strokes, full Apple Green and white, green glow, plus a drop shadow on the front copy. They never cross text or a face.
+- **Never reuse a graphic.** Similar ideas are fine; identical graphics are not. Check the graphics registry below.
+- **Depth stack, back to front:** navy base with a pattern → photo background (graded) → back copy of the post's graphic → subject layer with drop shadow → front copy of the graphic → frosted glass cards → text.
+- Text sits on the navy or on dissolved background, never on the subject.
+- **Never crop or cover a face or head.** Heads stay inside the solid part of the photo panel or the subject layer, with room above; no text, logo, card or front graphic covers them. The renderer QA checks detected faces on every export.
 - Style: EWS navy (`#2A3852` / `#1C1F26`), uppercase Montserrat 900 headline with the second line in Apple Green, green CTA block, white logo, phone + engineeringwireless.com. Text and photo are clearly separated, and the text side carries a technical background: blueprint grid, RF arcs, sine waves, contour lines, lattice, or dot matrix.
 - **Permanent spec (every graphic):** 64px margin on all four sides; all text, logos and buttons stay inside it (photos may bleed to the edge).
 - **Fixed type sizes, never changed per post:** kicker 22px · title 76px (Montserrat 900) · subtext 28px · CTA 26px · labels/chips 22px · footer 24px · big numerals 200px. Titles wrap onto more lines rather than shrink. Logo 150px wide at the top-left margin (carousel slide footers use 100px).
@@ -54,7 +56,38 @@ No design-system sync has run from this repo yet: it holds no component library.
 - No EV charger, Dalmatian or firefighter photos exist in the stock folder yet. Oct 1, 5 and 28 use interim EWS cut-outs until Pexels/Pixabay photos are added.
 
 ### Layout registry: used, do not repeat
-v6 layouts, current. Same sections as the v5 table below, now with the subject breaking out of its panel and a sandwiched orbit ring (Oct 2, 21 cover and 30 cover stay full photo sections):
+v7 layouts, current. Same text and section positions as the v5 table below, now with organic photo dissolves and these one-off graphics:
+
+| Post | Graphic (sandwiched) |
+|---|---|
+| Oct 1 | Flattened broadcast rings around the equipment |
+| Oct 2 | Red dashed dead-zone circle with an X over the racking |
+| Oct 3 | Climbing rope curve, behind the first climber, in front of the second |
+| Oct 5 | Double lightning bolt through the rack |
+| Oct 6 | Vertical signal chain with four nodes through the rack |
+| Oct 8 | Wide green ribbon arc along the team's feet |
+| Oct 9 | Clock-dial ellipse with 12 ticks around the rack |
+| Oct 12 | Radar sweep with wedge over the NOC desk |
+| Oct 13 | Wind streaks across the worker's shoulders |
+| Oct 15 | ECG pulse bent into a ring around the crew |
+| Oct 16 | Three Wi-Fi arcs over the phone |
+| Oct 19 | Flattened hexagon around the worker's head |
+| Oct 20 | Dashed flight path with arrowhead across the crane |
+| Oct 22 | Equalizer bars rising behind the radio cluster |
+| Oct 23 | Three glass panes between and in front of the two men |
+| Oct 26 | Stacked perspective contour rings under the 3D model |
+| Oct 27 | Three sonar rings stacked along the monopole |
+| Oct 28 | Shield outline around the crew in the tower |
+| Oct 29 | Ring of rotating data bits around the handset |
+| Oct 31 | Double helix climbing the tower |
+| Oct 7 carousel | Ring with five nodes around the worker (one node per area) |
+| Oct 14 carousel | Giant code braces around the team |
+| Oct 21 carousel | Dimension line with arrows across the trench; slides 2 and 4 bent conduit lines (3 and 2 lines) |
+| Oct 30 carousel | Big check stroke inside a dashed inspection circle |
+| Reel covers | Oct 4 perspective floor grid through the antenna canopy · Oct 11 green/orange oscilloscope waves through the antenna · Oct 18 crosshair with corner brackets on the monopine · Oct 25 rising dotted path with four nodes up the tower |
+
+v6 and earlier layouts: retired, do not repeat.
+
 
 | Post | Layout |
 |---|---|
