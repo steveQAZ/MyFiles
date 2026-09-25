@@ -32,7 +32,11 @@ No design-system sync has run from this repo yet: it holds no component library.
 
 ## Social creatives (images, carousels, reel covers)
 
-- Photos come **only** from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). Each photo must match the post's subject; crop to the subject and keep watermarks and timestamp overlays out of frame.
+- Photos come from Google Drive `My Drive/AI/EWS/EWS Stock Photos` (Z:\My Drive\AI\EWS\EWS Stock Photos). When no photo there matches the topic (EV charger, Dalmatian, firefighters, NOC, warehouse), use a free-license Pexels or Pixabay photo, saved first to the Drive folder `27 Stock - Licensed (Pexels & Pixabay)`. Each photo must match the post's subject; keep watermarks and timestamp overlays out of frame.
+- **Cut-out "sticker" style (from Oct 2026 v3):** remove the photo background and float the subject over a layered brand background (navy gradient + pattern + RF arcs or waves), with a soft drop shadow, and a floor shadow or green glow for depth. No plain photo rectangles, ovals or circles.
+- Text never sits on the subject: text and cut-out keep separate zones. An occluder (clipboard card, caution tape, badge) may overlap the subject's body, never its head.
+- **Never crop or cover a face or head.** Heads stay inside the canvas with room above; no text, logo or card covers them. The renderer QA checks detected faces on every export.
+- Where a cut-out ends in a straight cut (the source photo's edge), that edge sits flush on the canvas edge or hides behind an occluder. A straight base is allowed only for objects standing on a floor shadow.
 - Style: EWS navy (`#2A3852` / `#1C1F26`), uppercase Montserrat 900 headline with the second line in Apple Green, green CTA block, white logo, phone + engineeringwireless.com. Text and photo are clearly separated, and the text side carries a technical background: blueprint grid, RF arcs, sine waves, contour lines, lattice, or dot matrix.
 - **Permanent spec (every graphic):** 64px margin on all four sides; all text, logos and buttons stay inside it (photos may bleed to the edge).
 - **Fixed type sizes, never changed per post:** kicker 22px · title 76px (Montserrat 900) · subtext 28px · CTA 26px · labels/chips 22px · footer 24px · big numerals 200px. Titles wrap onto more lines rather than shrink. Logo 150px wide at the top-left margin (carousel slide footers use 100px).
@@ -45,33 +49,37 @@ No design-system sync has run from this repo yet: it holds no component library.
 - Leave at least 8px between any two text elements; the renderer QA checks margins, spacing, overflow, font sizes, photo scaling and photo reuse on every export.
 - **Never reuse a layout.** Every post gets a composition that hasn't been used before. Check the registry below and add new ones to it.
 - Sizes: 1080×1080 images, 1080×1350 carousel slides, 1080×1920 reel covers.
-- No EV charger photos exist in the stock folder yet (Oct 5 used electrical metering gear).
+- No EV charger, Dalmatian or firefighter photos exist in the stock folder yet. Oct 1, 5 and 28 use interim EWS cut-outs until Pexels/Pixabay photos are added.
 
 ### Layout registry: used, do not repeat
+v3 (cut-out) layouts, current:
+
 | Post | Layout |
 |---|---|
-| Oct 1 | Photo top with angled bottom edge and green seam; RF arcs bottom-right |
-| Oct 2 | Grid text column left, full-height photo right, green vertical seam, dead-zone signal bars |
-| Oct 3 | Large circular photo off-canvas right with green rings; stacked 4-line headline |
-| Oct 5 | Staggered photo triptych top; green rule; text band below |
-| Oct 6 | Rounded photo card left; vertical signal-chain nodes right |
-| Oct 8 | Photo top with viewfinder brackets; 5-step numbered process row |
-| Oct 9 | Dashed 1871 → 2026 timeline under the title; offset-framed photo right |
-| Oct 12 | Photo inside an app window (NOC title bar, live dot); sparkline divider |
-| Oct 13 | Full-bleed photo; navy panel with sine-wave top edge |
-| Oct 15 | Text top on grid; ECG pulse divider; photo bottom |
-| Oct 16 | Giant stat numeral; photo in tall capsule with rings |
-| Oct 19 | Photo right with slanted edge and green seam; role chips stack |
-| Oct 20 | Altitude ruler scale left of photo; text band below |
-| Oct 22 | Wide photo top with "full bars" badge; chips row |
-| Oct 23 | Photo right with navy window-mullion bars over it |
-| Oct 26 | Giant "60+" numeral; arch-shaped photo; tick list |
-| Oct 27 | Full-height photo column left; 9-1-1 digit boxes; contour lines |
-| Oct 28 | Centered hexagon photo with radiating arcs; centered text |
-| Oct 29 | Terminal console block; photo bottom-right fade |
-| Oct 31 | Full-bleed photo, dark fade, centered headline, rings from tower |
-| Oct 7 carousel | Solid "5" numeral cover; floorplan slides highlighting one room each |
-| Oct 14 carousel | Phrasebook slides: code term, "in plain English", line-art icon per code |
-| Oct 21 carousel | Caution-tape stripe system; step labels; photo half-panels |
-| Oct 30 carousel | Clipboard card cover; checkbox progress slides with "why it matters" panel |
-| Reel covers | Oct 4 photo + 2×2 step grid · Oct 11 oscilloscope waves · Oct 18 crosshair target · Oct 25 single photo + 4-step build timeline |
+| Oct 1 | Tilted equipment cut-out top-right on grid, green glow + front arc; text band below with side note |
+| Oct 2 | (v2) Grid text column left, full-height photo right, green vertical seam |
+| Oct 3 | Two climbers cut out, anchored bottom-left; title top full width; copy and CTA right |
+| Oct 5 | Metering rack cut-out right on scan lines with sine waves; stacked 3-line title left |
+| Oct 6 | Rack cut-out left with floor shadow; leader lines to white callout tags right |
+| Oct 8 | Full-width team cut-out along the bottom; process dots row above |
+| Oct 9 | Tall rack cut-out bleeding left; timeline and copy right |
+| Oct 12 | (v2) Photo inside an app window (NOC title bar) |
+| Oct 13 | Five layered sine waves behind title; worker cut-out bottom-right |
+| Oct 15 | Full-width title; ECG line; crew cut-out bottom-right |
+| Oct 16 | Giant 80% numeral; phone cut-out tilted over rings |
+| Oct 19 | Worker (back view) cut-out right; chip stack left |
+| Oct 20 | Crane cut-out with altitude ruler right edge |
+| Oct 22 | DAS radio cluster cut-out top with "full bars" badge occluder; stadium seat curves |
+| Oct 23 | Two-person cut-out bottom-right on diagonal glass stripes with floor shadow |
+| Oct 26 | 3D hospital heat-map model floating, tilted, under the title |
+| Oct 27 | 9-1-1 digit boxes; monopole cut-out right over contour lines |
+| Oct 28 | Crew cut-out hanging from the top edge; centered text below |
+| Oct 29 | Rotary phone cut-out bottom-left; terminal console card right |
+| Oct 31 | Lattice tower cut-out on floor shadow, purple night glow, rings from the top |
+| Oct 7 carousel | Cover: worker cut-out right, solid "5" numeral left |
+| Oct 14 carousel | Cover: three-person cut-out rising from the bottom, chips row under title |
+| Oct 21 carousel | Cover: two workers cut out above a caution-tape band; step 1 conduit cut-out behind a tape occluder |
+| Oct 30 carousel | Cover: checklist card left overlapping two workers' shoulders, heads clear |
+| Reel covers | Oct 4 floating floor-plan heat map in perspective + tag · Oct 11 antenna cut-out between oscilloscope waves · Oct 18 monopine cut-out with crosshair · Oct 25 lattice tower flush to top + build timeline |
+
+v1/v2 layouts (retired, also do not repeat): Oct 1 angled photo top · Oct 3 circular photo · Oct 5 staggered triptych · Oct 6 rounded card + signal chain · Oct 8 viewfinder brackets · Oct 9 offset frame · Oct 13 sine-wave panel · Oct 15 text top + photo bottom · Oct 16 capsule photo · Oct 19 slanted photo · Oct 20 ruler + text band · Oct 22 wide photo + badge · Oct 23 window mullions · Oct 26 arch photo + 60+ · Oct 27 photo column + digit boxes · Oct 28 hexagon photo · Oct 29 terminal + fade · Oct 31 full-bleed photo + rings · carousel photo half-panels and photo covers · reel full-bleed photo covers.
